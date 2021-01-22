@@ -146,7 +146,7 @@
         <li>rule->I'll knock your ass into the next quadrum!</li>
 		<li>rule->come get some!</li>
 		
-		<li>rule(MILD!=true)->I'm going to beat you like a [Animal]</li>
+		<li>rule(MILD!=true)->I'm going to beat you like a [Animal]!</li>
 		<li>rule(MILD!=true)->now you've awakened the [AnimalBadass]!</li>
 		<li>rule(MILD!=true)->I'm going to build a boot factory in your ass!</li>
 		<li>rule(MILD!=true)->I'll [callout_verb_rip] you another [callout_noun_orifice]-hole!</li>
