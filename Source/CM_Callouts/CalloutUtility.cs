@@ -12,6 +12,8 @@ namespace CM_Callouts
 {
     public static class CalloutUtility
     {
+        public const float baseCalloutChance = 0.2f;
+
         public static void AttemptDraftedCallout(Pawn pawn)
         {
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
@@ -23,34 +25,70 @@ namespace CM_Callouts
 
                     GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
                     CollectPawnRules(pawn, "INITIATOR", ref grammarRequest);
-                    CollectWeaponRules(pawn, "INITIATOR_WEAPON", ref grammarRequest);
 
                     calloutTracker.RequestCallout(pawn, rulePack, grammarRequest);
                 }
             }
         }
 
-        public static void AttemptMeleeAttackCallout(Pawn pawn, Verb verb)
+        public static void AttemptMeleeAttackCallout(PendingCallout pendingCallout)
+        {
+            AttemptMeleeAttackCallout(pendingCallout.initiator, pendingCallout.recipient);
+        }
+
+        public static void AttemptMeleeAttackCallout(Pawn initiator, Pawn recipient)
         {
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
             if (calloutTracker != null)
             {
-                if (calloutTracker.CanCalloutNow(pawn))
+                if (calloutTracker.CanCalloutNow(initiator))
                 {
                     RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Melee_Attack;
 
                     GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
 
-                    CollectPawnRules(pawn, "INITIATOR", ref grammarRequest);
-                    CollectWeaponRules(pawn, "INITIATOR_WEAPON", ref grammarRequest);
+                    CollectPawnRules(initiator, "INITIATOR", ref grammarRequest);
 
-                    if (verb.CurrentTarget.Pawn != null)
+                    if (recipient != null)
+                        CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
+
+                    calloutTracker.RequestCallout(initiator, rulePack, grammarRequest);
+                }
+            }
+        }
+
+        public static void AttemptMeleeAttackLandedCallout(PendingCallout pendingCallout, BodyDef body, List<BodyPartRecord> bodyParts, List<bool> bodyPartsDestroyed)
+        {
+            AttemptMeleeAttackLandedCallout(pendingCallout.initiator, pendingCallout.recipient, body, bodyParts, bodyPartsDestroyed);
+        }
+
+        public static void AttemptMeleeAttackLandedCallout(Pawn initiator, Pawn recipient, BodyDef body, List<BodyPartRecord> bodyParts, List<bool> bodyPartsDestroyed)
+        {
+            CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
+            if (calloutTracker != null)
+            {
+                bool recipientCallout = Rand.Bool;
+
+                if ((recipientCallout && calloutTracker.CanCalloutNow(recipient)) || (!recipientCallout && calloutTracker.CanCalloutNow(initiator)))
+                {
+                    RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Landed;
+                    if (recipientCallout)
+                        rulePack = CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Received;
+
+                    GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
+
+                    CollectPawnRules(initiator, "INITIATOR", ref grammarRequest);
+
+                    if (recipient != null)
                     {
-                        CollectPawnRules(verb.CurrentTarget.Pawn, "RECIPIENT", ref grammarRequest);
-                        CollectWeaponRules(verb.CurrentTarget.Pawn, "RECIPIENT_WEAPON", ref grammarRequest);
+                        CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
+                        grammarRequest.Rules.AddRange(PlayLogEntryUtility.RulesForDamagedParts("recipient_part", body, bodyParts, bodyPartsDestroyed, grammarRequest.Constants));
                     }
 
-                    calloutTracker.RequestCallout(pawn, rulePack, grammarRequest);
+                    if (!recipientCallout)
+                        calloutTracker.RequestCallout(initiator, rulePack, grammarRequest);
+                    else
+                        calloutTracker.RequestCallout(recipient, rulePack, grammarRequest);
                 }
             }
         }
@@ -67,14 +105,12 @@ namespace CM_Callouts
                     GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
 
                     CollectPawnRules(pawn, "INITIATOR", ref grammarRequest);
-                    CollectWeaponRules(pawn, "INITIATOR_WEAPON", ref grammarRequest);
 
                     if (verb.CurrentTarget.Pawn != null)
                     {
                         CollectCoverRules(verb.CurrentTarget.Pawn, pawn, "INITIATOR_COVER", verb, ref grammarRequest);
 
                         CollectPawnRules(verb.CurrentTarget.Pawn, "RECIPIENT", ref grammarRequest);
-                        CollectWeaponRules(verb.CurrentTarget.Pawn, "RECIPIENT_WEAPON", ref grammarRequest);
                         CollectCoverRules(pawn, verb.CurrentTarget.Pawn, "RECIPIENT_COVER", verb, ref grammarRequest);
                     }
 
@@ -86,6 +122,7 @@ namespace CM_Callouts
         private static void CollectPawnRules(Pawn pawn, string symbol, ref GrammarRequest grammarRequest)
         {
             grammarRequest.Rules.AddRange(GrammarUtility.RulesForPawn(symbol, pawn));
+            CollectWeaponRules(pawn, symbol + "_WEAPON", ref grammarRequest);
         }
 
         private static void CollectWeaponRules(Pawn pawn, string symbol, ref GrammarRequest grammarRequest)

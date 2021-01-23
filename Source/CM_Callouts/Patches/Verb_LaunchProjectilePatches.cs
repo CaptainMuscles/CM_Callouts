@@ -21,7 +21,7 @@ namespace CM_Callouts
                 if (__instance.CasterPawn == null)
                     return;
 
-                if (__instance.CurrentTarget.Thing is Pawn && Rand.Chance(0.25f))
+                if (__instance.CurrentTarget.Thing is Pawn && Rand.Chance(CalloutUtility.baseCalloutChance))
                 {
                     CalloutUtility.AttemptRangedAttackCallout(__instance.CasterPawn, __instance);
                 }

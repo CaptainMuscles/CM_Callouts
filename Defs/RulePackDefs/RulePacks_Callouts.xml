@@ -39,6 +39,7 @@
 		<li>rule->say hello to [callout_noun_afterlife_greeter] for me!</li>
 		<li>rule->end-of-the-line for you, pal!</li>
 		<li>rule->say goodbye...</li>
+		<li>rule->this [Community] ain't big enough for the two of us!</li>
 		
         <li>rule(MILD!=true)->I'll see you in hell!</li>
         <li>rule(MILD!=true)->wake up, time to die!</li>
@@ -156,6 +157,60 @@
 		<li>rule(MILD!=true)->I'll [callout_verb_rip] out your [callout_noun_bodypart_internal] and eat it!</li>
 		<li>rule(SPICY==true)->I can't wait to harvest your [callout_noun_bodypart_internal]!</li>
 		<li>rule(SPICY==true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and shove it in your [callout_noun_orifice]!</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Attack_Landed_Common</defName>
+	<include>
+      <li>Combat_WoundIncludes</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+
+		<li>rule->ooooh, right in the [damaged_targets]!</li>
+		<li>rule->say goodbye to your [destroyed_targets]!</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Melee_Attack_Landed</defName>
+	<include>
+      <li>CM_Callouts_RulePack_Attack_Landed_Common</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+   <RulePackDef>
+    <defName>CM_Callouts_RulePack_Attack_Received_Common</defName>
+	<include>
+      <li>Combat_WoundIncludes</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+
+		<li>rule->ow, my [damaged_targets]!</li>
+		<li>rule->goodbye, my [destroyed_targets]!</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Melee_Attack_Received</defName>
+	<include>
+      <li>CM_Callouts_RulePack_Attack_Received_Common</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
 
       </rulesStrings>
     </rulePack>
