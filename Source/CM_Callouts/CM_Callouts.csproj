@@ -58,14 +58,20 @@
     <Compile Include="CalloutConstantByTraitDef.cs" />
     <Compile Include="CalloutTracker.cs" />
     <Compile Include="CalloutUtility.cs" />
+    <Compile Include="Patches\BattleLogEntry_RangedImpact_Patches.cs" />
     <Compile Include="Patches\LogEntry_DamageResult_Patches.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="MoteAttachedText.cs" />
+    <Compile Include="Patches\MoteMaker_Patches.cs" />
+    <Compile Include="Patches\MoteThrown_Patches.cs" />
     <Compile Include="Patches\Pawn_DraftController_Patches.cs" />
+    <Compile Include="Patches\RealTime_Patches.cs" />
     <Compile Include="Patches\Verb_MeleeAttack_Patches.cs" />
     <Compile Include="PendingCallout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Patches\Verb_LaunchProjectilePatches.cs" />
     <Compile Include="Patches\VerbPatches.cs" />
+    <Compile Include="TextMoteQueue.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

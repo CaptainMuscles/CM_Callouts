@@ -13,10 +13,26 @@ namespace CM_Callouts
     {
         public Pawn initiator = null;
         public Pawn recipient = null;
-        public PendingCallout(Pawn source, Pawn target)
+        public Pawn originalTarget = null;
+        public ThingDef weaponDef = null;
+        public ThingDef projectileDef = null;
+        public ThingDef coverDef = null;
+
+        public PendingCallout(Pawn _initiator, Pawn _recipient)
         {
-            initiator = source;
-            recipient = target;
+            initiator = _initiator;
+            recipient = _recipient;
+        }
+
+        public PendingCallout(Pawn _initiator, Pawn _recipient, Pawn _originalTarget, ThingDef _weaponDef, ThingDef _projectileDef, ThingDef _coverDef)
+        {
+            initiator = _initiator;
+            recipient = _recipient;
+            originalTarget = _originalTarget;
+
+            weaponDef = _weaponDef;
+            projectileDef = _projectileDef;
+            coverDef = _coverDef;
         }
     }
 }

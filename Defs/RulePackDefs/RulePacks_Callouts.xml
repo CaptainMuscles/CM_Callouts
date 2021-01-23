@@ -170,8 +170,45 @@
     <rulePack>
       <rulesStrings>
 
-		<li>rule->ooooh, right in the [damaged_targets]!</li>
-		<li>rule->say goodbye to your [destroyed_targets]!</li>
+		<!--<li>rule->pow, right in the [damaged_targets]!</li>
+		<li>rule->say goodbye to your [destroyed_targets]!</li>-->
+		
+		<li>rule->pow, right in the [damaged_part]!</li>
+		<li>rule->say goodbye to your [destroyed_part]!</li>
+		
+		<li>destroyed_part->[recipient_part_destroyed0_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed1_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed2_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed3_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed4_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed5_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed6_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed7_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed8_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed9_label]</li>
+		
+		<li>damaged_part->[recipient_part_damaged0_label]</li>
+		<li>damaged_part->[recipient_part_damaged1_label]</li>
+		<li>damaged_part->[recipient_part_damaged2_label]</li>
+		<li>damaged_part->[recipient_part_damaged3_label]</li>
+		<li>damaged_part->[recipient_part_damaged4_label]</li>
+		<li>damaged_part->[recipient_part_damaged5_label]</li>
+		<li>damaged_part->[recipient_part_damaged6_label]</li>
+		<li>damaged_part->[recipient_part_damaged7_label]</li>
+		<li>damaged_part->[recipient_part_damaged8_label]</li>
+		<li>damaged_part->[recipient_part_damaged9_label]</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Ranged_Attack_Impact</defName>
+	<include>
+      <li>CM_Callouts_RulePack_Attack_Landed_Common</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
 
       </rulesStrings>
     </rulePack>
@@ -197,8 +234,33 @@
     <rulePack>
       <rulesStrings>
 
-		<li>rule->ow, my [damaged_targets]!</li>
-		<li>rule->goodbye, my [destroyed_targets]!</li>
+		<!--<li>rule->ow, my [damaged_targets]!</li>
+		<li>rule->goodbye, my [destroyed_targets]!</li>-->
+		
+		<li>rule->ow, my [damaged_part]!</li>
+		<li>rule->goodbye, my [destroyed_part]!</li>
+		
+		<li>destroyed_part->[recipient_part_destroyed0_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed1_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed2_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed3_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed4_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed5_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed6_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed7_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed8_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed9_label]</li>
+		
+		<li>damaged_part->[recipient_part_damaged0_label]</li>
+		<li>damaged_part->[recipient_part_damaged1_label]</li>
+		<li>damaged_part->[recipient_part_damaged2_label]</li>
+		<li>damaged_part->[recipient_part_damaged3_label]</li>
+		<li>damaged_part->[recipient_part_damaged4_label]</li>
+		<li>damaged_part->[recipient_part_damaged5_label]</li>
+		<li>damaged_part->[recipient_part_damaged6_label]</li>
+		<li>damaged_part->[recipient_part_damaged7_label]</li>
+		<li>damaged_part->[recipient_part_damaged8_label]</li>
+		<li>damaged_part->[recipient_part_damaged9_label]</li>
 
       </rulesStrings>
     </rulePack>

@@ -119,6 +119,40 @@ namespace CM_Callouts
             }
         }
 
+        public static void AttemptRangedAttackImpactCallout(PendingCallout pendingCallout, BodyDef body, List<BodyPartRecord> bodyParts, List<bool> bodyPartsDestroyed)
+        {
+            AttemptRangedAttackImpactCallout(pendingCallout.initiator, pendingCallout.recipient, pendingCallout.originalTarget,
+                                             pendingCallout.weaponDef, pendingCallout.projectileDef, pendingCallout.coverDef,
+                                             body, bodyParts, bodyPartsDestroyed);
+        }
+
+        public static void AttemptRangedAttackImpactCallout(Pawn initiator, Pawn recipient, Pawn originalTarget, ThingDef weaponDef, ThingDef projectileDef, ThingDef coverDef, BodyDef body, List<BodyPartRecord> bodyParts, List<bool> bodyPartsDestroyed)
+        {
+            CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
+            if (calloutTracker != null)
+            {
+                if (calloutTracker.CanCalloutNow(initiator))
+                {
+                    RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack_Impact;
+
+                    GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
+
+                    CollectPawnRules(initiator, "INITIATOR", ref grammarRequest);
+
+                    if (recipient != null)
+                    {
+                        CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
+                        grammarRequest.Rules.AddRange(PlayLogEntryUtility.RulesForDamagedParts("recipient_part", body, bodyParts, bodyPartsDestroyed, grammarRequest.Constants));
+
+                        if (coverDef != null)
+                            grammarRequest.Rules.AddRange(GrammarUtility.RulesForDef("RECIPIENT_COVER", coverDef));
+                    }
+
+                    calloutTracker.RequestCallout(initiator, rulePack, grammarRequest);
+                }
+            }
+        }
+
         private static void CollectPawnRules(Pawn pawn, string symbol, ref GrammarRequest grammarRequest)
         {
             grammarRequest.Rules.AddRange(GrammarUtility.RulesForPawn(symbol, pawn));

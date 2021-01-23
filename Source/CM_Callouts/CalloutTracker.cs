@@ -18,9 +18,16 @@ namespace CM_Callouts
 
         private Dictionary<Pawn, int> pawnCalloutExpireTick = new Dictionary<Pawn, int>();
 
+        private static Dictionary<int, TextMoteQueueTickBased> textMoteQueuesTickBased = new Dictionary<int, TextMoteQueueTickBased>();
+        private static Dictionary<int, TextMoteQueueRealTime> textMoteQueuesRealTime = new Dictionary<int, TextMoteQueueRealTime>();
+
         public CalloutTracker(World world) : base(world)
         {
             hashCache = this.GetHashCode();
+
+            // New world, new queues
+            textMoteQueuesTickBased = new Dictionary<int, TextMoteQueueTickBased>();
+            textMoteQueuesRealTime = new Dictionary<int, TextMoteQueueRealTime>();
         }
 
         public override void WorldComponentTick()
@@ -32,6 +39,60 @@ namespace CM_Callouts
             // Replace dictionary with new one without expired values
             if (currentTickPlusHash % checkTicks == 0)
                 pawnCalloutExpireTick = pawnCalloutExpireTick.Where(kvp => kvp.Value > currentTickPlusHash).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+            UpdateTextMoteQueuesTickBased();
+        }
+
+        private static void UpdateTextMoteQueuesTickBased()
+        {
+            bool cleanup = false;
+            foreach(TextMoteQueue textMoteQueue in textMoteQueuesTickBased.Values)
+            {
+                cleanup = (cleanup || !textMoteQueue.Update());
+            }
+
+            if (cleanup)
+                textMoteQueuesTickBased = textMoteQueuesTickBased.Where(kvp => kvp.Value.Valid()).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+        }
+
+        public static void UpdateTextMoteQueuesRealTime()
+        {
+            bool cleanup = false;
+            foreach (TextMoteQueue textMoteQueue in textMoteQueuesRealTime.Values)
+            {
+                cleanup = (cleanup || !textMoteQueue.Update());
+            }
+
+            if (cleanup)
+                textMoteQueuesRealTime = textMoteQueuesRealTime.Where(kvp => kvp.Value.Valid()).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+        }
+
+        public static Thing ThrowText(Thing thing, IntVec3 location, Map map, WipeMode wipeMode = WipeMode.Vanish)
+        {
+            MoteText moteText = thing as MoteText;
+
+            if (moteText != null)
+            {
+                int hash = (map.Index * 1000000) + (location.x * 1000) + location.z;
+
+                if (Find.TickManager.Paused)
+                {
+                    if (!textMoteQueuesRealTime.ContainsKey(hash))
+                        textMoteQueuesRealTime[hash] = new TextMoteQueueRealTime(location, map);
+
+                    textMoteQueuesRealTime[hash].AddMote(moteText);
+                }
+                else
+                {
+                    if (!textMoteQueuesTickBased.ContainsKey(hash))
+                        textMoteQueuesTickBased[hash] = new TextMoteQueueTickBased(location, map);
+
+                    textMoteQueuesTickBased[hash].AddMote(moteText);
+                }
+
+                //Log.Message("Throwing text - " + (thing as MoteText).text + " - at " + location + " - " + map);
+            }
+            return thing;
         }
 
         public bool CanCalloutNow(Pawn pawn)
@@ -66,7 +127,7 @@ namespace CM_Callouts
 
             string text = GrammarResolver.Resolve(rulePack.RulesPlusIncludes[0].keyword, grammarRequest);
             if (!text.NullOrEmpty())
-                MoteMaker.ThrowText(pawn.Position.ToVector3Shifted(), pawn.Map, text);
+                MoteMaker.ThrowText(pawn.DrawPos, pawn.MapHeld, text);
             else
                 Logger.WarningFormat(this, " Could not find text for requested {1} by {0}", pawn, rulePack);
 

@@ -11,6 +11,8 @@ namespace CM_Callouts
     {
         public static RulePackDef CM_Callouts_RulePack_Ranged_Attack;
 
+        public static RulePackDef CM_Callouts_RulePack_Ranged_Attack_Impact;
+
         public static RulePackDef CM_Callouts_RulePack_Melee_Attack;
 
         public static RulePackDef CM_Callouts_RulePack_Melee_Attack_Landed;
