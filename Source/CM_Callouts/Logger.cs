@@ -12,7 +12,7 @@ namespace CM_Callouts
 
         public static void MessageFormat(object caller, string message, params object[] stuff)
         {
-            if (Logger.MessageEnabled)
+            if (CalloutMod.settings.showDebugLogMessages)
             {
                 message = caller.GetType().ToString() + "." + (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name + " - " + message;
                 Log.Message(String.Format(message, stuff));
@@ -21,7 +21,7 @@ namespace CM_Callouts
 
         public static void MessageFormat(string message, params object[] stuff)
         {
-            if (Logger.MessageEnabled)
+            if (CalloutMod.settings.showDebugLogMessages)
             {
                 message = (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name + " - " + message;
                 Log.Message(String.Format(message, stuff));

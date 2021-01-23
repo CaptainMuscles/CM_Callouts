@@ -127,14 +127,42 @@ namespace CM_Callouts
 
             string text = GrammarResolver.Resolve(rulePack.RulesPlusIncludes[0].keyword, grammarRequest);
             if (!text.NullOrEmpty())
-                MoteMaker.ThrowText(pawn.DrawPos, pawn.MapHeld, text);
+            {
+                if (CalloutMod.settings.attachCalloutText)
+                    CreateAttachedCalloutText(pawn, text, Color.white);
+                else
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.MapHeld, text);
+            }
             else
+            {
                 Logger.WarningFormat(this, " Could not find text for requested {1} by {0}", pawn, rulePack);
+            }
 
             // Mark tick when pawn can callout again
             int expireTick = Find.TickManager.TicksGame + ticksBetweenCallouts + hashCache;
 
             pawnCalloutExpireTick.Add(pawn, expireTick);
+        }
+
+        private void CreateAttachedCalloutText(Thing caller, string text, Color color, float timeBeforeStartFadeout = -1f)
+        {
+            IntVec3 location = caller.PositionHeld;
+            Map map = caller.MapHeld;
+
+            if (location.InBounds(map))
+            {
+                MoteAttachedText moteText = (MoteAttachedText)ThingMaker.MakeThing(CalloutDefOf.CM_Callouts_Thing_Mote_Attached_Text);
+
+                //moteText.exactPosition = loc;
+                moteText.text = text;
+                moteText.textColor = color;
+                if (timeBeforeStartFadeout >= 0f)
+                {
+                    moteText.overrideTimeBeforeStartFadeout = timeBeforeStartFadeout;
+                }
+                GenSpawn.Spawn(moteText, location, map);
+                moteText.Attach(caller);
+            }
         }
     }
 }

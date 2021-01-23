@@ -22,7 +22,7 @@ namespace CM_Callouts
                 if (__instance as Verb_MeleeAttack == null || __instance.CasterPawn == null)
                     return;
 
-                if (__instance.CurrentTarget.Thing is Pawn && Rand.Chance(CalloutUtility.baseCalloutChance))
+                if (__instance.CurrentTarget.Thing is Pawn && Rand.Chance(CalloutMod.settings.baseCalloutChance))
                 {
                     CalloutUtility.AttemptMeleeAttackCallout(__instance.CasterPawn, __instance.CurrentTarget.Thing as Pawn);
                 }

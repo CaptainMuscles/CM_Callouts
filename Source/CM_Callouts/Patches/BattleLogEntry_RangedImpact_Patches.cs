@@ -25,7 +25,7 @@ namespace CM_Callouts
                 if (!(initiator is Pawn))
                     return;
 
-                if (recipient is Pawn && Rand.Chance(CalloutUtility.baseCalloutChance))
+                if (recipient is Pawn && Rand.Chance(CalloutMod.settings.baseCalloutChance))
                 {
                     pendingCallout = new PendingCallout(initiator as Pawn, recipient as Pawn, originalTarget as Pawn, weaponDef, projectileDef, coverDef);
                 }

@@ -64,7 +64,7 @@ namespace CM_Callouts
 
             private static void ThrowDestroyedPartMotes(Pawn pawn, List<BodyPartRecord> recipientParts, List<bool> recipientPartsDestroyed)
             {
-                if (!pawn.SpawnedOrAnyParentSpawned)
+                if (!CalloutMod.settings.showWounds || !pawn.SpawnedOrAnyParentSpawned)
                     return;
 
                 Vector3 thingVector3 = pawn.SpawnedParentOrMe.DrawPos;

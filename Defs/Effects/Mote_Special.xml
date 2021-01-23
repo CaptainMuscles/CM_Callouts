@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>CM_Callouts_Thing_Mote_Text_Ticked</defName>
+    <graphicData>
+      <texPath>Things/Mote/Transparent</texPath>
+    </graphicData>
+    <thingClass>MoteText</thingClass>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <realTime>false</realTime>
+      <solidTime>2.2</solidTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>CM_Callouts_Thing_Mote_Attached_Text</defName>
+    <graphicData>
+      <texPath>Things/Mote/Transparent</texPath>
+    </graphicData>
+    <thingClass>CM_Callouts.MoteAttachedText</thingClass>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+	  <attachedDrawOffset>(0, 0, 0.75)</attachedDrawOffset>
+      <realTime>false</realTime>
+      <solidTime>2.2</solidTime>
+    </mote>
+  </ThingDef>
+
+</Defs>

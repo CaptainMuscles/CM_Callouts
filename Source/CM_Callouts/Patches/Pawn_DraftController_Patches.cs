@@ -27,7 +27,7 @@ namespace CM_Callouts
             [HarmonyPostfix]
             public static void Postfix(Pawn_DraftController __instance, bool value, bool ___draftedInt)
             {
-                if (___draftedInt && wereDrafted && Rand.Chance(CalloutUtility.baseCalloutChance))
+                if (___draftedInt && wereDrafted && Rand.Chance(CalloutMod.settings.baseCalloutChance))
                 {
                     CalloutUtility.AttemptDraftedCallout(__instance.pawn);
                 }

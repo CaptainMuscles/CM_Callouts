@@ -45,7 +45,7 @@ namespace CM_Callouts
 
         public override void AddMote(MoteText newMote)
         {
-            newMote.def.mote.realTime = false;
+            newMote.def = CalloutDefOf.CM_Callouts_Thing_Mote_Text_Ticked;
 
             int currentTick = Find.TickManager.TicksGame;
 

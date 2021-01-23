@@ -12,8 +12,6 @@ namespace CM_Callouts
 {
     public static class CalloutUtility
     {
-        public const float baseCalloutChance = 0.2f;
-
         public static void AttemptDraftedCallout(Pawn pawn)
         {
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
