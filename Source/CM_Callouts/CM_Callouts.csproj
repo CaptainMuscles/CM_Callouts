@@ -51,6 +51,14 @@
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalloutDefOf.cs" />
@@ -60,15 +68,17 @@
     <Compile Include="CalloutTracker.cs" />
     <Compile Include="CalloutUtility.cs" />
     <Compile Include="Patches\BattleLogEntry_RangedImpact_Patches.cs" />
-    <Compile Include="Patches\LogEntry_DamageResult_Patches.cs" />
+    <Compile Include="Patches\DamageWorker_DamageResult_Patches.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="MoteAttachedText.cs" />
     <Compile Include="Patches\MoteMaker_Patches.cs" />
-    <Compile Include="Patches\MoteThrown_Patches.cs" />
+    <Compile Include="Patches\MoteText_Patches.cs" />
     <Compile Include="Patches\Pawn_DraftController_Patches.cs" />
     <Compile Include="Patches\RealTime_Patches.cs" />
     <Compile Include="Patches\Verb_MeleeAttack_Patches.cs" />
-    <Compile Include="PendingCallout.cs" />
+    <Compile Include="PendingCallouts\PendingCalloutEvent.cs" />
+    <Compile Include="PendingCallouts\PendingCalloutEventMeleeImpact.cs" />
+    <Compile Include="PendingCallouts\PendingCalloutEventRangedImpact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Patches\Verb_LaunchProjectilePatches.cs" />
     <Compile Include="Patches\VerbPatches.cs" />

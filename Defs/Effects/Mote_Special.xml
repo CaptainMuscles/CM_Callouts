@@ -24,7 +24,7 @@
     <drawGUIOverlay>true</drawGUIOverlay>
     <altitudeLayer>MetaOverlays</altitudeLayer>
     <mote>
-	  <attachedDrawOffset>(0, 0, 0.75)</attachedDrawOffset>
+	  <attachedDrawOffset>(0, 0, 1.0)</attachedDrawOffset>
       <realTime>false</realTime>
       <solidTime>2.2</solidTime>
     </mote>

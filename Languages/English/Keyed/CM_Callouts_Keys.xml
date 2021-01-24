@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-  <CM_Callouts_Settings_Attach_Callout_Text_Label>Attach callout text</CM_Callouts_Settings_Attach_Callout_Text_Label>
-  <CM_Callouts_Settings_Attach_Callout_Text_Description>When enabled, callout text hovers above the callers head instead of flying out.</CM_Callouts_Settings_Attach_Callout_Text_Description>
+  <CM_Callouts_Settings_Attach_Callout_Text_Label>Attach callout text to caller</CM_Callouts_Settings_Attach_Callout_Text_Label>
+  <CM_Callouts_Settings_Attach_Callout_Text_Description>When enabled, callout text hovers above the caller's head instead of flying out.</CM_Callouts_Settings_Attach_Callout_Text_Description>
+  
   <CM_Callouts_Settings_Show_Wounds_Label>Show wounds</CM_Callouts_Settings_Show_Wounds_Label>
   <CM_Callouts_Settings_Show_Wounds_Description>When enabled, text alerts appear over a pawn when a part is wounded.</CM_Callouts_Settings_Show_Wounds_Description>
+  
+  <CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Label>Draw label background for text motes</CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Label>
+  <CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Description>When enabled, text motes will be drawn on a light grey background.</CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Description>
+  
   <CM_Callouts_Settings_Base_Callout_Chance_Label>Base callout frequency</CM_Callouts_Settings_Base_Callout_Chance_Label>
   <CM_Callouts_Settings_Base_Callout_Chance_Description>Base chance that a callout will be occur on a related event.</CM_Callouts_Settings_Base_Callout_Chance_Description>
 </LanguageData>

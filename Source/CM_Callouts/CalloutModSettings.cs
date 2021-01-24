@@ -9,6 +9,7 @@ namespace CM_Callouts
     {
         public bool attachCalloutText = false;
         public bool showWounds = true;
+        public bool drawLabelBackgroundForTextMotes = true;
         public float baseCalloutChance = 0.2f;
 
         public bool showDebugLogMessages = false;
@@ -18,7 +19,8 @@ namespace CM_Callouts
             base.ExposeData();
 
             Scribe_Values.Look(ref attachCalloutText, "attachCalloutText", true);
-            Scribe_Values.Look(ref showWounds, "showWounds", false);
+            Scribe_Values.Look(ref showWounds, "showWounds", true);
+            Scribe_Values.Look(ref drawLabelBackgroundForTextMotes, "drawLabelBackgroundForTextMotes", true);
             Scribe_Values.Look(ref baseCalloutChance, "baseCalloutChance", 0.2f);
         }
 
@@ -28,6 +30,7 @@ namespace CM_Callouts
             listing_Standard.Begin(inRect);
             listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Attach_Callout_Text_Label".Translate(), ref attachCalloutText, "CM_Callouts_Settings_Attach_Callout_Text_Description".Translate());
             listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Show_Wounds_Label".Translate(), ref showWounds, "CM_Callouts_Settings_Show_Wounds_Description".Translate());
+            listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Label".Translate(), ref drawLabelBackgroundForTextMotes, "CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Description".Translate());
 
             listing_Standard.Label("CM_Callouts_Settings_Base_Callout_Chance_Label".Translate(), -1, "CM_Callouts_Settings_Base_Callout_Chance_Description".Translate());
             listing_Standard.Label(baseCalloutChance.ToString("P0"));

@@ -12,8 +12,6 @@ namespace CM_Callouts
     [StaticConstructorOnStartup]
     public static class Verb_MeleeAttack_Patches
     {
-        public static PendingCallout pendingCallout = null;
-
         [HarmonyPatch(typeof(Verb_MeleeAttack))]
         [HarmonyPatch("CreateCombatLog", MethodType.Normal)]
         public static class Verb_MeleeAttack_CreateCombatLog
@@ -21,7 +19,7 @@ namespace CM_Callouts
             [HarmonyPostfix]
             public static void Postfix(Verb_MeleeAttack __instance, Func<ManeuverDef, RulePackDef> rulePackGetter)
             {
-                pendingCallout = null;
+                CalloutUtility.pendingCallout = null;
 
                 if (__instance.maneuver == null || __instance.tool == null)
                     return;
@@ -36,7 +34,7 @@ namespace CM_Callouts
                     if (rulePackGetter(__instance.maneuver) == __instance.maneuver.combatLogRulesHit)
                     {
                         // This will get resolved in a DamageWorker.DamageResult.AssociateWithLog patch so we will know the result and don't have to transpile
-                        pendingCallout = new PendingCallout(__instance.CasterPawn, __instance.CurrentTarget.Thing as Pawn);
+                        CalloutUtility.pendingCallout = new PendingCalloutEventMeleeImpact(__instance.CasterPawn, __instance.CurrentTarget.Thing as Pawn);
                     }
                     else if (rulePackGetter(__instance.maneuver) == __instance.maneuver.combatLogRulesMiss)
                     {

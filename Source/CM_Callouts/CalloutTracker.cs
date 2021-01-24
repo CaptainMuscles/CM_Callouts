@@ -77,10 +77,13 @@ namespace CM_Callouts
 
                 if (Find.TickManager.Paused)
                 {
-                    if (!textMoteQueuesRealTime.ContainsKey(hash))
-                        textMoteQueuesRealTime[hash] = new TextMoteQueueRealTime(location, map);
+                    //if (!textMoteQueuesRealTime.ContainsKey(hash))
+                    //    textMoteQueuesRealTime[hash] = new TextMoteQueueRealTime(location, map);
 
-                    textMoteQueuesRealTime[hash].AddMote(moteText);
+                    //textMoteQueuesRealTime[hash].AddMote(moteText);
+
+                    // Meh, the situations I can think of where this is happening (changing temperature on a heater for example) queueing it makes it worse
+                    GenSpawn.Spawn(thing, location, map);
                 }
                 else
                 {
@@ -97,7 +100,7 @@ namespace CM_Callouts
 
         public bool CanCalloutNow(Pawn pawn)
         {
-            return (pawn != null && pawn.def.race.Humanlike && !pawn.Dead && pawn.Spawned && !pawnCalloutExpireTick.ContainsKey(pawn));
+            return (pawn != null && pawn.def.race.Humanlike && !pawn.Dead && pawn.Spawned && !pawnCalloutExpireTick.ContainsKey(pawn) && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking));
         }
 
         public void RequestCallout(Pawn pawn, RulePackDef rulePack, GrammarRequest grammarRequest)

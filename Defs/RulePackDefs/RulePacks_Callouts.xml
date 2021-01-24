@@ -22,40 +22,19 @@
 	<name>MILD</name>
 	<value>true</value>
   </CM_Callouts.CalloutConstantByTraitDef>
-
+  
+  
   <RulePackDef>
-    <defName>CM_Callouts_RulePack_Attack_Common</defName>
+    <defName>CM_Callouts_Common</defName>
     <rulePack>
       <rulesStrings>
 	  
-	    <li>rule(MILD==true)->I'll stop you, you [Enemy]!</li>
-		<li>rule(MILD==true)->don't make me hurt you!</li>
-		<li>rule(MILD==true)->take that!</li>
-		
-	    <li>rule->I do as [INITIATOR_WEAPON_title] commands!</li>
-		<li>rule->say hello to my little [INITIATOR_WEAPON_label]!</li>
-		<li>rule->time to kiss your ass goodbye!</li>
-		<li>rule->time for a dirt nap!</li>
-		<li>rule->say hello to [callout_noun_afterlife_greeter] for me!</li>
-		<li>rule->end-of-the-line for you, pal!</li>
-		<li>rule->say goodbye...</li>
-		<li>rule->this [Community] ain't big enough for the two of us!</li>
-		
-        <li>rule(MILD!=true)->I'll see you in hell!</li>
-        <li>rule(MILD!=true)->wake up, time to die!</li>
-		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label]s don't kill people... I kill people!</li>
-        <li>rule(MILD!=true)->I'll see you in hell!</li>
-        <li>rule(MILD!=true)->wake up, time to die!</li>
-		<li>rule(MILD!=true)->eat shit and die!</li>
-		
-		<li>rule(SPICY==true)->go to sleep, [callout_noun_insult_vulgar]!</li>
-		<li>rule(SPICY==true)->I'm going to [callout_verb_decorate] my [callout_noun_room] with your [Gore]!</li>
-		<li>rule(SPICY==true)->after this I'll kill your [PersonFamily]!</li>
-		
-		<li>callout_noun_afterlife_greeter->the devil</li>
+	    <li>callout_noun_afterlife_greeter->the devil</li>
 		<li>callout_noun_afterlife_greeter->the grim reaper</li>
 		<li>callout_noun_afterlife_greeter->the angels</li>
 		<li>callout_noun_afterlife_greeter->Kim Jong-il</li>
+		<li>callout_noun_afterlife_greeter->Jebus</li>
+		<li>callout_noun_afterlife_greeter->The Macho Man Randy Savage</li>
 		
 		<li>callout_noun_insult_vulgar->bitch</li>
 		<li>callout_noun_insult_vulgar->mother-fucker</li>
@@ -80,7 +59,6 @@
 		
 		<li>callout_verb_rip->rip</li>
 		<li>callout_verb_rip->cut</li>
-		<li>callout_verb_rip->pull</li>
 		<li>callout_verb_rip->tear</li>
 		
 		<li>callout_noun_bodypart->callout_noun_bodypart_external</li>
@@ -110,6 +88,67 @@
 		<li>callout_noun_meal->lunch</li>
 		<li>callout_noun_meal->dinner</li>
 		<li>callout_noun_meal->a snack</li>
+        
+		<li>curse(MILD==true)->darn</li>
+		<li>curse(MILD==true)->dang</li>
+		<li>curse(MILD==true)->shucks</li>
+		<li>curse(MILD==true)->poo</li>
+		<li>curse(MILD==true)->fiddlesticks</li>
+		
+		<li>curse->damn</li>
+		<li>curse->hell</li>
+		
+		<li>curse(MILD!=true)->shit</li>
+		<li>curse(MILD!=true)->fuck</li>
+		<li>curse(MILD!=true)->goddamn</li>
+		
+		<li>curse(SPICY==true)->[curse_gerund] [curse]</li>
+		<li>curse(SPICY==true)->[curse] [curse]</li>
+		<li>curse(SPICY==true)->[curse] [curse_gerund]</li>
+		
+		<li>curse_gerund(MILD!=true)->fucking</li>
+		<li>curse_gerund(MILD!=true)->[PersonFamily]-fucking</li>
+		<li>curse_gerund(MILD!=true)->[callout_noun_orifice]-fucking</li>
+		<li>curse_gerund(MILD!=true)->shitting</li>
+		
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Attack attempted -->
+
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Attack_Common</defName>
+	<include>
+	  <li>CM_Callouts_Common</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+	  
+	    <li>rule(MILD==true)->I'll stop you, you [Enemy]!</li>
+		<li>rule(MILD==true)->don't make me hurt you!</li>
+		<li>rule(MILD==true)->take that!</li>
+		
+	    <li>rule->I do as [INITIATOR_WEAPON_title] commands!</li>
+		<li>rule->say hello to my little [INITIATOR_WEAPON_label]!</li>
+		<li>rule->time to kiss your ass goodbye!</li>
+		<li>rule->time for a dirt nap!</li>
+		<li>rule->say hello to [callout_noun_afterlife_greeter] for me!</li>
+		<li>rule->end-of-the-line for you, pal!</li>
+		<li>rule->say goodbye...</li>
+		<li>rule->this [Community] ain't big enough for the two of us!</li>
+		
+		<li>rule(MILD!=true)->mommy can't save you now!</li>
+        <li>rule(MILD!=true)->I'll see you in hell!</li>
+        <li>rule(MILD!=true)->wake up, time to die!</li>
+		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label]s don't kill people... I kill people!</li>
+        <li>rule(MILD!=true)->I'll see you in hell!</li>
+        <li>rule(MILD!=true)->wake up, time to die!</li>
+		<li>rule(MILD!=true)->eat shit and die!</li>
+		
+		<li>rule(SPICY==true)->go to sleep, [callout_noun_insult_vulgar]!</li>
+		<li>rule(SPICY==true)->I'm going to [callout_verb_decorate] my [callout_noun_room] with your [Gore]!</li>
+		<li>rule(SPICY==true)->after this I'll kill your [PersonFamily]!</li>
 		
       </rulesStrings>
     </rulePack>
@@ -162,9 +201,12 @@
     </rulePack>
   </RulePackDef>
   
+  <!-- Attack landed -->
+  
   <RulePackDef>
     <defName>CM_Callouts_RulePack_Attack_Landed_Common</defName>
 	<include>
+	  <li>CM_Callouts_Common</li>
       <li>Combat_WoundIncludes</li>
     </include>
     <rulePack>
@@ -173,8 +215,16 @@
 		<!--<li>rule->pow, right in the [damaged_targets]!</li>
 		<li>rule->say goodbye to your [destroyed_targets]!</li>-->
 		
+		<!--Until we have more to say, most will come up empty-->
+		<li>rule(p=10.0)-></li>
+		
+		<li>rule(MILD==true)->I don't want to have to hurt you anymore!</li>
+		
 		<li>rule->pow, right in the [damaged_part]!</li>
 		<li>rule->say goodbye to your [destroyed_part]!</li>
+		
+		<li>rule(MILD!=true)->what a waste of a perfectly good [destroyed_part]...!</li>
+		<li>rule(SPICY==true)->damn! I was going to eat that [destroyed_part]!</li>
 		
 		<li>destroyed_part->[recipient_part_destroyed0_label]</li>
 		<li>destroyed_part->[recipient_part_destroyed1_label]</li>
@@ -203,7 +253,7 @@
   </RulePackDef>
   
   <RulePackDef>
-    <defName>CM_Callouts_RulePack_Ranged_Attack_Impact</defName>
+    <defName>CM_Callouts_RulePack_Ranged_Attack_Landed_OriginalTarget</defName>
 	<include>
       <li>CM_Callouts_RulePack_Attack_Landed_Common</li>
     </include>
@@ -221,14 +271,19 @@
     </include>
     <rulePack>
       <rulesStrings>
+	  
+	    <li>rule(SPICY==true)->now I'm going to shove that [destroyed_part] in your [callout_noun_orifice]!</li>
 
       </rulesStrings>
     </rulePack>
   </RulePackDef>
   
+  <!-- Attack received -->
+  
    <RulePackDef>
     <defName>CM_Callouts_RulePack_Attack_Received_Common</defName>
 	<include>
+	  <li>CM_Callouts_Common</li>
       <li>Combat_WoundIncludes</li>
     </include>
     <rulePack>
@@ -237,8 +292,21 @@
 		<!--<li>rule->ow, my [damaged_targets]!</li>
 		<li>rule->goodbye, my [destroyed_targets]!</li>-->
 		
+		<li>rule(MILD==true)->ow, make it stop!</li>
+		<li>rule(MILD==true)->ow, I want my mommy!</li>
+		
+		<li>rule(SPICY!=true)->nooo, not my [destroyed_part]!</li>
+		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere...</li>
+		<li>rule(SPICY!=true)->I think I hear [callout_noun_afterlife_greeter] calling...</li>
+		
+		<li>rule->ouch!</li>
 		<li>rule->ow, my [damaged_part]!</li>
 		<li>rule->goodbye, my [destroyed_part]!</li>
+		
+		<li>rule(MILD!=true,recipient_part_destroyed_count>=1)->[curse]!</li>
+		<li>rule(MILD!=true,recipient_part_destroyed_count==0)->pfft, that didn't even hurt!</li>
+		<li>rule(SPICY==true)->ha! I don't need my [destroyed_part] to kill you!</li>
+		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway!</li>
 		
 		<li>destroyed_part->[recipient_part_destroyed0_label]</li>
 		<li>destroyed_part->[recipient_part_destroyed1_label]</li>
@@ -267,7 +335,7 @@
   </RulePackDef>
   
   <RulePackDef>
-    <defName>CM_Callouts_RulePack_Melee_Attack_Received</defName>
+    <defName>CM_Callouts_RulePack_Ranged_Attack_Received_OriginalTarget</defName>
 	<include>
       <li>CM_Callouts_RulePack_Attack_Received_Common</li>
     </include>
@@ -279,7 +347,24 @@
   </RulePackDef>
   
   <RulePackDef>
+    <defName>CM_Callouts_RulePack_Melee_Attack_Received</defName>
+	<include>
+      <li>CM_Callouts_RulePack_Attack_Received_Common</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Drafted -->
+  
+  <RulePackDef>
     <defName>CM_Callouts_RulePack_Drafted</defName>
+	<include>
+	  <li>CM_Callouts_Common</li>
+    </include>
     <rulePack>
       <rulesStrings>
 	  
@@ -295,6 +380,7 @@
 		<li>rule->for [INITIATOR_factionName]!</li>
 		<li>rule->let's make [INITIATOR_factionName] great again!</li>
 		<li>rule->you have my [INITIATOR_WEAPON_label]!</li>
+		<li>rule->this is my [INITIATOR_WEAPON_label], there are many like it, but this one is mine.</li>
 		<li>rule->ready to roll!</li>
 		<li>rule->let's do this!</li>
 		<li>rule->where's the action at?</li>

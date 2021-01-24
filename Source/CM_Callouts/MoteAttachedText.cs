@@ -38,7 +38,7 @@ namespace CM_Callouts
         public override void DrawGUIOverlay()
         {
             float a = 1f - (base.AgeSecs - TimeBeforeStartFadeout) / def.mote.fadeOutTime;
-            GenMapUI.DrawText(textColor: new Color(textColor.r, textColor.g, textColor.b, a), worldPos: new Vector2(exactPosition.x, exactPosition.z), text: text);
+            CalloutUtility.DrawText(new Vector2(exactPosition.x, exactPosition.z), text, new Color(textColor.r, textColor.g, textColor.b, a));
         }
     }
 }
