@@ -7,7 +7,7 @@ namespace CM_Callouts
 {
     public class CalloutModSettings : ModSettings
     {
-        public bool attachCalloutText = false;
+        public bool attachCalloutText = true;
         public bool showWounds = true;
         public bool drawLabelBackgroundForTextMotes = true;
         public float baseCalloutChance = 0.2f;
