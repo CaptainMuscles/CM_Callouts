@@ -29,6 +29,28 @@
     <rulePack>
       <rulesStrings>
 	  
+	    <li>destroyed_part->[recipient_part_destroyed0_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed1_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed2_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed3_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed4_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed5_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed6_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed7_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed8_label]</li>
+		<li>destroyed_part->[recipient_part_destroyed9_label]</li>
+		
+		<li>damaged_part->[recipient_part_damaged0_label]</li>
+		<li>damaged_part->[recipient_part_damaged1_label]</li>
+		<li>damaged_part->[recipient_part_damaged2_label]</li>
+		<li>damaged_part->[recipient_part_damaged3_label]</li>
+		<li>damaged_part->[recipient_part_damaged4_label]</li>
+		<li>damaged_part->[recipient_part_damaged5_label]</li>
+		<li>damaged_part->[recipient_part_damaged6_label]</li>
+		<li>damaged_part->[recipient_part_damaged7_label]</li>
+		<li>damaged_part->[recipient_part_damaged8_label]</li>
+		<li>damaged_part->[recipient_part_damaged9_label]</li>
+	  
 	    <li>callout_noun_afterlife_greeter->the devil</li>
 		<li>callout_noun_afterlife_greeter->the grim reaper</li>
 		<li>callout_noun_afterlife_greeter->the angels</li>
@@ -48,6 +70,10 @@
 		<li>callout_verb_decorate->paint</li>
 		<li>callout_verb_decorate->cover</li>
 		
+		<li>callout_verb_rip->rip</li>
+		<li>callout_verb_rip->cut</li>
+		<li>callout_verb_rip->tear</li>
+		
 		<li>callout_noun_room->bedroom</li>
 		<li>callout_noun_room->kitchen</li>
 		<li>callout_noun_room->bathroom</li>
@@ -56,10 +82,6 @@
 		<li>callout_noun_room->rec room</li>
 		<li>callout_noun_room->closet</li>
 		<li>callout_noun_room->garden</li>
-		
-		<li>callout_verb_rip->rip</li>
-		<li>callout_verb_rip->cut</li>
-		<li>callout_verb_rip->tear</li>
 		
 		<li>callout_noun_bodypart->callout_noun_bodypart_external</li>
 		<li>callout_noun_bodypart->callout_noun_bodypart_internal</li>
@@ -149,7 +171,8 @@
 		<li>rule(SPICY==true)->go to sleep, [callout_noun_insult_vulgar]!</li>
 		<li>rule(SPICY==true)->I'm going to [callout_verb_decorate] my [callout_noun_room] with your [Gore]!</li>
 		<li>rule(SPICY==true)->after this I'll kill your [PersonFamily]!</li>
-		
+		<li>rule(SPICY==true)->after this I'll kill your [PersonFamily]!</li>
+
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -193,7 +216,7 @@
 		<li>rule(MILD!=true)->I hope you're ready for a [INITIATOR_WEAPON_label] in your [callout_noun_bodypart_internal]!</li>
 		<li>rule(MILD!=true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and beat you to death with it!</li>
 		
-		<li>rule(MILD!=true)->I'll [callout_verb_rip] out your [callout_noun_bodypart_internal] and eat it!</li>
+		<li>rule(MILD!=true)->I'll [callout_verb_rip] out your [callout_noun_bodypart_internal] and eat it for [callout_noun_meal]!</li>
 		<li>rule(SPICY==true)->I can't wait to harvest your [callout_noun_bodypart_internal]!</li>
 		<li>rule(SPICY==true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and shove it in your [callout_noun_orifice]!</li>
 
@@ -226,27 +249,7 @@
 		<li>rule(MILD!=true)->what a waste of a perfectly good [destroyed_part]...!</li>
 		<li>rule(SPICY==true)->damn! I was going to eat that [destroyed_part]!</li>
 		
-		<li>destroyed_part->[recipient_part_destroyed0_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed1_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed2_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed3_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed4_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed5_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed6_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed7_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed8_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed9_label]</li>
-		
-		<li>damaged_part->[recipient_part_damaged0_label]</li>
-		<li>damaged_part->[recipient_part_damaged1_label]</li>
-		<li>damaged_part->[recipient_part_damaged2_label]</li>
-		<li>damaged_part->[recipient_part_damaged3_label]</li>
-		<li>damaged_part->[recipient_part_damaged4_label]</li>
-		<li>damaged_part->[recipient_part_damaged5_label]</li>
-		<li>damaged_part->[recipient_part_damaged6_label]</li>
-		<li>damaged_part->[recipient_part_damaged7_label]</li>
-		<li>damaged_part->[recipient_part_damaged8_label]</li>
-		<li>damaged_part->[recipient_part_damaged9_label]</li>
+
 
       </rulesStrings>
     </rulePack>
@@ -307,28 +310,6 @@
 		<li>rule(MILD!=true,recipient_part_destroyed_count==0)->pfft, that didn't even hurt!</li>
 		<li>rule(SPICY==true)->ha! I don't need my [destroyed_part] to kill you!</li>
 		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway!</li>
-		
-		<li>destroyed_part->[recipient_part_destroyed0_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed1_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed2_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed3_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed4_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed5_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed6_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed7_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed8_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed9_label]</li>
-		
-		<li>damaged_part->[recipient_part_damaged0_label]</li>
-		<li>damaged_part->[recipient_part_damaged1_label]</li>
-		<li>damaged_part->[recipient_part_damaged2_label]</li>
-		<li>damaged_part->[recipient_part_damaged3_label]</li>
-		<li>damaged_part->[recipient_part_damaged4_label]</li>
-		<li>damaged_part->[recipient_part_damaged5_label]</li>
-		<li>damaged_part->[recipient_part_damaged6_label]</li>
-		<li>damaged_part->[recipient_part_damaged7_label]</li>
-		<li>damaged_part->[recipient_part_damaged8_label]</li>
-		<li>damaged_part->[recipient_part_damaged9_label]</li>
 
       </rulesStrings>
     </rulePack>
