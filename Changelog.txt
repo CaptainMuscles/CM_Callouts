@@ -1,3 +1,18 @@
+## [1.1.0] - 2020-01-23
+
+### Added
+- Damaged and destroyed body parts displayed as text motes
+- Text motes stay put when game paused unless generated during pause
+- Label background for text motes
+- Queueing of text motes to reduce overlap
+- Setting to attach callouts so they stay in place above the caller
+- Setting for callout frequency
+- Setting to show/hide destroyed body part info
+- Callouts for melee attack hitting and being hit
+- Callouts for ranged attack hitting and being hit
+- More callout lines
+
+
 ## [1.0.0] - 2020-01-20
 
 ### Added
