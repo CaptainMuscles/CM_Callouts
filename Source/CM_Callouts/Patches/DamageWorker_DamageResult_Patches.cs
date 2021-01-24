@@ -41,9 +41,10 @@ namespace CM_Callouts
                 }
             }
 
-            private static void ThrowDestroyedPartMotes(Pawn pawn, List<BodyPartRecord> recipientParts, List<bool> recipientPartsDestroyed)
+            private static void ThrowDestroyedPartMotes(Pawn pawn, List<BodyPartRecord> recipientPartsDamaged, List<bool> recipientPartsDestroyed)
             {
-                if (!CalloutMod.settings.showWounds || !pawn.SpawnedOrAnyParentSpawned)
+                ShowWoundLevel showWoundLevel = CalloutMod.settings.showWoundLevel;
+                if (showWoundLevel == ShowWoundLevel.None || !pawn.SpawnedOrAnyParentSpawned)
                     return;
 
                 Vector3 thingVector3 = pawn.SpawnedParentOrMe.DrawPos;
@@ -53,12 +54,27 @@ namespace CM_Callouts
                 {
                     if (recipientPartsDestroyed[i])
                     {
-                        MoteMaker.ThrowText(thingVector3, thingMap, recipientParts[i].def.label, Color.magenta);
+                        MoteMaker.ThrowText(thingVector3, thingMap, recipientPartsDamaged[i].def.label, Color.magenta);
                     }
                     else
                     {
-                        Color moteColor = HealthUtility.GetPartConditionLabel(pawn, recipientParts[i]).Second;
-                        MoteMaker.ThrowText(thingVector3, thingMap, recipientParts[i].def.label, moteColor);
+                        float partHealth = pawn.health.hediffSet.GetPartHealth(recipientPartsDamaged[i]);
+                        float partMaxHealth = recipientPartsDamaged[i].def.GetMaxHealth(pawn);
+                        float partPercentHealth = partHealth / partMaxHealth;
+                        bool showWound = false;
+
+                        if (partPercentHealth < 0.4f)
+                            showWound = (showWoundLevel >= ShowWoundLevel.Major);
+                        else if (partPercentHealth < 0.7f)
+                            showWound = (showWoundLevel >= ShowWoundLevel.Serious);
+                        else
+                            showWound = (showWoundLevel >= ShowWoundLevel.All);
+
+                        if (showWound)
+                        {
+                            Color moteColor = HealthUtility.GetPartConditionLabel(pawn, recipientPartsDamaged[i]).Second;
+                            CalloutTracker.CreateWoundTextMote(thingVector3, thingMap, recipientPartsDamaged[i].def.label, moteColor);
+                        }
                     }
                 }
             }

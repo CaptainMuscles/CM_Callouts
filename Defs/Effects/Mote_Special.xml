@@ -8,10 +8,24 @@
     </graphicData>
     <thingClass>MoteText</thingClass>
     <drawGUIOverlay>true</drawGUIOverlay>
-    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
       <realTime>false</realTime>
       <solidTime>2.2</solidTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>CM_Callouts_Thing_Mote_Text_Wound</defName>
+    <graphicData>
+      <texPath>Things/Mote/Transparent</texPath>
+    </graphicData>
+    <thingClass>MoteText</thingClass>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>MoteOverheadLow</altitudeLayer>
+    <mote>
+      <realTime>false</realTime>
+      <solidTime>2.0</solidTime>
     </mote>
   </ThingDef>
 

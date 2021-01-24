@@ -167,5 +167,23 @@ namespace CM_Callouts
                 moteText.Attach(caller);
             }
         }
+
+        public static void CreateWoundTextMote(Vector3 loc, Map map, string text, Color color, float timeBeforeStartFadeout = -1f)
+        {
+            IntVec3 intVec = loc.ToIntVec3();
+            if (intVec.InBounds(map))
+            {
+                MoteText moteText = (MoteText)ThingMaker.MakeThing(CalloutDefOf.CM_Callouts_Thing_Mote_Text_Wound);
+                moteText.exactPosition = loc;
+                moteText.SetVelocity(Rand.Range(5, 35), Rand.Range(0.42f, 0.45f));
+                moteText.text = text;
+                moteText.textColor = color;
+                if (timeBeforeStartFadeout >= 0f)
+                {
+                    moteText.overrideTimeBeforeStartFadeout = timeBeforeStartFadeout;
+                }
+                ThrowText(moteText, intVec, map);
+            }
+        }
     }
 }

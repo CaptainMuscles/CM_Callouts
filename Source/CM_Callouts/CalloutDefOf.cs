@@ -10,6 +10,7 @@ namespace CM_Callouts
     public static class CalloutDefOf
     {
         public static ThingDef CM_Callouts_Thing_Mote_Text_Ticked;
+        public static ThingDef CM_Callouts_Thing_Mote_Text_Wound;
         public static ThingDef CM_Callouts_Thing_Mote_Attached_Text;
 
         public static RulePackDef CM_Callouts_RulePack_Ranged_Attack;
