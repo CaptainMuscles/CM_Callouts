@@ -102,7 +102,7 @@ namespace CM_Callouts
 
         public bool CanCalloutNow(Pawn pawn)
         {
-            return (pawn != null && pawn.def.race.Humanlike && !pawn.Dead && pawn.Spawned && !pawnCalloutExpireTick.ContainsKey(pawn) && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking));
+            return (pawn != null && !pawn.Dead && pawn.Spawned && (CalloutMod.settings.allowCalloutsForAnimals || pawn.def.race.Humanlike) && !pawnCalloutExpireTick.ContainsKey(pawn) && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking));
         }
 
         public bool CheckCalloutChance(RulePackDef rulePackDef, string keyword = "rule")

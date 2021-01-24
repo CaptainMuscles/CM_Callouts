@@ -24,7 +24,7 @@ namespace CM_Callouts
                 if (__instance.maneuver == null || __instance.tool == null)
                     return;
 
-                if (__instance.CurrentTarget.Thing is Pawn)
+                if (__instance.CurrentTarget.Thing is Pawn && CalloutUtility.CanCalloutNow(__instance.CasterPawn) && CalloutUtility.CanCalloutAtTarget(__instance.CurrentTarget.Thing))
                 {
                     // Ignore dodge for now since it already throws a text mote
                     if (rulePackGetter(__instance.maneuver) == __instance.maneuver.combatLogRulesDodge)

@@ -14,12 +14,30 @@ namespace CM_Callouts
     {
         public static PendingCalloutEvent pendingCallout = null;
 
+        public static bool CanCalloutNow(Thing thing)
+        {
+            Pawn caller = thing as Pawn;
+
+            CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
+            if (caller != null && calloutTracker != null)
+                return calloutTracker.CanCalloutNow(caller);
+
+            return false;
+        }
+
+        public static bool CanCalloutAtTarget(Thing target)
+        {
+            Pawn targetPawn = target as Pawn;
+
+            return (targetPawn != null && (CalloutMod.settings.allowCalloutsWhenTargetingAnimals || targetPawn.RaceProps.Humanlike));
+        }
+
         public static void AttemptDraftedCallout(Pawn pawn)
         {
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
             if (calloutTracker != null)
             {
-                if (calloutTracker.CanCalloutNow(pawn))
+                if (CalloutUtility.CanCalloutNow(pawn))
                 {
                     RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Drafted;
 
@@ -36,19 +54,16 @@ namespace CM_Callouts
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
             if (calloutTracker != null)
             {
-                if (calloutTracker.CanCalloutNow(initiator))
-                {
-                    RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Melee_Attack;
+                RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Melee_Attack;
 
-                    GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
+                GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
 
-                    CollectPawnRules(initiator, "INITIATOR", ref grammarRequest);
+                CollectPawnRules(initiator, "INITIATOR", ref grammarRequest);
 
-                    if (recipient != null)
-                        CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
+                if (recipient != null)
+                    CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
 
-                    calloutTracker.RequestCallout(initiator, rulePack, grammarRequest);
-                }
+                calloutTracker.RequestCallout(initiator, rulePack, grammarRequest);
             }
         }
 
@@ -57,24 +72,21 @@ namespace CM_Callouts
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
             if (calloutTracker != null)
             {
-                if (calloutTracker.CanCalloutNow(pawn))
+                RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack;
+
+                GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
+
+                CollectPawnRules(pawn, "INITIATOR", ref grammarRequest);
+
+                if (verb.CurrentTarget.Pawn != null)
                 {
-                    RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack;
+                    CollectCoverRules(verb.CurrentTarget.Pawn, pawn, "INITIATOR_COVER", verb, ref grammarRequest);
 
-                    GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
-
-                    CollectPawnRules(pawn, "INITIATOR", ref grammarRequest);
-
-                    if (verb.CurrentTarget.Pawn != null)
-                    {
-                        CollectCoverRules(verb.CurrentTarget.Pawn, pawn, "INITIATOR_COVER", verb, ref grammarRequest);
-
-                        CollectPawnRules(verb.CurrentTarget.Pawn, "RECIPIENT", ref grammarRequest);
-                        CollectCoverRules(pawn, verb.CurrentTarget.Pawn, "RECIPIENT_COVER", verb, ref grammarRequest);
-                    }
-
-                    calloutTracker.RequestCallout(pawn, rulePack, grammarRequest);
+                    CollectPawnRules(verb.CurrentTarget.Pawn, "RECIPIENT", ref grammarRequest);
+                    CollectCoverRules(pawn, verb.CurrentTarget.Pawn, "RECIPIENT_COVER", verb, ref grammarRequest);
                 }
+
+                calloutTracker.RequestCallout(pawn, rulePack, grammarRequest);
             }
         }
 

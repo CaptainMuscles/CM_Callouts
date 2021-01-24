@@ -21,7 +21,7 @@ namespace CM_Callouts
                 if (__instance.CasterPawn == null)
                     return;
 
-                if (__instance.CurrentTarget.Thing is Pawn)
+                if (CalloutUtility.CanCalloutNow(__instance.CasterPawn) && CalloutUtility.CanCalloutAtTarget(__instance.CurrentTarget.Thing))
                 {
                     CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
                     if (calloutTracker != null && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack))

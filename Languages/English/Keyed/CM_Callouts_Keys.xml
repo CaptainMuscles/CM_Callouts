@@ -3,9 +3,6 @@
   <CM_Callouts_Settings_Attach_Callout_Text_Label>Attach callout text to caller</CM_Callouts_Settings_Attach_Callout_Text_Label>
   <CM_Callouts_Settings_Attach_Callout_Text_Description>When enabled, callout text hovers above the caller's head instead of flying out.</CM_Callouts_Settings_Attach_Callout_Text_Description>
   
-  <CM_Callouts_Settings_Show_Wounds_Label>Show wounds</CM_Callouts_Settings_Show_Wounds_Label>
-  <CM_Callouts_Settings_Show_Wounds_Description>When enabled, text alerts appear over a pawn when a part is wounded.</CM_Callouts_Settings_Show_Wounds_Description>
-  
   <CM_Callouts_Settings_Show_Wounds_All_Label>All</CM_Callouts_Settings_Show_Wounds_All_Label>
   <CM_Callouts_Settings_Show_Wounds_Serious_Label>Serious</CM_Callouts_Settings_Show_Wounds_Serious_Label>
   <CM_Callouts_Settings_Show_Wounds_Major_Label>Major</CM_Callouts_Settings_Show_Wounds_Major_Label>
@@ -23,4 +20,10 @@
   
   <CM_Callouts_Settings_Base_Callout_Chance_Label>Base callout frequency (default 20%)</CM_Callouts_Settings_Base_Callout_Chance_Label>
   <CM_Callouts_Settings_Base_Callout_Chance_Description>Base chance that a callout will be occur on a related event.</CM_Callouts_Settings_Base_Callout_Chance_Description>
+  
+  <CM_Callouts_Settings_Callout_When_Targeting_Animals_Label>Call out when targeting animals</CM_Callouts_Settings_Callout_When_Targeting_Animals_Label>
+  <CM_Callouts_Settings_Callout_When_Targeting_Animals_Description>When enabled, humanlikes will callout when targeting animals.</CM_Callouts_Settings_Callout_When_Targeting_Animals_Description>
+  
+  <CM_Callouts_Settings_Animal_Callouts_Label>Animals call out</CM_Callouts_Settings_Animal_Callouts_Label>
+  <CM_Callouts_Settings_Animal_Callouts_Description>When enabled, animals can call out.</CM_Callouts_Settings_Animal_Callouts_Description>
 </LanguageData>

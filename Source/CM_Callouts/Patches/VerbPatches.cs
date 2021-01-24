@@ -22,7 +22,7 @@ namespace CM_Callouts
                 if (__instance as Verb_MeleeAttack == null || __instance.CasterPawn == null)
                     return;
 
-                if (__instance.CurrentTarget.Thing is Pawn)
+                if (CalloutUtility.CanCalloutNow(__instance.CasterPawn) && CalloutUtility.CanCalloutAtTarget(__instance.CurrentTarget.Thing))
                 {
                     CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
                     if (calloutTracker != null && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Melee_Attack))

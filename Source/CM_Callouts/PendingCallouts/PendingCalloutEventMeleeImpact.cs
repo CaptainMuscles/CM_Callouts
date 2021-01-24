@@ -28,8 +28,8 @@ namespace CM_Callouts
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
             if (calloutTracker != null)
             {
-                bool initiatorCallout = Rand.Bool && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Landed) && calloutTracker.CanCalloutNow(initiator);
-                bool recipientCallout = Rand.Bool && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Received) && calloutTracker.CanCalloutNow(recipient);
+                bool initiatorCallout = Rand.Bool && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Landed) && CalloutUtility.CanCalloutNow(initiator);
+                bool recipientCallout = Rand.Bool && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Received) && CalloutUtility.CanCalloutNow(recipient);
 
                 if (initiatorCallout)
                     DoInitiatorCallout(calloutTracker);
