@@ -36,6 +36,10 @@ namespace CM_Callouts
 
                         CalloutUtility.pendingCallout = null;
                     }
+                    else if (CalloutUtility.CanCalloutNow(hitPawn))
+                    {
+                        new PendingCalloutEventWounded(hitPawn).AttemptCallout();
+                    }
 
                     ThrowDestroyedPartMotes(hitPawn, recipientPartsDamaged, recipientPartsDestroyed);
                 }

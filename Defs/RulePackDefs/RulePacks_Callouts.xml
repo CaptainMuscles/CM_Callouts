@@ -138,7 +138,7 @@
 		<li>callout_noun_insulting->ass-clown</li>
 		<li>callout_noun_insulting->cockroach</li>
 		<li>callout_noun_insulting->penis-wrinkle</li>
-		<li>callout_noun_insulting(RECIPIENT_gender==male)->prick</li>
+		<li>callout_noun_insulting->prick</li>
 		<li>callout_noun_insulting->twat</li>
 		<li>callout_noun_insulting->pissant</li>
 		<li>callout_noun_insulting->wanker</li>
@@ -155,8 +155,8 @@
 		<li>callout_noun_insulting(MILD!=true)->cock-sucker</li>
 		<li>callout_noun_insulting(MILD!=true)->motherfucker</li>
 		<li>callout_noun_insulting(MILD!=true)->bitch</li>
-		<li>callout_noun_insulting(MILD!=true,RECIPIENT_gender==male)->bastard</li>
-		<li>callout_noun_insulting(MILD!=true,RECIPIENT_gender==male)->son-of-a-bitch</li>
+		<li>callout_noun_insulting(MILD!=true)->bastard</li>
+		<li>callout_noun_insulting(MILD!=true)->son-of-a-bitch</li>
 		
 		
 		<li>callout_adjective_insulting(MILD==true)->cotton-headed</li>
@@ -364,10 +364,9 @@
 		
 		<li>rule(SPICY!=true)->nooo, not my [destroyed_part][callout_potential_insult]</li>
 		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere[callout_potential_insult]</li>
-		<li>rule(SPICY!=true)->I think I hear [callout_noun_afterlife_greeter] calling[callout_potential_insult]</li>
 		
 		<li>rule->ouch[callout_potential_insult]</li>
-		<li>rule->ow, my [damaged_part][callout_potential_insult]</li>
+		<li>rule(recipient_part_destroyed_count==0)->ow, my [damaged_part][callout_potential_insult]</li>
 		<li>rule->goodbye, my [destroyed_part][callout_potential_insult]</li>
 		
 		<!--<li>rule(MILD!=true,recipient_part_destroyed_count>=1)->[curse][callout_potential_insult]</li>-->
@@ -398,6 +397,39 @@
     </include>
     <rulePack>
       <rulesStrings>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Wounded outside of attack covered above -->
+  
+   <RulePackDef>
+    <defName>CM_Callouts_RulePack_Wounded</defName>
+	<include>
+	  <li>CM_Callouts_Common</li>
+      <li>Combat_WoundIncludes</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+
+		<!--<li>rule->ow, my [damaged_targets]!</li>
+		<li>rule->goodbye, my [destroyed_targets]!</li>-->
+		
+		<li>rule(MILD==true)->ow, make it stop!</li>
+		<li>rule(MILD==true)->ow, I want my mommy!</li>
+		
+		<li>rule(SPICY!=true)->nooo, not my [destroyed_part]!</li>
+		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere...</li>
+		<li>rule(SPICY!=true,recipient_part_destroyed_count>=1)->I think I hear [callout_noun_afterlife_greeter] calling...</li>
+		
+		<li>rule->ouch!</li>
+		<li>rule(recipient_part_destroyed_count==0)->ow, my [damaged_part]!</li>
+		<li>rule->goodbye, my [destroyed_part]!</li>
+		
+		<!--<li>rule(MILD!=true,recipient_part_destroyed_count>=1)->[curse]</li>-->
+		<li>rule(MILD!=true,recipient_part_destroyed_count==0)->pfft, that didn't even hurt.</li>
+		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway!</li>
 
       </rulesStrings>
     </rulePack>
