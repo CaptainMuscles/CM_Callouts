@@ -21,6 +21,8 @@ namespace CM_Callouts
         private static Dictionary<int, TextMoteQueueTickBased> textMoteQueuesTickBased = new Dictionary<int, TextMoteQueueTickBased>();
         private static Dictionary<int, TextMoteQueueRealTime> textMoteQueuesRealTime = new Dictionary<int, TextMoteQueueRealTime>();
 
+        private static int maxRulesSeen = 1;
+
         public CalloutTracker(World world) : base(world)
         {
             hashCache = this.GetHashCode();
@@ -103,6 +105,25 @@ namespace CM_Callouts
             return (pawn != null && pawn.def.race.Humanlike && !pawn.Dead && pawn.Spawned && !pawnCalloutExpireTick.ContainsKey(pawn) && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking));
         }
 
+        public bool CheckCalloutChance(RulePackDef rulePackDef, string keyword = "rule")
+        {
+            return Rand.Chance(CalloutMod.settings.baseCalloutChance * ScaledCalloutFrequency(rulePackDef));
+        }
+
+        private float ScaledCalloutFrequency(RulePackDef rulePackDef, string keyword = "rule")
+        {
+            int numberOfRules = rulePackDef.RulesPlusIncludes.Where(rule => rule.keyword == keyword).Count();
+
+            if (numberOfRules > maxRulesSeen)
+                maxRulesSeen = numberOfRules;
+
+            float scaledChance = (float)numberOfRules / maxRulesSeen;
+
+            Logger.MessageFormat(this, "Scaled chance of {0} = {1}", rulePackDef, scaledChance);
+
+            return scaledChance;
+        }
+
         public void RequestCallout(Pawn pawn, RulePackDef rulePack, GrammarRequest grammarRequest)
         {
             if (!CanCalloutNow(pawn))
@@ -128,7 +149,7 @@ namespace CM_Callouts
                 }
             }
 
-            string text = GrammarResolver.Resolve(rulePack.RulesPlusIncludes[0].keyword, grammarRequest);
+            string text = GrammarResolver.Resolve("rule", grammarRequest);
             if (!text.NullOrEmpty())
             {
                 if (CalloutMod.settings.attachCalloutText)

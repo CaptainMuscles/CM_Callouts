@@ -50,6 +50,17 @@
 		<li>damaged_part->[recipient_part_damaged7_label]</li>
 		<li>damaged_part->[recipient_part_damaged8_label]</li>
 		<li>damaged_part->[recipient_part_damaged9_label]</li>
+		
+		
+		<li>callout_potential_insult->!</li>
+		<li>callout_potential_insult(MILD==true,p=0.1)->, [callout_insult]!</li>
+		<li>callout_potential_insult(MILD!=true,SPICY!=true,p=0.2)->, [callout_insult]!</li>
+		<li>callout_potential_insult(SPICY==true,p=0.33)->, [callout_insult]!</li>
+		
+		
+		<li>callout_insult->[callout_noun_insulting]</li>
+		<li>callout_insult(p=0.25)->you [callout_adjective_insulting] [callout_noun_insulting]</li>
+	  
 	  
 	    <li>callout_noun_afterlife_greeter->the devil</li>
 		<li>callout_noun_afterlife_greeter->the grim reaper</li>
@@ -58,10 +69,6 @@
 		<li>callout_noun_afterlife_greeter->Jebus</li>
 		<li>callout_noun_afterlife_greeter->Macho Man Randy Savage</li>
 		
-		<li>callout_noun_insult_vulgar->bitch</li>
-		<li>callout_noun_insult_vulgar->mother-fucker</li>
-		<li>callout_noun_insult_vulgar->asshole</li>
-		<li>callout_noun_insult_vulgar->shithead</li>
 		
 		<li>callout_verb_decorate->decorate</li>
 		<li>callout_verb_decorate->adorn</li>
@@ -95,7 +102,7 @@
 		<li>callout_noun_bodypart_internal->liver</li>
 		<li>callout_noun_bodypart_internal->lung</li>
 		<li>callout_noun_bodypart_internal->pancreas</li>
-		<li>callout_noun_bodypart_internal->intestines</li>
+		<li>callout_noun_bodypart_internal->intestine</li>
 		<li>callout_noun_bodypart_internal->stomach</li>
 		<li>callout_noun_bodypart_internal->spine</li>
 		
@@ -110,8 +117,70 @@
 		<li>callout_noun_meal->lunch</li>
 		<li>callout_noun_meal->dinner</li>
 		<li>callout_noun_meal->a snack</li>
+		
+		
+		<li>callout_noun_insulting(MILD==true)->ninnymuggins</li>
+		
+		<li>callout_noun_insulting(SPICY!=true)->jerk</li>
+		
+		<li>callout_noun_insulting->buffoon</li>
+		<li>callout_noun_insulting->bonehead</li>
+		<li>callout_noun_insulting->dirtbag</li>
+		<li>callout_noun_insulting->boot-licker</li>
+		<li>callout_noun_insulting->moron</li>
+		<li>callout_noun_insulting->idiot</li>
+		<li>callout_noun_insulting->animal</li>
+		<li>callout_noun_insulting->maggot</li>
+		<li>callout_noun_insulting->worm</li>
+		<li>callout_noun_insulting->wretch</li>
+		<li>callout_noun_insulting->poltroon</li>
+		<li>callout_noun_insulting->turd</li>
+		<li>callout_noun_insulting->ass-clown</li>
+		<li>callout_noun_insulting->cockroach</li>
+		<li>callout_noun_insulting->penis-wrinkle</li>
+		<li>callout_noun_insulting(RECIPIENT_gender==male)->prick</li>
+		<li>callout_noun_insulting->twat</li>
+		<li>callout_noun_insulting->pissant</li>
+		<li>callout_noun_insulting->wanker</li>
+		<li>callout_noun_insulting->jag</li>
+
+		<li>callout_noun_insulting(MILD!=true)->assworm</li>
+        <li>callout_noun_insulting(MILD!=true)->fucktard</li>
+		<li>callout_noun_insulting(MILD!=true)->asshole</li>
+		<li>callout_noun_insulting(MILD!=true)->shithead</li>
+		<li>callout_noun_insulting(MILD!=true)->shit-sack</li>
+		<li>callout_noun_insulting(MILD!=true)->fuck-face</li>
+		<li>callout_noun_insulting(MILD!=true)->fuck-knuckle</li>
+		<li>callout_noun_insulting(MILD!=true)->cunt</li>
+		<li>callout_noun_insulting(MILD!=true)->cock-sucker</li>
+		<li>callout_noun_insulting(MILD!=true)->motherfucker</li>
+		<li>callout_noun_insulting(MILD!=true)->bitch</li>
+		<li>callout_noun_insulting(MILD!=true,RECIPIENT_gender==male)->bastard</li>
+		<li>callout_noun_insulting(MILD!=true,RECIPIENT_gender==male)->son-of-a-bitch</li>
+		
+		
+		<li>callout_adjective_insulting(MILD==true)->cotton-headed</li>
+		
+		<li>callout_adjective_insulting->absolute</li>
+		<li>callout_adjective_insulting->total</li>
+		<li>callout_adjective_insulting->rat-faced</li>
+		<li>callout_adjective_insulting->ugly</li>
+		<li>callout_adjective_insulting->meat-headed</li>
+		<li>callout_adjective_insulting->stupid</li>
+		<li>callout_adjective_insulting->half-witted</li>
+		<li>callout_adjective_insulting->simple-minded</li>
+		<li>callout_adjective_insulting->worthless</li>
+		<li>callout_adjective_insulting->festering</li>
+		<li>callout_adjective_insulting->dirty</li>
+		<li>callout_adjective_insulting->filthy</li>
+		<li>callout_adjective_insulting->stinking</li>
+		<li>callout_adjective_insulting->simpering</li>
+		<li>callout_adjective_insulting->lily-livered</li>
+		<li>callout_adjective_insulting->yellow-bellied</li>
+		<li>callout_adjective_insulting->gutless</li>
+		<li>callout_adjective_insulting->craven</li>
         
-		<li>curse(MILD==true)->darn</li>
+		<!--<li>curse(MILD==true)->darn</li>
 		<li>curse(MILD==true)->dang</li>
 		<li>curse(MILD==true)->shucks</li>
 		<li>curse(MILD==true)->poo</li>
@@ -131,7 +200,7 @@
 		<li>curse_gerund(MILD!=true)->fucking</li>
 		<li>curse_gerund(MILD!=true)->[PersonFamily]-fucking</li>
 		<li>curse_gerund(MILD!=true)->[callout_noun_orifice]-fucking</li>
-		<li>curse_gerund(MILD!=true)->shitting</li>
+		<li>curse_gerund(MILD!=true)->shitting</li>-->
 		
       </rulesStrings>
     </rulePack>
@@ -146,33 +215,30 @@
     </include>
     <rulePack>
       <rulesStrings>
-	  
-	    <li>rule(MILD==true)->I'll stop you, you [Enemy]!</li>
-		<li>rule(MILD==true)->don't make me hurt you!</li>
-		<li>rule(MILD==true)->take that!</li>
-		
-	    <li>rule->I do as [INITIATOR_WEAPON_title] commands!</li>
-		<li>rule->say hello to my little [INITIATOR_WEAPON_label]!</li>
-		<li>rule->time to kiss your ass goodbye!</li>
-		<li>rule->time for a dirt nap!</li>
-		<li>rule->say hello to [callout_noun_afterlife_greeter] for me!</li>
-		<li>rule->end-of-the-line for you, pal!</li>
-		<li>rule->say goodbye...</li>
-		<li>rule->this [Community] ain't big enough for the two of us!</li>
-		
-		<li>rule(MILD!=true)->mommy can't save you now!</li>
-        <li>rule(MILD!=true)->I'll see you in hell!</li>
-        <li>rule(MILD!=true)->wake up, time to die!</li>
-		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label]s don't kill people... I kill people!</li>
-        <li>rule(MILD!=true)->I'll see you in hell!</li>
-        <li>rule(MILD!=true)->wake up, time to die!</li>
-		<li>rule(MILD!=true)->eat shit and die!</li>
-		
-		<li>rule(SPICY==true)->go to sleep, [callout_noun_insult_vulgar]!</li>
-		<li>rule(SPICY==true)->I'm going to [callout_verb_decorate] my [callout_noun_room] with your [Gore]!</li>
-		<li>rule(SPICY==true)->after this I'll kill your [PersonFamily]!</li>
-		<li>rule(SPICY==true)->after this I'll kill your [PersonFamily]!</li>
 
+		<li>rule(MILD==true)->I'll stop you[callout_potential_insult]</li>
+		<li>rule(MILD==true)->don't make me hurt you[callout_potential_insult]</li>
+		<li>rule(MILD==true)->take that[callout_potential_insult]</li>
+	    
+		<li>rule->I do as [INITIATOR_WEAPON_title] commands[callout_potential_insult]</li>
+		<li>rule->go to sleep[callout_potential_insult]</li>
+		<li>rule->say hello to my little [INITIATOR_WEAPON_label][callout_potential_insult]</li>
+		<li>rule->time to kiss your ass goodbye[callout_potential_insult]</li>
+		<li>rule->time for a dirt nap[callout_potential_insult]</li>
+		<li>rule->say hello to [callout_noun_afterlife_greeter] for me[callout_potential_insult]</li>
+		<li>rule->end-of-the-line for you[callout_potential_insult]</li>
+		<li>rule->say goodbye[callout_potential_insult]</li>
+		<li>rule->this [Community] ain't big enough for the two of us[callout_potential_insult]</li>
+		
+		<li>rule(MILD!=true)->mommy can't save you now[callout_potential_insult]</li>
+        <li>rule(MILD!=true)->I'll see you in hell[callout_potential_insult]</li>
+        <li>rule(MILD!=true)->wake up, time to die[callout_potential_insult]</li>
+		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label]s don't kill people... I kill people[callout_potential_insult]</li>
+		<li>rule(MILD!=true)->eat shit and die[callout_potential_insult]</li>
+		
+		<li>rule(SPICY==true)->I'm going to [callout_verb_decorate] my [callout_noun_room] with your [Gore][callout_potential_insult]</li>
+		<li>rule(SPICY==true)->after this I'll kill your [PersonFamily][callout_potential_insult]</li>
+		
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -185,13 +251,14 @@
     <rulePack>
       <rulesStrings>
 	    
-		<li>rule(MILD==true)->yippie kayak, other buckets!</li>
+		<li>rule(MILD==true,p=0.1)->yippie kayak, other buckets!</li>
 		
-	    <li>rule->eat [INITIATOR_WEAPON_projectile_labelPlural]!</li>
-		<li>rule(p=0.5)->my [INITIATOR_WEAPON_projectile_labelPlural] will blot out the sun!</li>
-		<li>rule->you can't hide behind that [RECIPIENT_COVER_label] forever!</li>
+	    <li>rule->eat [INITIATOR_WEAPON_projectile_labelPlural][callout_potential_insult]</li>
+		<li>rule(p=0.25)->my [INITIATOR_WEAPON_projectile_labelPlural] will blot out the sun[callout_potential_insult]</li>
+		<li>rule->you can't hide behind that [RECIPIENT_COVER_label] forever[callout_potential_insult]</li>
+		<li>rule->keep hugging that [RECIPIENT_COVER_label][callout_potential_insult]</li>
 		
-		<li>rule(SPICY==true)->keep hugging that [RECIPIENT_COVER_label], [callout_noun_insult_vulgar]!</li>
+		<li>rule(MILD!=true)->I hope you're ready for a [INITIATOR_WEAPON_projectile_label] in your [callout_noun_bodypart_internal][callout_potential_insult]</li>
 	    
       </rulesStrings>
     </rulePack>
@@ -205,20 +272,20 @@
     <rulePack>
       <rulesStrings>
 
-		<li>rule->taste my [INITIATOR_WEAPON_stuffLabel]!</li>
-        <li>rule->I'll knock your ass into the next quadrum!</li>
-		<li>rule->come get some!</li>
+		<li>rule->taste my [INITIATOR_WEAPON_stuffLabel][callout_potential_insult]</li>
+        <li>rule->I'll knock your ass into the next quadrum[callout_potential_insult]</li>
+		<li>rule->come get some[callout_potential_insult]</li>
+		<li>rule->I'm going to build a boot factory in your ass[callout_potential_insult]</li>
+		<li>rule->I'm going to beat you like a [Animal][callout_potential_insult]</li>
 		
-		<li>rule(MILD!=true)->I'm going to beat you like a [Animal]!</li>
-		<li>rule(MILD!=true)->now you've awakened the [AnimalBadass]!</li>
-		<li>rule(MILD!=true)->I'm going to build a boot factory in your ass!</li>
-		<li>rule(MILD!=true)->I'll [callout_verb_rip] you another [callout_noun_orifice]-hole!</li>
-		<li>rule(MILD!=true)->I hope you're ready for a [INITIATOR_WEAPON_label] in your [callout_noun_bodypart_internal]!</li>
-		<li>rule(MILD!=true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and beat you to death with it!</li>
+		<li>rule(MILD!=true)->now you've awakened the [AnimalBadass][callout_potential_insult]</li>
+		<li>rule(MILD!=true)->I'll [callout_verb_rip] you another [callout_noun_orifice]-hole[callout_potential_insult]</li>
+		<li>rule(MILD!=true)->I hope you're ready for a [INITIATOR_WEAPON_label] in your [callout_noun_bodypart_internal][callout_potential_insult]</li>
+		<li>rule(MILD!=true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and beat you to death with it[callout_potential_insult]</li>
 		
-		<li>rule(MILD!=true)->I'll [callout_verb_rip] out your [callout_noun_bodypart_internal] and eat it for [callout_noun_meal]!</li>
-		<li>rule(SPICY==true)->I can't wait to harvest your [callout_noun_bodypart_internal]!</li>
-		<li>rule(SPICY==true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and shove it in your [callout_noun_orifice]!</li>
+		<li>rule(MILD!=true)->I'll [callout_verb_rip] out your [callout_noun_bodypart_internal] and eat it for [callout_noun_meal][callout_potential_insult]</li>
+		<li>rule(SPICY==true)->I can't wait to harvest your [callout_noun_bodypart_internal][callout_potential_insult]</li>
+		<li>rule(SPICY==true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and shove it in your [callout_noun_orifice][callout_potential_insult]</li>
 
       </rulesStrings>
     </rulePack>
@@ -238,16 +305,13 @@
 		<!--<li>rule->pow, right in the [damaged_targets]!</li>
 		<li>rule->say goodbye to your [destroyed_targets]!</li>-->
 		
-		<!--Until we have more to say, most will come up empty-->
-		<li>rule(p=10.0)-></li>
+		<li>rule(MILD==true)->I don't want to have to hurt you anymore[callout_potential_insult]</li>
 		
-		<li>rule(MILD==true)->I don't want to have to hurt you anymore!</li>
+		<li>rule->pow, right in the [damaged_part][callout_potential_insult]</li>
+		<li>rule->say goodbye to your [destroyed_part][callout_potential_insult]</li>
 		
-		<li>rule->pow, right in the [damaged_part]!</li>
-		<li>rule->say goodbye to your [destroyed_part]!</li>
-		
-		<li>rule(MILD!=true)->what a waste of a perfectly good [destroyed_part]...!</li>
-		<li>rule(SPICY==true)->damn! I was going to eat that [destroyed_part]!</li>
+		<li>rule(MILD!=true)->what a waste of a perfectly good [destroyed_part][callout_potential_insult]</li>
+		<li>rule(SPICY==true)->damn! I was going to eat that [destroyed_part][callout_potential_insult]</li>
 		
 
 
@@ -275,7 +339,7 @@
     <rulePack>
       <rulesStrings>
 	  
-	    <li>rule(SPICY==true)->now I'm going to shove that [destroyed_part] in your [callout_noun_orifice]!</li>
+	    <li>rule(SPICY==true)->now I'm going to shove your [destroyed_part] in your [callout_noun_orifice][callout_potential_insult]</li>
 
       </rulesStrings>
     </rulePack>
@@ -295,21 +359,21 @@
 		<!--<li>rule->ow, my [damaged_targets]!</li>
 		<li>rule->goodbye, my [destroyed_targets]!</li>-->
 		
-		<li>rule(MILD==true)->ow, make it stop!</li>
-		<li>rule(MILD==true)->ow, I want my mommy!</li>
+		<li>rule(MILD==true)->ow, make it stop[callout_potential_insult]</li>
+		<li>rule(MILD==true)->ow, I want my mommy[callout_potential_insult]</li>
 		
-		<li>rule(SPICY!=true)->nooo, not my [destroyed_part]!</li>
-		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere...</li>
-		<li>rule(SPICY!=true)->I think I hear [callout_noun_afterlife_greeter] calling...</li>
+		<li>rule(SPICY!=true)->nooo, not my [destroyed_part][callout_potential_insult]</li>
+		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere[callout_potential_insult]</li>
+		<li>rule(SPICY!=true)->I think I hear [callout_noun_afterlife_greeter] calling[callout_potential_insult]</li>
 		
-		<li>rule->ouch!</li>
-		<li>rule->ow, my [damaged_part]!</li>
-		<li>rule->goodbye, my [destroyed_part]!</li>
+		<li>rule->ouch[callout_potential_insult]</li>
+		<li>rule->ow, my [damaged_part][callout_potential_insult]</li>
+		<li>rule->goodbye, my [destroyed_part][callout_potential_insult]</li>
 		
-		<li>rule(MILD!=true,recipient_part_destroyed_count>=1)->[curse]!</li>
-		<li>rule(MILD!=true,recipient_part_destroyed_count==0)->pfft, that didn't even hurt!</li>
-		<li>rule(SPICY==true)->ha! I don't need my [destroyed_part] to kill you!</li>
-		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway!</li>
+		<!--<li>rule(MILD!=true,recipient_part_destroyed_count>=1)->[curse][callout_potential_insult]</li>-->
+		<li>rule(MILD!=true,recipient_part_destroyed_count==0)->pfft, that didn't even hurt[callout_potential_insult]</li>
+		<li>rule(SPICY==true)->ha! I don't need my [destroyed_part] to kill you[callout_potential_insult]</li>
+		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway[callout_potential_insult]</li>
 
       </rulesStrings>
     </rulePack>

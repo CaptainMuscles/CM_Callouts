@@ -27,9 +27,11 @@ namespace CM_Callouts
             [HarmonyPostfix]
             public static void Postfix(Pawn_DraftController __instance, bool value, bool ___draftedInt)
             {
-                if (___draftedInt && wereDrafted && Rand.Chance(CalloutMod.settings.baseCalloutChance))
+                if (___draftedInt && wereDrafted)
                 {
-                    CalloutUtility.AttemptDraftedCallout(__instance.pawn);
+                    CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
+                    if (calloutTracker != null && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Drafted))
+                        CalloutUtility.AttemptDraftedCallout(__instance.pawn);
                 }
             }
         }

@@ -37,8 +37,8 @@ namespace CM_Callouts
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
             if (calloutTracker != null)
             {
-                bool initiatorCallout = Rand.Bool && calloutTracker.CanCalloutNow(initiator);
-                bool recipientCallout = Rand.Bool && calloutTracker.CanCalloutNow(recipient);
+                bool initiatorCallout = Rand.Bool && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack_Landed_OriginalTarget) && calloutTracker.CanCalloutNow(initiator);
+                bool recipientCallout = Rand.Bool && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack_Received_OriginalTarget) && calloutTracker.CanCalloutNow(recipient);
 
                 if (initiatorCallout)
                     DoInitiatorCallout(calloutTracker);
