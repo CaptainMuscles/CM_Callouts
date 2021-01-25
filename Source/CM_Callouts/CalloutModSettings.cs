@@ -48,7 +48,11 @@ namespace CM_Callouts
 
             listing_Standard.Begin(inRect);
             listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Attach_Callout_Text_Label".Translate(), ref attachCalloutText, "CM_Callouts_Settings_Attach_Callout_Text_Description".Translate());
+            listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Label".Translate(), ref drawLabelBackgroundForTextMotes, "CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Description".Translate());
 
+            listing_Standard.GapLine();
+
+            listing_Standard.Label("CM_Callouts_Settings_Show_Wound_Level_Label".Translate(), -1, "CM_Callouts_Settings_Show_Wound_Level_Description".Translate());
             if (listing_Standard.RadioButton_NewTemp("CM_Callouts_Settings_Show_Wounds_None_Label".Translate(), showWoundLevel == ShowWoundLevel.None, 8f, "CM_Callouts_Settings_Show_Wounds_None_Description".Translate()))
                 showWoundLevel = ShowWoundLevel.None;
             if (listing_Standard.RadioButton_NewTemp("CM_Callouts_Settings_Show_Wounds_Destroyed_Label".Translate(), showWoundLevel == ShowWoundLevel.Destroyed, 8f, "CM_Callouts_Settings_Show_Wounds_Destroyed_Description".Translate()))
@@ -58,9 +62,9 @@ namespace CM_Callouts
             if (listing_Standard.RadioButton_NewTemp("CM_Callouts_Settings_Show_Wounds_Serious_Label".Translate(), showWoundLevel == ShowWoundLevel.Serious, 8f, "CM_Callouts_Settings_Show_Wounds_Serious_Description".Translate()))
                 showWoundLevel = ShowWoundLevel.Serious;
             if (listing_Standard.RadioButton_NewTemp("CM_Callouts_Settings_Show_Wounds_All_Label".Translate(), showWoundLevel == ShowWoundLevel.All, 8f, "CM_Callouts_Settings_Show_Wounds_All_Description".Translate()))
-                showWoundLevel = ShowWoundLevel.All;           
+                showWoundLevel = ShowWoundLevel.All;
 
-            listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Label".Translate(), ref drawLabelBackgroundForTextMotes, "CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Description".Translate());
+            listing_Standard.GapLine();
 
             listing_Standard.Label("CM_Callouts_Settings_Base_Callout_Chance_Label".Translate(), -1, "CM_Callouts_Settings_Base_Callout_Chance_Description".Translate());
             listing_Standard.Label(baseCalloutChance.ToString("P0"));

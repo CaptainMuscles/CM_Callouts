@@ -3,6 +3,9 @@
   <CM_Callouts_Settings_Attach_Callout_Text_Label>Attach callout text to caller</CM_Callouts_Settings_Attach_Callout_Text_Label>
   <CM_Callouts_Settings_Attach_Callout_Text_Description>When enabled, callout text hovers above the caller's head instead of flying out.</CM_Callouts_Settings_Attach_Callout_Text_Description>
   
+  <CM_Callouts_Settings_Show_Wound_Level_Label>Show wounds</CM_Callouts_Settings_Show_Wound_Level_Label>
+  <CM_Callouts_Settings_Show_Wound_Level_Description>Wounds of the select severity and worse will generate text motes.</CM_Callouts_Settings_Show_Wound_Level_Description>
+  
   <CM_Callouts_Settings_Show_Wounds_All_Label>All</CM_Callouts_Settings_Show_Wounds_All_Label>
   <CM_Callouts_Settings_Show_Wounds_Serious_Label>Serious</CM_Callouts_Settings_Show_Wounds_Serious_Label>
   <CM_Callouts_Settings_Show_Wounds_Major_Label>Major</CM_Callouts_Settings_Show_Wounds_Major_Label>
