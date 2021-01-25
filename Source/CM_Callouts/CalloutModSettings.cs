@@ -19,7 +19,7 @@ namespace CM_Callouts
         public bool attachCalloutText = true;
         public ShowWoundLevel showWoundLevel = ShowWoundLevel.Major;
         public bool drawLabelBackgroundForTextMotes = true;
-        public float baseCalloutChance = 0.1f;
+        public float baseCalloutChance = 0.15f;
 
         public bool allowCalloutsWhenTargetingAnimals = false;
         public bool allowCalloutsForAnimals = false;
@@ -32,7 +32,7 @@ namespace CM_Callouts
 
             Scribe_Values.Look(ref attachCalloutText, "attachCalloutText", true);
             Scribe_Values.Look(ref drawLabelBackgroundForTextMotes, "drawLabelBackgroundForTextMotes", true);
-            Scribe_Values.Look(ref baseCalloutChance, "baseCalloutChance", 0.1f);
+            Scribe_Values.Look(ref baseCalloutChance, "baseCalloutChance", 0.15f);
             Scribe_Values.Look(ref showWoundLevel, "showWoundLevel", ShowWoundLevel.All);
 
             Scribe_Values.Look(ref allowCalloutsWhenTargetingAnimals, "allowCalloutsWhenTargetingAnimals", false);
