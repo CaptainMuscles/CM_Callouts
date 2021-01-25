@@ -12,7 +12,7 @@
 - Likelihood of showing callout is scaled to be proportionate to the number of available entries
 - Most taunt-like callouts now have a chance to append an insult based on the caller's spicyness
 - Weapon titles will be colored in callouts
-- Default callout chance reduced to 10% (for new users)
+- Default callout chance reduced to 15% (for new users)
 
 
 ## [1.1.0] - 2020-01-23
