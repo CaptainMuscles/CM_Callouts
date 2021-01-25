@@ -74,9 +74,11 @@
     <Compile Include="Patches\MoteMaker_Patches.cs" />
     <Compile Include="Patches\MoteText_Patches.cs" />
     <Compile Include="Patches\Pawn_DraftController_Patches.cs" />
+    <Compile Include="Patches\HealthUtility_Patches.cs" />
     <Compile Include="Patches\RealTime_Patches.cs" />
     <Compile Include="Patches\Verb_MeleeAttack_Patches.cs" />
     <Compile Include="PendingCallouts\PendingCalloutEvent.cs" />
+    <Compile Include="PendingCallouts\PendingCalloutEventLethalHediffProgression.cs" />
     <Compile Include="PendingCallouts\PendingCalloutEventMeleeImpact.cs" />
     <Compile Include="PendingCallouts\PendingCalloutEventRangedImpact.cs" />
     <Compile Include="PendingCallouts\PendingCalloutEventWounded.cs" />

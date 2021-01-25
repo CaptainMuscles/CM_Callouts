@@ -53,14 +53,14 @@
 		
 		
 		<li>callout_potential_insult->!</li>
-		<li>callout_potential_insult(MILD==true,p=0.1)->, [callout_insult]!</li>
-		<li>callout_potential_insult(MILD!=true,SPICY!=true,p=0.2)->, [callout_insult]!</li>
-		<li>callout_potential_insult(SPICY==true,p=0.33)->, [callout_insult]!</li>
+		<li>callout_potential_insult(MILD==true,p=0.05)->, [callout_insult]!</li>
+		<li>callout_potential_insult(MILD!=true,SPICY!=true,p=0.1)->, [callout_insult]!</li>
+		<li>callout_potential_insult(SPICY==true,p=0.2)->, [callout_insult]!</li>
 		
 		
 		<li>callout_insult->[callout_noun_insulting]</li>
 		<li>callout_insult(p=0.25)->you [callout_adjective_insulting] [callout_noun_insulting]</li>
-	  
+		
 	  
 	    <li>callout_noun_afterlife_greeter->the devil</li>
 		<li>callout_noun_afterlife_greeter->the grim reaper</li>
@@ -180,27 +180,22 @@
 		<li>callout_adjective_insulting->gutless</li>
 		<li>callout_adjective_insulting->craven</li>
         
-		<!--<li>curse(MILD==true)->darn</li>
-		<li>curse(MILD==true)->dang</li>
-		<li>curse(MILD==true)->shucks</li>
-		<li>curse(MILD==true)->poo</li>
-		<li>curse(MILD==true)->fiddlesticks</li>
 		
-		<li>curse->damn</li>
-		<li>curse->hell</li>
+		<li>callout_curse(MILD==true)->darn it</li>
+		<li>callout_curse(MILD==true)->dang it</li>
+		<li>callout_curse(MILD==true)->shucks</li>
+		<li>callout_curse(MILD==true)->poo</li>
+		<li>callout_curse(MILD==true)->fiddlesticks</li>
 		
-		<li>curse(MILD!=true)->shit</li>
-		<li>curse(MILD!=true)->fuck</li>
-		<li>curse(MILD!=true)->goddamn</li>
+		<li>callout_curse->[Animal] farts</li>
+		<li>callout_curse->crap</li>
+		<li>callout_curse->damn it</li>
+		<li>callout_curse->hell</li>
 		
-		<li>curse(SPICY==true)->[curse_gerund] [curse]</li>
-		<li>curse(SPICY==true)->[curse] [curse]</li>
-		<li>curse(SPICY==true)->[curse] [curse_gerund]</li>
-		
-		<li>curse_gerund(MILD!=true)->fucking</li>
-		<li>curse_gerund(MILD!=true)->[PersonFamily]-fucking</li>
-		<li>curse_gerund(MILD!=true)->[callout_noun_orifice]-fucking</li>
-		<li>curse_gerund(MILD!=true)->shitting</li>-->
+		<li>callout_curse(MILD!=true)->shit snacks</li>
+		<li>callout_curse(MILD!=true)->shit</li>
+		<li>callout_curse(MILD!=true)->fuck</li>
+		<li>callout_curse(MILD!=true)->goddamn it</li>
 		
       </rulesStrings>
     </rulePack>
@@ -362,14 +357,17 @@
 		<li>rule(MILD==true)->ow, make it stop[callout_potential_insult]</li>
 		<li>rule(MILD==true)->ow, I want my mommy[callout_potential_insult]</li>
 		
-		<li>rule(SPICY!=true)->nooo, not my [destroyed_part][callout_potential_insult]</li>
-		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere[callout_potential_insult]</li>
+		<li>rule(SPICY!=true)->nooo, not my [destroyed_part]!</li>
+		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere!</li>
 		
-		<li>rule->ouch[callout_potential_insult]</li>
-		<li>rule(recipient_part_destroyed_count==0)->ow, my [damaged_part][callout_potential_insult]</li>
-		<li>rule->goodbye, my [destroyed_part][callout_potential_insult]</li>
+		<li>rule->ouch!</li>
+		<li>rule(recipient_part_destroyed_count==0)->ow, my [damaged_part]!</li>
+		<li>rule->goodbye, my [destroyed_part]!</li>
 		
-		<!--<li>rule(MILD!=true,recipient_part_destroyed_count>=1)->[curse][callout_potential_insult]</li>-->
+		<li>rule->oh, [callout_curse]! not my [destroyed_part]!</li>
+		<li>rule->aw, [callout_curse]!</li>
+		<li>rule->[callout_curse]!</li>
+		
 		<li>rule(MILD!=true,recipient_part_destroyed_count==0)->pfft, that didn't even hurt[callout_potential_insult]</li>
 		<li>rule(SPICY==true)->ha! I don't need my [destroyed_part] to kill you[callout_potential_insult]</li>
 		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway[callout_potential_insult]</li>
@@ -421,15 +419,42 @@
 		
 		<li>rule(SPICY!=true)->nooo, not my [destroyed_part]!</li>
 		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere...</li>
-		<li>rule(SPICY!=true,recipient_part_destroyed_count>=1)->I think I hear [callout_noun_afterlife_greeter] calling...</li>
 		
 		<li>rule->ouch!</li>
 		<li>rule(recipient_part_destroyed_count==0)->ow, my [damaged_part]!</li>
 		<li>rule->goodbye, my [destroyed_part]!</li>
+		<li>rule->oh, [callout_curse]! not my [destroyed_part]!</li>
+		<li>rule->aw, [callout_curse]!</li>
+		<li>rule->[callout_curse]!</li>
 		
-		<!--<li>rule(MILD!=true,recipient_part_destroyed_count>=1)->[curse]</li>-->
 		<li>rule(MILD!=true,recipient_part_destroyed_count==0)->pfft, that didn't even hurt.</li>
+		
 		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway!</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Hediff -->
+  
+   <RulePackDef>
+    <defName>CM_Callouts_RulePack_Lethal_Hediff_Progression</defName>
+	<include>
+	  <li>CM_Callouts_Common</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+		
+		<li>rule(MILD==true)->ow, make it stop!</li>
+		<li>rule(MILD==true)->ow, I want my mommy!</li>
+		
+		<li>rule->ouch!</li>
+		<li>rule->this [CULPRITHEDIFF_label] will be the end of me!</li>
+		<li>rule->I think I hear [callout_noun_afterlife_greeter] calling...</li>
+		<li>rule->its you and me 'til the end, [RECIPIENT_WEAPON_title]</li>
+		<li>rule->this may be the end of ol' [RECIPIENT_label]</li>
+		
+		<li>rule(CULPRITHEDIFF_stage==extreme)->goodbye cruel world!</li>
 
       </rulesStrings>
     </rulePack>

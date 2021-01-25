@@ -25,6 +25,8 @@ namespace CM_Callouts
 
         public static RulePackDef CM_Callouts_RulePack_Wounded;
 
+        public static RulePackDef CM_Callouts_RulePack_Lethal_Hediff_Progression;
+
         public static RulePackDef CM_Callouts_RulePack_Drafted;
     }
 }

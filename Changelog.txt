@@ -1,3 +1,20 @@
+## [1.1.1] - 2020-01-24
+
+### Added
+- Setting to specify minimum wound severity to throw text mote for
+- Setting to allow callouts when an animal is the target (off by default)
+- Setting to allow animals to call out (off by default)
+- Callouts on being wounded in a situation not included by another callout
+- Potentially lethal hediffs display text motes when their severity goes up
+- Callouts can be triggered upon lethal hediff progression
+
+### Changed
+- Likelihood of showing callout is scaled to be proportionate to the number of available entries
+- Most taunt-like callouts now have a chance to append an insult based on the caller's spicyness
+- Weapon titles will be colored in callouts
+- Default callout chance reduced to 10% (for new users)
+
+
 ## [1.1.0] - 2020-01-23
 
 ### Added

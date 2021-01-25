@@ -141,7 +141,7 @@ namespace CM_Callouts
                     {
                         if (pawn.story.traits.allTraits.Any(trait => trait.def == traitDef))
                         {
-                            Logger.MessageFormat(this, "{0}, {1}, {2}", pawn, constantByTraitDef.name, constantByTraitDef.value);
+                            //Logger.MessageFormat(this, "{0}, {1}, {2}", pawn, constantByTraitDef.name, constantByTraitDef.value);
                             grammarRequest.Constants[constantByTraitDef.name] = constantByTraitDef.value;
                             break;
                         }

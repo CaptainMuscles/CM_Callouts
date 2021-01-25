@@ -96,7 +96,7 @@ namespace CM_Callouts
             CollectWeaponRules(pawn, symbol + "_WEAPON", ref grammarRequest);
         }
 
-        public static void CollectWeaponRules(Pawn pawn, string symbol, ref GrammarRequest grammarRequest)
+        private static void CollectWeaponRules(Pawn pawn, string symbol, ref GrammarRequest grammarRequest)
         {
             if (pawn.equipment != null && pawn.equipment.Primary != null)
                 grammarRequest.Rules.AddRange(GetRulesForWeapon(symbol, pawn.equipment.Primary));
@@ -110,6 +110,17 @@ namespace CM_Callouts
 
             if (targetCoverDef != null)
                 grammarRequest.Rules.AddRange(GrammarUtility.RulesForDef(symbol, targetCoverDef));
+        }
+
+        public static void CollectHediffRules(Hediff hediff, string symbol, ref GrammarRequest grammarRequest)
+        {
+            grammarRequest.Rules.AddRange(GrammarUtility.RulesForHediffDef(symbol, hediff.def, hediff.Part));
+
+            if (hediff.Part != null)
+                grammarRequest.Rules.AddRange(GrammarUtility.RulesForBodyPartRecord(symbol + "_target", hediff.Part));
+
+            if (hediff.CurStage != null)
+                grammarRequest.Constants[symbol + "_stage"] = hediff.CurStage.label;
         }
 
         private static IEnumerable<Rule> GetRulesForWeapon(string prefix, Thing thing)
@@ -130,7 +141,7 @@ namespace CM_Callouts
             CompArt compArt = thing.TryGetComp<CompArt>();
             if (compArt != null && compArt.Active)
             {
-                yield return new Rule_String(prefix + "_title", compArt.Title);
+                yield return new Rule_String(prefix + "_title", compArt.Title.ApplyTag(TagType.Name).Resolve());
             }
             CompQuality compQuality = thing.TryGetComp<CompQuality>();
             if (compQuality != null)
