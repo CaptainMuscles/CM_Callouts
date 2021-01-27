@@ -272,6 +272,10 @@
 		<li>rule->come get some[callout_potential_insult]</li>
 		<li>rule->I'm going to build a boot factory in your ass[callout_potential_insult]</li>
 		<li>rule->I'm going to beat you like a [Animal][callout_potential_insult]</li>
+		<li>rule->my name is [INITIATOR_label], prepare to be [destroyed_past][callout_potential_insult]</li>
+		<li>rule->I'm going to [damaged_inf] you [destroyed_suffix] [damaged_past][callout_potential_insult]</li>
+		<li>rule->I hope you're ready to get [damaged_past][callout_potential_insult]</li>
+		<li>rule->I've crossed oceans of time to [damaged_inf] you[callout_potential_insult]</li>
 		
 		<li>rule(MILD!=true)->now you've awakened the [AnimalBadass][callout_potential_insult]</li>
 		<li>rule(MILD!=true)->I'll [callout_verb_rip] you another [callout_noun_orifice]-hole[callout_potential_insult]</li>

@@ -79,7 +79,9 @@
     <Compile Include="Patches\Verb_MeleeAttack_Patches.cs" />
     <Compile Include="PendingCallouts\PendingCalloutEvent.cs" />
     <Compile Include="PendingCallouts\PendingCalloutEventLethalHediffProgression.cs" />
+    <Compile Include="PendingCallouts\PendingCalloutEventMeleeAttempt.cs" />
     <Compile Include="PendingCallouts\PendingCalloutEventMeleeImpact.cs" />
+    <Compile Include="PendingCallouts\PendingCalloutEventRangedAttempt.cs" />
     <Compile Include="PendingCallouts\PendingCalloutEventRangedImpact.cs" />
     <Compile Include="PendingCallouts\PendingCalloutEventWounded.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

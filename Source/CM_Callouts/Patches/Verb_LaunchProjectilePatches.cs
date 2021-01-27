@@ -23,9 +23,7 @@ namespace CM_Callouts
 
                 if (CalloutUtility.CanCalloutNow(__instance.CasterPawn) && CalloutUtility.CanCalloutAtTarget(__instance.CurrentTarget.Thing))
                 {
-                    CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-                    if (calloutTracker != null && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack))
-                        CalloutUtility.AttemptRangedAttackCallout(__instance.CasterPawn, __instance);
+                    new PendingCalloutEventRangedAttempt(__instance.CasterPawn, __instance.CurrentTarget.Pawn, __instance).AttemptCallout();
                 }
             }
         }

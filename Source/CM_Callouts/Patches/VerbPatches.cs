@@ -24,9 +24,7 @@ namespace CM_Callouts
 
                 if (CalloutUtility.CanCalloutNow(__instance.CasterPawn) && CalloutUtility.CanCalloutAtTarget(__instance.CurrentTarget.Thing))
                 {
-                    CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-                    if (calloutTracker != null && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Melee_Attack))
-                        CalloutUtility.AttemptMeleeAttackCallout(__instance.CasterPawn, __instance.CurrentTarget.Thing as Pawn);
+                    new PendingCalloutEventMeleeAttempt(__instance.CasterPawn, __instance.CurrentTarget.Thing as Pawn, __instance).AttemptCallout();
                 }
             }
         }

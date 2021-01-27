@@ -49,47 +49,6 @@ namespace CM_Callouts
             }
         }
 
-        public static void AttemptMeleeAttackCallout(Pawn initiator, Pawn recipient)
-        {
-            CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-            if (calloutTracker != null)
-            {
-                RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Melee_Attack;
-
-                GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
-
-                CollectPawnRules(initiator, "INITIATOR", ref grammarRequest);
-
-                if (recipient != null)
-                    CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
-
-                calloutTracker.RequestCallout(initiator, rulePack, grammarRequest);
-            }
-        }
-
-        public static void AttemptRangedAttackCallout(Pawn pawn, Verb_LaunchProjectile verb)
-        {
-            CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-            if (calloutTracker != null)
-            {
-                RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack;
-
-                GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
-
-                CollectPawnRules(pawn, "INITIATOR", ref grammarRequest);
-
-                if (verb.CurrentTarget.Pawn != null)
-                {
-                    CollectCoverRules(verb.CurrentTarget.Pawn, pawn, "INITIATOR_COVER", verb, ref grammarRequest);
-
-                    CollectPawnRules(verb.CurrentTarget.Pawn, "RECIPIENT", ref grammarRequest);
-                    CollectCoverRules(pawn, verb.CurrentTarget.Pawn, "RECIPIENT_COVER", verb, ref grammarRequest);
-                }
-
-                calloutTracker.RequestCallout(pawn, rulePack, grammarRequest);
-            }
-        }
-
         public static void CollectPawnRules(Pawn pawn, string symbol, ref GrammarRequest grammarRequest)
         {
             grammarRequest.Rules.AddRange(GrammarUtility.RulesForPawn(symbol, pawn));
