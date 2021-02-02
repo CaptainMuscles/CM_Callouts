@@ -273,7 +273,7 @@
 		<li>rule->I'm going to build a boot factory in your ass[callout_potential_insult]</li>
 		<li>rule->I'm going to beat you like a [Animal][callout_potential_insult]</li>
 		<li>rule->my name is [INITIATOR_label], prepare to be [destroyed_past][callout_potential_insult]</li>
-		<li>rule->I'm going to [damaged_inf] you [destroyed_suffix] [damaged_past][callout_potential_insult]</li>
+		<li>rule->I'm going to [damaged_inf] you[callout_potential_insult]</li>
 		<li>rule->I hope you're ready to get [damaged_past][callout_potential_insult]</li>
 		<li>rule->I've crossed oceans of time to [damaged_inf] you[callout_potential_insult]</li>
 		
@@ -495,8 +495,9 @@
         <li>rule->show me an ass and I'll kick it!</li>
         <li>rule->hell yeah, I'm ready! Are you?</li>
 		<li>rule->the day of [ConceptBadass] is here!</li>
+		<li>rule->you can get much further with a kind word and a [INITIATOR_WEAPON_label] then you can with a kind word alone</li>
 		
-		<li>rule(SPICY==true)->the [AdjectiveBadass] [PersonBadass] of [ConceptBadass] is here!</li>
+		<li>rule(MILD!=true)->the [AdjectiveBadass] [PersonBadass] of [ConceptBadass] is here!</li>
 
       </rulesStrings>
     </rulePack>
