@@ -8,6 +8,8 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
+using CM_Callouts.PendingCallouts;
+
 namespace CM_Callouts
 {
     [StaticConstructorOnStartup]

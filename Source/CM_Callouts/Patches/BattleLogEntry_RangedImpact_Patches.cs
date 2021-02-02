@@ -7,6 +7,8 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
+using CM_Callouts.PendingCallouts.Combat;
+
 namespace CM_Callouts
 {
     [StaticConstructorOnStartup]

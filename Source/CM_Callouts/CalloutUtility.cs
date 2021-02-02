@@ -8,6 +8,8 @@ using RimWorld.Planet;
 using Verse;
 using Verse.Grammar;
 
+using CM_Callouts.PendingCallouts;
+
 namespace CM_Callouts
 {
     public static class CalloutUtility

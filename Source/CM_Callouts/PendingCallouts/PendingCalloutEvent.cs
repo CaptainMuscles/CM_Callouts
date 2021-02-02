@@ -8,7 +8,7 @@ using Verse;
 using Verse.AI;
 using Verse.Grammar;
 
-namespace CM_Callouts
+namespace CM_Callouts.PendingCallouts
 {
     public abstract class PendingCalloutEvent
     {
