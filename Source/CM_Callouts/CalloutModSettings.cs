@@ -24,7 +24,12 @@ namespace CM_Callouts
         public bool allowCalloutsWhenTargetingAnimals = false;
         public bool allowCalloutsForAnimals = false;
 
+
+        // Debugging
         public bool showDebugLogMessages = false;
+        public bool hyperNuzzling = false;
+        public bool forceInitiatorCallouts = false;
+        public bool forceRecipientCallouts = false;
 
         public override void ExposeData()
         {
@@ -39,6 +44,9 @@ namespace CM_Callouts
             Scribe_Values.Look(ref allowCalloutsForAnimals, "allowCalloutsForAnimals", false);
 
             Scribe_Values.Look(ref showDebugLogMessages, "showDebugLogMessages", false);
+            Scribe_Values.Look(ref hyperNuzzling, "hyperNuzzling", false);
+            Scribe_Values.Look(ref forceInitiatorCallouts, "forceInitiatorCallouts", false);
+            Scribe_Values.Look(ref forceRecipientCallouts, "forceRecipientCallouts", false);
         }
 
         public void DoSettingsWindowContents(Rect inRect)
@@ -75,7 +83,14 @@ namespace CM_Callouts
 
             if (Prefs.DevMode)
             {
-                listing_Standard.CheckboxLabeled("Show debug messages", ref showDebugLogMessages);
+                listing_Standard.Gap(24);
+                listing_Standard.Label("Debug settings");
+                listing_Standard.GapLine();
+                
+                listing_Standard.CheckboxLabeled("showDebugLogMessages", ref showDebugLogMessages);
+                listing_Standard.CheckboxLabeled("hyperNuzzling", ref hyperNuzzling);
+                listing_Standard.CheckboxLabeled("forceInitiatorCallouts", ref forceInitiatorCallouts);
+                listing_Standard.CheckboxLabeled("forceRecipientCallouts", ref forceRecipientCallouts);
             }
 
             listing_Standard.End();

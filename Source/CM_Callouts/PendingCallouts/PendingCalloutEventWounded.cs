@@ -23,6 +23,8 @@ namespace CM_Callouts.PendingCallouts
 
         public override void AttemptCallout()
         {
+            base.AttemptCallout();
+
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
             if (calloutTracker != null)
             {

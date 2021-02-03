@@ -152,6 +152,8 @@ namespace CM_Callouts
             string text = GrammarResolver.Resolve("rule", grammarRequest);
             if (!text.NullOrEmpty())
             {
+                Logger.MessageFormat(this, "Callout resolved.");
+
                 if (CalloutMod.settings.attachCalloutText)
                     CreateAttachedCalloutText(pawn, text, Color.white);
                 else

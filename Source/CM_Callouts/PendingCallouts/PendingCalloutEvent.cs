@@ -25,6 +25,9 @@ namespace CM_Callouts.PendingCallouts
             bodyPartsDestroyed = _bodyPartsDestroyed;
         }
 
-        public abstract void AttemptCallout();
+        public virtual void AttemptCallout()
+        {
+            Logger.MessageFormat(this, "Attempting callout.");
+        }
     }
 }

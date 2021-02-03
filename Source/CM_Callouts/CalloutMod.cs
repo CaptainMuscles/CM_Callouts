@@ -3,6 +3,8 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
+using CM_Callouts.Patches.InteractionWorkers;
+
 namespace CM_Callouts
 {
     public class CalloutMod : Mod
@@ -16,6 +18,8 @@ namespace CM_Callouts
         {
             var harmony = new Harmony("CM_Callouts");
             harmony.PatchAll();
+
+            InteractionWorker_RecruitAttempt_Patches.InteractionWorker_RecruitAttempt_DoRecruit.Patch(harmony);
 
             _instance = this;
             settings = GetSettings<CalloutModSettings>();

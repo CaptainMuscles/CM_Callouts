@@ -6,7 +6,6 @@ namespace CM_Callouts
 {
     public static class Logger
     {
-        public static bool MessageEnabled = false;
         public static bool WarningEnabled = true;
         public static bool ErrorEnabled = true;
 

@@ -23,7 +23,8 @@ namespace CM_Callouts.Patches.InteractionWorkers
                 if (recipient.needs.mood == null)
                     return;
 
-
+                // Recipient and initiator are deliberately reversed here so that the nuzzle callout can share logic with other animal interaction
+                new PendingCallouts.Interaction.PendingCalloutEventAnimalInteraction(recipient, initiator, CalloutDefOf.CM_Callouts_RulePack_Interaction_Animal_Nuzzle_Initiated, CalloutDefOf.CM_Callouts_RulePack_Interaction_Animal_Nuzzle_Received).AttemptCallout();
             }
         }
     }

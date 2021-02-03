@@ -54,6 +54,7 @@ namespace CM_Callouts
         public static void CollectPawnRules(Pawn pawn, string symbol, ref GrammarRequest grammarRequest)
         {
             grammarRequest.Rules.AddRange(GrammarUtility.RulesForPawn(symbol, pawn));
+            grammarRequest.Constants.Add(symbol + "_gender", pawn.gender.GetLabel());
             CollectWeaponRules(pawn, symbol + "_WEAPON", ref grammarRequest);
         }
 
