@@ -1,10 +1,25 @@
-## [1.1.2] - 2020-01-24
+## [1.2.0] - 2021-02-03
+
+### Added
+- Callouts on animal interactions - nuzzling, feeding, taming success, training success, tending and slaughtering.
+- Setting to enable/disable combat callouts
+- Setting to enable/disable animal interaction callouts
+- Setting to enable/disable text mote queueing
+- Melee manuever info available to combat callouts
+- New callout entries
+
+### Changed
+- 'recipient_part' keywords changed to 'PART' in callout rules
+- Affected pawn in Lethal_Hediff_Progression callout now labeled as INITIATOR instead of RECIPIENT
+
+
+## [1.1.2] - 2021-01-24
 
 ### Changed
 - Rearranged settings menu
 
 
-## [1.1.1] - 2020-01-24
+## [1.1.1] - 2021-01-24
 
 ### Added
 - Setting to specify minimum wound severity to throw text mote for
@@ -21,7 +36,7 @@
 - Default callout chance reduced to 15% (for new users)
 
 
-## [1.1.0] - 2020-01-23
+## [1.1.0] - 2021-01-23
 
 ### Added
 - Damaged and destroyed body parts displayed as text motes
@@ -36,7 +51,7 @@
 - More callout lines
 
 
-## [1.0.0] - 2020-01-20
+## [1.0.0] - 2021-01-20
 
 ### Added
 - Initial release
