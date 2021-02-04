@@ -15,7 +15,7 @@ namespace CM_Callouts.PendingCallouts.Combat
         public Verb_LaunchProjectile verb = null;
 
         public PendingCalloutEventRangedAttempt(Pawn _initiator, Pawn _recipient, Verb_LaunchProjectile _verb)
-            : base(_initiator, _recipient, CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack, null)
+            : base(CalloutCategory.Combat, _initiator, _recipient, CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack, null)
         {
             verb = _verb;
         }

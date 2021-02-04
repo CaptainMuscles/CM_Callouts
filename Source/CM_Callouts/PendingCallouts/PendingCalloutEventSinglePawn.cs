@@ -16,7 +16,8 @@ namespace CM_Callouts.PendingCallouts
 
         public RulePackDef initiatorRulePack = null;
 
-        public PendingCalloutEventSinglePawn(Pawn _initiator, RulePackDef _initiatorRulePack)
+        public PendingCalloutEventSinglePawn(CalloutCategory _category, Pawn _initiator, RulePackDef _initiatorRulePack)
+            : base(_category)
         {
             initiator = _initiator;
             initiatorRulePack = _initiatorRulePack;
@@ -24,6 +25,9 @@ namespace CM_Callouts.PendingCallouts
 
         public override void AttemptCallout()
         {
+            if (!CalloutMod.settings.CalloutCategoryEnabled(category))
+                return;
+
             base.AttemptCallout();
 
             // Some of the functions leading here might be called when loading the game

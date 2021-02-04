@@ -31,7 +31,7 @@ namespace CM_Callouts
             {
                 if (___draftedInt && wereDrafted)
                 {
-                    new PendingCalloutEventSinglePawn(__instance.pawn, CalloutDefOf.CM_Callouts_RulePack_Drafted).AttemptCallout();
+                    new PendingCalloutEventSinglePawn(CalloutCategory.Undefined, __instance.pawn, CalloutDefOf.CM_Callouts_RulePack_Drafted).AttemptCallout();
                 }
             }
         }

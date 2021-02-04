@@ -15,7 +15,7 @@ namespace CM_Callouts.PendingCallouts.Combat
         public Verb verb = null;
 
         public PendingCalloutEventMeleeAttempt(Pawn _initiator, Pawn _recipient, Verb _verb)
-            : base(_initiator, _recipient, CalloutDefOf.CM_Callouts_RulePack_Melee_Attack, null)
+            : base(CalloutCategory.Combat, _initiator, _recipient, CalloutDefOf.CM_Callouts_RulePack_Melee_Attack, null)
         {
             verb = _verb;
         }

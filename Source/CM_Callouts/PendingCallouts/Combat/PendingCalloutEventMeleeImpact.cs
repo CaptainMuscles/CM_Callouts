@@ -13,7 +13,7 @@ namespace CM_Callouts.PendingCallouts.Combat
     public class PendingCalloutEventMeleeImpact : PendingCalloutEventDoublePawn
     {
         public PendingCalloutEventMeleeImpact(Pawn _initiator, Pawn _recipient)
-            : base(_initiator, _recipient, CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Landed, CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Received)
+            : base(CalloutCategory.Combat, _initiator, _recipient, CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Landed, CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Received)
         {
         }
 

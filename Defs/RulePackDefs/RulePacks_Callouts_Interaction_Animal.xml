@@ -37,6 +37,7 @@
 		<!-- RECIPIENT -->
 		<li>rule->what a sweet [callout_noun_diminutive_animal] you are!</li>
 		<li>rule->who's a good [callout_noun_diminutive_animal]?</li>
+		<li>rule->who's the best [RECIPIENT_kind] ever?</li>
 		<li>rule->who's [callout_noun_diminutive_person]'s little [callout_noun_diminutive_animal]?</li>
 		
       </rulesStrings>
@@ -51,6 +52,7 @@
     <rulePack>
       <rulesStrings>
 		
+		<li>rule->I can haz treat?</li>
 		<li>rule->who's a good [INITIATOR_alienRace]?</li>
 		<li>rule->rub my belly now, you fool!</li>
 		<li>rule->come here and love on me, ya big dummy!</li>
@@ -72,7 +74,7 @@
 		<!-- RECIPIENT -->
 		<!-- FOOD -->
 		<li>rule->who wants a treat?</li>
-		<li>rule->who wants some yummy [FOOD_label]?</li>
+		<li>rule->how about some yummy [FOOD_label]?</li>
 		<li>rule->hey there [callout_noun_diminutive_animal], how would you like some [FOOD_label]?</li>
 		<li>rule->hey there [callout_noun_diminutive_animal], I'm not gonna hurt ya...</li>
 		<li>rule->nice and steady...</li>
@@ -157,6 +159,7 @@
 		<!-- RECIPIENT -->
 		<li>rule->excellent work, [RECIPIENT_name]!</li>
 		<li>rule->nice job, [callout_noun_diminutive_animal]!</li>
+		<li>rule->what a smart [callout_noun_diminutive_animal] you are!</li>
 		<li>rule->you're [callout_noun_diminutive_person]'s brilliant little [RECIPIENT_kind], yes you are!</li>
 		
       </rulesStrings>

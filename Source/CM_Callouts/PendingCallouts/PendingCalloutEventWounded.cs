@@ -13,7 +13,7 @@ namespace CM_Callouts.PendingCallouts
     public class PendingCalloutEventWounded : PendingCalloutEventSinglePawn
     {
         public PendingCalloutEventWounded(Pawn _initiator)
-            : base(_initiator, CalloutDefOf.CM_Callouts_RulePack_Wounded)
+            : base(CalloutCategory.Combat, _initiator, CalloutDefOf.CM_Callouts_RulePack_Wounded)
         {
         }
 

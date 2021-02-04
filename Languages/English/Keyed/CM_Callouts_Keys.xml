@@ -29,4 +29,10 @@
   
   <CM_Callouts_Settings_Animal_Callouts_Label>Animals call out</CM_Callouts_Settings_Animal_Callouts_Label>
   <CM_Callouts_Settings_Animal_Callouts_Description>When enabled, animals can call out.</CM_Callouts_Settings_Animal_Callouts_Description>
+  
+  <CM_Callouts_Settings_Do_Callouts_Combat_Label>Combat callouts enabled</CM_Callouts_Settings_Do_Callouts_Combat_Label>
+  <CM_Callouts_Settings_Do_Callouts_Combat_Description>Enables/disables all combat callouts.</CM_Callouts_Settings_Do_Callouts_Combat_Description>
+  
+  <CM_Callouts_Settings_Do_Callouts_Animal_Label>Animal interaction callouts enabled</CM_Callouts_Settings_Do_Callouts_Animal_Label>
+  <CM_Callouts_Settings_Do_Callouts_Animal_Description>Enables/disables all animal interaction callouts.</CM_Callouts_Settings_Do_Callouts_Animal_Description>
 </LanguageData>

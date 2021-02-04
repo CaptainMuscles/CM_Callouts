@@ -13,7 +13,7 @@ namespace CM_Callouts.PendingCallouts.Interaction
     public class PendingCalloutEventAnimalInteraction : PendingCalloutEventDoublePawn
     {
         public PendingCalloutEventAnimalInteraction(Pawn _initiator, Pawn _recipient, RulePackDef _initiatorRulePack, RulePackDef _recipientRulePack)
-            : base(_initiator, _recipient, _initiatorRulePack, _recipientRulePack)
+            : base(CalloutCategory.Animal, _initiator, _recipient, _initiatorRulePack, _recipientRulePack)
         {
 
         }

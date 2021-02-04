@@ -15,7 +15,7 @@ namespace CM_Callouts.PendingCallouts
         public Hediff hediff = null;
 
         public PendingCalloutEventLethalHediffProgression(Pawn _initiator, Hediff _hediff)
-            : base(_initiator, CalloutDefOf.CM_Callouts_RulePack_Lethal_Hediff_Progression)
+            : base(CalloutCategory.Undefined, _initiator, CalloutDefOf.CM_Callouts_RulePack_Lethal_Hediff_Progression)
         {
             hediff = _hediff;
         }

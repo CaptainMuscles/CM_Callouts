@@ -3,6 +3,8 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
+using CM_Callouts.PendingCallouts;
+
 namespace CM_Callouts
 {
     public enum ShowWoundLevel
@@ -16,6 +18,9 @@ namespace CM_Callouts
 
     public class CalloutModSettings : ModSettings
     {
+        public bool enableCalloutsCombat = true;
+        public bool enableCalloutsAnimal = true;
+
         public bool attachCalloutText = true;
         public ShowWoundLevel showWoundLevel = ShowWoundLevel.Major;
         public bool drawLabelBackgroundForTextMotes = true;
@@ -34,6 +39,9 @@ namespace CM_Callouts
         public override void ExposeData()
         {
             base.ExposeData();
+
+            Scribe_Values.Look(ref enableCalloutsCombat, "enableCalloutsCombat", true);
+            Scribe_Values.Look(ref enableCalloutsAnimal, "enableCalloutsAnimal", true);
 
             Scribe_Values.Look(ref attachCalloutText, "attachCalloutText", true);
             Scribe_Values.Look(ref drawLabelBackgroundForTextMotes, "drawLabelBackgroundForTextMotes", true);
@@ -55,6 +63,12 @@ namespace CM_Callouts
             listing_Standard.ColumnWidth = (inRect.width - 34f) / 2f;
 
             listing_Standard.Begin(inRect);
+
+            listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Do_Callouts_Combat_Label".Translate(), ref enableCalloutsCombat, "CM_Callouts_Settings_Do_Callouts_Combat_Description".Translate());
+            listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Do_Callouts_Animal_Label".Translate(), ref enableCalloutsAnimal, "CM_Callouts_Settings_Do_Callouts_Animal_Description".Translate());
+
+            listing_Standard.GapLine();
+
             listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Attach_Callout_Text_Label".Translate(), ref attachCalloutText, "CM_Callouts_Settings_Attach_Callout_Text_Description".Translate());
             listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Label".Translate(), ref drawLabelBackgroundForTextMotes, "CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Description".Translate());
 
@@ -98,6 +112,19 @@ namespace CM_Callouts
 
         public void UpdateSettings()
         {
+        }
+
+        public bool CalloutCategoryEnabled(CalloutCategory category)
+        {
+            switch (category)
+            {
+                case CalloutCategory.Combat:
+                    return enableCalloutsCombat;
+                case CalloutCategory.Animal:
+                    return enableCalloutsAnimal;
+                default:
+                    return true;
+            }
         }
     }
 }

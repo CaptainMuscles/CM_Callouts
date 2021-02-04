@@ -18,7 +18,8 @@ namespace CM_Callouts.PendingCallouts
         public RulePackDef initiatorRulePack = null;
         public RulePackDef recipientRulePack = null;
 
-        public PendingCalloutEventDoublePawn(Pawn _initiator, Pawn _recipient, RulePackDef _initiatorRulePack, RulePackDef _recipientRulePack)
+        public PendingCalloutEventDoublePawn(CalloutCategory _category, Pawn _initiator, Pawn _recipient, RulePackDef _initiatorRulePack, RulePackDef _recipientRulePack)
+            : base(_category)
         {
             initiator = _initiator;
             recipient = _recipient;
@@ -28,6 +29,9 @@ namespace CM_Callouts.PendingCallouts
 
         public override void AttemptCallout()
         {
+            if (!CalloutMod.settings.CalloutCategoryEnabled(category))
+                return;
+
             base.AttemptCallout();
 
             // Some of the functions leading here might be called when loading the game

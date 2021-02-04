@@ -18,7 +18,7 @@ namespace CM_Callouts.PendingCallouts.Combat
         public ThingDef coverDef = null;
 
         public PendingCalloutEventRangedImpact(Pawn _initiator, Pawn _recipient, Pawn _originalTarget, ThingDef _weaponDef, ThingDef _projectileDef, ThingDef _coverDef)
-            : base(_initiator, _recipient, CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack_Landed_OriginalTarget, CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack_Received_OriginalTarget)
+            : base(CalloutCategory.Combat, _initiator, _recipient, CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack_Landed_OriginalTarget, CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack_Received_OriginalTarget)
         {
             originalTarget = _originalTarget;
 
