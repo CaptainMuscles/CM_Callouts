@@ -59,8 +59,8 @@ namespace CM_Callouts.PendingCallouts
                 bool initiatorCalloutForced = (hasInitiatorCallout && Prefs.DevMode && CalloutMod.settings.forceInitiatorCallouts);
                 bool recipientCalloutForced = (hasRecipientCallout && Prefs.DevMode && CalloutMod.settings.forceRecipientCallouts);
 
-                bool initiatorCallout = hasInitiatorCallout && (initiatorCalloutForced || ((!hasRecipientCallout || Rand.Bool) && calloutTracker.CheckCalloutChance(initiatorRulePack) && CalloutUtility.CanCalloutNow(initiator) && !recipientCalloutForced));
-                bool recipientCallout = hasRecipientCallout && (recipientCalloutForced || ((!hasInitiatorCallout || Rand.Bool) && calloutTracker.CheckCalloutChance(recipientRulePack) && CalloutUtility.CanCalloutNow(initiator)));
+                bool initiatorCallout = hasInitiatorCallout && (initiatorCalloutForced || ((!hasRecipientCallout || Rand.Bool) && calloutTracker.CheckCalloutChance(category, initiatorRulePack) && CalloutUtility.CanCalloutNow(initiator) && !recipientCalloutForced));
+                bool recipientCallout = hasRecipientCallout && (recipientCalloutForced || ((!hasInitiatorCallout || Rand.Bool) && calloutTracker.CheckCalloutChance(category, recipientRulePack) && CalloutUtility.CanCalloutNow(initiator)));
 
                 if (initiatorCallout)
                     DoInitiatorCallout(calloutTracker);

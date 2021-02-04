@@ -8,6 +8,8 @@ using RimWorld.Planet;
 using Verse;
 using Verse.Grammar;
 
+using CM_Callouts.PendingCallouts;
+
 namespace CM_Callouts
 {
     public class CalloutTracker : WorldComponent
@@ -87,6 +89,11 @@ namespace CM_Callouts
                     // Meh, the situations I can think of where this is happening (changing temperature on a heater for example) queueing it makes it worse
                     GenSpawn.Spawn(thing, location, map);
                 }
+                else if (!CalloutMod.settings.queueTextMotes)
+                {
+                    thing.def = CalloutDefOf.CM_Callouts_Thing_Mote_Text_Ticked;
+                    GenSpawn.Spawn(thing, location, map);
+                }
                 else
                 {
                     if (!textMoteQueuesTickBased.ContainsKey(hash))
@@ -105,21 +112,25 @@ namespace CM_Callouts
             return (pawn != null && !pawn.Dead && pawn.Spawned && (CalloutMod.settings.allowCalloutsForAnimals || pawn.def.race.Humanlike) && !pawnCalloutExpireTick.ContainsKey(pawn) && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking));
         }
 
-        public bool CheckCalloutChance(RulePackDef rulePackDef, string keyword = "rule")
+        public bool CheckCalloutChance(CalloutCategory category, RulePackDef rulePackDef, string keyword = "rule")
         {
-            return Rand.Chance(CalloutMod.settings.baseCalloutChance * ScaledCalloutFrequency(rulePackDef));
+            float calloutChance = CalloutMod.settings.baseCalloutChance * ScaledCalloutFrequency(category, rulePackDef);
+            float randChance = Rand.Value;
+            Logger.MessageFormat(this, "calloutChance of {0} = {1}/{2}", rulePackDef, randChance, calloutChance);
+            return randChance <= calloutChance;
         }
 
-        private float ScaledCalloutFrequency(RulePackDef rulePackDef, string keyword = "rule")
+        private float ScaledCalloutFrequency(CalloutCategory category, RulePackDef rulePackDef, string keyword = "rule")
         {
+            if (category != CalloutCategory.Combat)
+                return 1.0f;
+
             int numberOfRules = rulePackDef.RulesPlusIncludes.Where(rule => rule.keyword == keyword).Count();
 
             if (numberOfRules > maxRulesSeen)
                 maxRulesSeen = numberOfRules;
 
             float scaledChance = (float)numberOfRules / maxRulesSeen;
-
-            Logger.MessageFormat(this, "Scaled chance of {0} = {1}", rulePackDef, scaledChance);
 
             return scaledChance;
         }

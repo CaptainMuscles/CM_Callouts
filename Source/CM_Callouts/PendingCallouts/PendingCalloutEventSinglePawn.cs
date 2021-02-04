@@ -43,7 +43,7 @@ namespace CM_Callouts.PendingCallouts
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
             if (calloutTracker != null)
             {
-                bool initiatorCallout = (Prefs.DevMode && CalloutMod.settings.forceInitiatorCallouts) || (calloutTracker.CheckCalloutChance(initiatorRulePack) && CalloutUtility.CanCalloutNow(initiator));
+                bool initiatorCallout = (Prefs.DevMode && CalloutMod.settings.forceInitiatorCallouts) || (calloutTracker.CheckCalloutChance(category, initiatorRulePack) && CalloutUtility.CanCalloutNow(initiator));
 
                 if (initiatorCallout)
                     DoInitiatorCallout(calloutTracker);
