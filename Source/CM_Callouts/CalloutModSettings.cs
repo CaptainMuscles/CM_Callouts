@@ -21,6 +21,7 @@ namespace CM_Callouts
         public bool enableCalloutsCombat = true;
         public bool enableCalloutsAnimal = true;
 
+        public bool queueTextMotes = true;
         public bool attachCalloutText = true;
         public ShowWoundLevel showWoundLevel = ShowWoundLevel.Major;
         public bool drawLabelBackgroundForTextMotes = true;
@@ -43,6 +44,7 @@ namespace CM_Callouts
             Scribe_Values.Look(ref enableCalloutsCombat, "enableCalloutsCombat", true);
             Scribe_Values.Look(ref enableCalloutsAnimal, "enableCalloutsAnimal", true);
 
+            Scribe_Values.Look(ref queueTextMotes, "queueTextMotes", true);
             Scribe_Values.Look(ref attachCalloutText, "attachCalloutText", true);
             Scribe_Values.Look(ref drawLabelBackgroundForTextMotes, "drawLabelBackgroundForTextMotes", true);
             Scribe_Values.Look(ref baseCalloutChance, "baseCalloutChance", 0.15f);
@@ -69,6 +71,7 @@ namespace CM_Callouts
 
             listing_Standard.GapLine();
 
+            listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Queue_Text_Motes_Label".Translate(), ref queueTextMotes, "CM_Callouts_Settings_Queue_Text_Motes_Description".Translate());
             listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Attach_Callout_Text_Label".Translate(), ref attachCalloutText, "CM_Callouts_Settings_Attach_Callout_Text_Description".Translate());
             listing_Standard.CheckboxLabeled("CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Label".Translate(), ref drawLabelBackgroundForTextMotes, "CM_Callouts_Settings_Draw_Label_Background_For_Text_Motes_Description".Translate());
 

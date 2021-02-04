@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+  <CM_Callouts_Settings_Queue_Text_Motes_Label>Queue text motes</CM_Callouts_Settings_Queue_Text_Motes_Label>
+  <CM_Callouts_Settings_Queue_Text_Motes_Description>When enabled, text motes will be queued and released over time to keep them from overlapping as much.</CM_Callouts_Settings_Queue_Text_Motes_Description>
+
   <CM_Callouts_Settings_Attach_Callout_Text_Label>Attach callout text to caller</CM_Callouts_Settings_Attach_Callout_Text_Label>
   <CM_Callouts_Settings_Attach_Callout_Text_Description>When enabled, callout text hovers above the caller's head instead of flying out.</CM_Callouts_Settings_Attach_Callout_Text_Description>
   
