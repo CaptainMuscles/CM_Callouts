@@ -60,7 +60,7 @@ namespace CM_Callouts
                 {
                     if (recipientPartsDestroyed[i])
                     {
-                        MoteMaker.ThrowText(thingVector3, thingMap, recipientPartsDamaged[i].def.label, Color.magenta);
+                        CalloutTracker.CreateWoundTextMote(thingVector3, thingMap, recipientPartsDamaged[i].def.label, Color.magenta);
                     }
                     else
                     {
