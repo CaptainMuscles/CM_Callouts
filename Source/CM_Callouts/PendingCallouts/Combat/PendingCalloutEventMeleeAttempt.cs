@@ -10,58 +10,22 @@ using Verse.Grammar;
 
 namespace CM_Callouts.PendingCallouts.Combat
 {
-    public class PendingCalloutEventMeleeAttempt : PendingCalloutEvent
+    public class PendingCalloutEventMeleeAttempt : PendingCalloutEventDoublePawn
     {
-        public Pawn initiator = null;
-        public Pawn recipient = null;
         public Verb verb = null;
 
         public PendingCalloutEventMeleeAttempt(Pawn _initiator, Pawn _recipient, Verb _verb)
+            : base(_initiator, _recipient, CalloutDefOf.CM_Callouts_RulePack_Melee_Attack, null)
         {
-            initiator = _initiator;
-            recipient = _recipient;
             verb = _verb;
         }
 
-        public override void AttemptCallout()
+        protected override GrammarRequest PrepareGrammarRequest(RulePackDef rulePack)
         {
-            base.AttemptCallout();
-
-            CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-            if (calloutTracker != null)
-            {
-                bool initiatorCallout = Rand.Bool && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Melee_Attack) && CalloutUtility.CanCalloutNow(initiator);
-
-                if (initiatorCallout)
-                    DoInitiatorCallout(calloutTracker);
-            }
-        }
-
-        private void DoInitiatorCallout(CalloutTracker calloutTracker)
-        {
-            RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Melee_Attack;
-            GrammarRequest grammarRequest = PrepareGrammarRequest(rulePack);
-            calloutTracker.RequestCallout(initiator, rulePack, grammarRequest);
-        }
-
-        private void DoRecipientCallout(CalloutTracker calloutTracker)
-        {
-            RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Melee_Attack_Received;
-            GrammarRequest grammarRequest = PrepareGrammarRequest(rulePack);
-            calloutTracker.RequestCallout(recipient, rulePack, grammarRequest);
-        }
-
-        private GrammarRequest PrepareGrammarRequest(RulePackDef rulePack)
-        {
-            GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
+            GrammarRequest grammarRequest = base.PrepareGrammarRequest(rulePack);
 
             if (verb != null && verb.maneuver != null && verb.maneuver.combatLogRulesHit != null)
                 grammarRequest.Includes.Add(verb.maneuver.combatLogRulesHit);
-
-            CalloutUtility.CollectPawnRules(initiator, "INITIATOR", ref grammarRequest);
-
-            if (recipient != null)
-                CalloutUtility.CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
 
             return grammarRequest;
         }

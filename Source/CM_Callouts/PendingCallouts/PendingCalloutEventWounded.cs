@@ -10,44 +10,17 @@ using Verse.Grammar;
 
 namespace CM_Callouts.PendingCallouts
 {
-    public class PendingCalloutEventWounded : PendingCalloutEvent
+    public class PendingCalloutEventWounded : PendingCalloutEventSinglePawn
     {
-        public Pawn recipient = null;
-
-        public PendingCalloutEventWounded(Pawn _recipient)
+        public PendingCalloutEventWounded(Pawn _initiator)
+            : base(_initiator, CalloutDefOf.CM_Callouts_RulePack_Wounded)
         {
-            recipient = _recipient;
         }
 
-        public override void AttemptCallout()
+        protected override GrammarRequest PrepareGrammarRequest(RulePackDef rulePack)
         {
-            base.AttemptCallout();
-
-            CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-            if (calloutTracker != null)
-            {
-                //bool recipientCallout = calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Wounded) && CalloutUtility.CanCalloutNow(recipient);
-                bool recipientCallout = Rand.Chance(CalloutMod.settings.baseCalloutChance) && CalloutUtility.CanCalloutNow(recipient);
-
-                if (recipientCallout)
-                    DoRecipientCallout(calloutTracker);
-            }
-        }
-
-        private void DoRecipientCallout(CalloutTracker calloutTracker)
-        {
-            RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Wounded;
-            GrammarRequest grammarRequest = PrepareGrammarRequest(rulePack);
-            calloutTracker.RequestCallout(recipient, rulePack, grammarRequest);
-        }
-
-        private GrammarRequest PrepareGrammarRequest(RulePackDef rulePack)
-        {
-            GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
-
-            CalloutUtility.CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
+            GrammarRequest grammarRequest = base.PrepareGrammarRequest(rulePack);
             grammarRequest.Rules.AddRange(PlayLogEntryUtility.RulesForDamagedParts("PART", body, bodyPartsDamaged, bodyPartsDestroyed, grammarRequest.Constants));
-
             return grammarRequest;
         }
     }

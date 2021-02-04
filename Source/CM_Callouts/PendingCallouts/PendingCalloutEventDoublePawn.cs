@@ -49,11 +49,14 @@ namespace CM_Callouts.PendingCallouts
             CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
             if (calloutTracker != null)
             {
-                bool initiatorCalloutForced = (Prefs.DevMode && CalloutMod.settings.forceInitiatorCallouts);
-                bool recipientCalloutForced = (Prefs.DevMode && CalloutMod.settings.forceRecipientCallouts);
+                bool hasInitiatorCallout = initiatorRulePack != null;
+                bool hasRecipientCallout = recipientRulePack != null;
 
-                bool initiatorCallout = initiatorCalloutForced || (!recipientCalloutForced && Rand.Bool && calloutTracker.CheckCalloutChance(initiatorRulePack) && CalloutUtility.CanCalloutNow(initiator));
-                bool recipientCallout = recipientCalloutForced || (Rand.Bool && calloutTracker.CheckCalloutChance(recipientRulePack) && CalloutUtility.CanCalloutNow(initiator));
+                bool initiatorCalloutForced = (hasInitiatorCallout && Prefs.DevMode && CalloutMod.settings.forceInitiatorCallouts);
+                bool recipientCalloutForced = (hasRecipientCallout && Prefs.DevMode && CalloutMod.settings.forceRecipientCallouts);
+
+                bool initiatorCallout = hasInitiatorCallout && (initiatorCalloutForced || ((!hasRecipientCallout || Rand.Bool) && calloutTracker.CheckCalloutChance(initiatorRulePack) && CalloutUtility.CanCalloutNow(initiator) && !recipientCalloutForced));
+                bool recipientCallout = hasRecipientCallout && (recipientCalloutForced || ((!hasInitiatorCallout || Rand.Bool) && calloutTracker.CheckCalloutChance(recipientRulePack) && CalloutUtility.CanCalloutNow(initiator)));
 
                 if (initiatorCallout)
                     DoInitiatorCallout(calloutTracker);

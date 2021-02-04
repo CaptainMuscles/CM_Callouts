@@ -34,23 +34,6 @@ namespace CM_Callouts
             return (targetPawn != null && (CalloutMod.settings.allowCalloutsWhenTargetingAnimals || targetPawn.RaceProps.Humanlike));
         }
 
-        public static void AttemptDraftedCallout(Pawn pawn)
-        {
-            CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-            if (calloutTracker != null)
-            {
-                if (CalloutUtility.CanCalloutNow(pawn))
-                {
-                    RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Drafted;
-
-                    GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
-                    CollectPawnRules(pawn, "INITIATOR", ref grammarRequest);
-
-                    calloutTracker.RequestCallout(pawn, rulePack, grammarRequest);
-                }
-            }
-        }
-
         public static void CollectPawnRules(Pawn pawn, string symbol, ref GrammarRequest grammarRequest)
         {
             grammarRequest.Rules.AddRange(GrammarUtility.RulesForPawn(symbol, pawn));

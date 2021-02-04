@@ -6,6 +6,8 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
+using CM_Callouts.PendingCallouts;
+
 namespace CM_Callouts
 {
     [StaticConstructorOnStartup]
@@ -29,9 +31,7 @@ namespace CM_Callouts
             {
                 if (___draftedInt && wereDrafted)
                 {
-                    CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-                    if (calloutTracker != null && calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Drafted))
-                        CalloutUtility.AttemptDraftedCallout(__instance.pawn);
+                    new PendingCalloutEventSinglePawn(__instance.pawn, CalloutDefOf.CM_Callouts_RulePack_Drafted).AttemptCallout();
                 }
             }
         }

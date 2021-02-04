@@ -27,6 +27,10 @@ namespace CM_Callouts
                 if (!(initiator is Pawn))
                     return;
 
+
+                if (recipient != originalTarget)
+                    return;
+
                 if (recipient is Pawn && CalloutUtility.CanCalloutNow(initiator) && CalloutUtility.CanCalloutAtTarget(recipient))
                 {
                     CalloutUtility.pendingCallout = new PendingCalloutEventRangedImpact(initiator as Pawn, recipient as Pawn, originalTarget as Pawn, weaponDef, projectileDef, coverDef);

@@ -484,7 +484,7 @@
 		<li>rule(SPICY!=true)->my [PersonalCharacteristic] should come in handy!</li>
 		
 		<li>rule->for [INITIATOR_factionName]!</li>
-		<li>rule->let's make [INITIATOR_factionName] great again!</li>
+		<li>rule->make [INITIATOR_factionName] great again!</li>
 		<li>rule->you have my [INITIATOR_WEAPON_label]!</li>
 		<li>rule->this is my [INITIATOR_WEAPON_label], there are many like it, but this one is mine.</li>
 		<li>rule->ready to roll!</li>
