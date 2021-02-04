@@ -17,8 +17,8 @@ namespace CM_Callouts.Patches
         [HarmonyPatch("DoExecutionByCut", MethodType.Normal)]
         public static class ExecutionUtility_DoExecutionByCut
         {
-            [HarmonyPostfix]
-            public static void Postfix(Pawn executioner, Pawn victim)
+            [HarmonyPrefix]
+            public static void Prefix(Pawn executioner, Pawn victim)
             {
                 if (!victim.AnimalOrWildMan())
                     return;

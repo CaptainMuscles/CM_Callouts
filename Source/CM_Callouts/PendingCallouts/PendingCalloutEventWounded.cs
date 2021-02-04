@@ -14,8 +14,6 @@ namespace CM_Callouts.PendingCallouts
     {
         public Pawn recipient = null;
 
-        public override Thing Recipient { get { return recipient; } }
-
         public PendingCalloutEventWounded(Pawn _recipient)
         {
             recipient = _recipient;

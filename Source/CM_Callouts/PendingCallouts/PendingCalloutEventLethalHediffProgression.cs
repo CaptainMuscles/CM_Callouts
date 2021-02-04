@@ -10,49 +10,20 @@ using Verse.Grammar;
 
 namespace CM_Callouts.PendingCallouts
 {
-    public class PendingCalloutEventLethalHediffProgression : PendingCalloutEvent
+    public class PendingCalloutEventLethalHediffProgression : PendingCalloutEventSinglePawn
     {
-        public Pawn recipient = null;
-
         public Hediff hediff = null;
 
-        public override Thing Recipient { get { return recipient; } }
-
-        public PendingCalloutEventLethalHediffProgression(Pawn _recipient, Hediff _hediff)
+        public PendingCalloutEventLethalHediffProgression(Pawn _initiator, Hediff _hediff)
+            : base(_initiator, CalloutDefOf.CM_Callouts_RulePack_Lethal_Hediff_Progression)
         {
-            recipient = _recipient;
             hediff = _hediff;
         }
 
-        public override void AttemptCallout()
+        protected override GrammarRequest PrepareGrammarRequest(RulePackDef rulePack)
         {
-            base.AttemptCallout();
-
-            CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-            if (calloutTracker != null)
-            {
-                //bool recipientCallout = calloutTracker.CheckCalloutChance(CalloutDefOf.CM_Callouts_RulePack_Lethal_Hediff_Progression) && CalloutUtility.CanCalloutNow(recipient);
-                bool recipientCallout = Rand.Chance(CalloutMod.settings.baseCalloutChance) && CalloutUtility.CanCalloutNow(recipient);
-
-                if (recipientCallout)
-                    DoRecipientCallout(calloutTracker);
-            }
-        }
-
-        private void DoRecipientCallout(CalloutTracker calloutTracker)
-        {
-            RulePackDef rulePack = CalloutDefOf.CM_Callouts_RulePack_Lethal_Hediff_Progression;
-            GrammarRequest grammarRequest = PrepareGrammarRequest(rulePack);
-            calloutTracker.RequestCallout(recipient, rulePack, grammarRequest);
-        }
-
-        private GrammarRequest PrepareGrammarRequest(RulePackDef rulePack)
-        {
-            GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
-
-            CalloutUtility.CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
+            GrammarRequest grammarRequest = base.PrepareGrammarRequest(rulePack);
             CalloutUtility.CollectHediffRules(hediff, "CULPRITHEDIFF", ref grammarRequest);
-
             return grammarRequest;
         }
     }

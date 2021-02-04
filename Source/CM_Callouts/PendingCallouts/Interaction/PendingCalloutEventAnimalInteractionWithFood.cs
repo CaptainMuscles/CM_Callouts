@@ -14,8 +14,6 @@ namespace CM_Callouts.PendingCallouts.Interaction
     {
         public ThingDef food = null;
 
-        public override Thing Recipient { get { return recipient; } }
-
         public PendingCalloutEventAnimalInteractionWithFood(Pawn _initiator, Pawn _recipient, ThingDef _food, RulePackDef _initiatorRulePack, RulePackDef _recipientRulePack)
             : base (_initiator, _recipient, _initiatorRulePack, _recipientRulePack)
         {

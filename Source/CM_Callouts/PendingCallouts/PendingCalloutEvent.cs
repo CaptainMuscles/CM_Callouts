@@ -16,8 +16,6 @@ namespace CM_Callouts.PendingCallouts
         public List<BodyPartRecord> bodyPartsDamaged = new List<BodyPartRecord>();
         public List<bool> bodyPartsDestroyed = new List<bool>();
 
-        public abstract Thing Recipient { get; }
-
         public void FillBodyPartInfo(BodyDef _body, List<BodyPartRecord> _bodyPartsDamaged, List<bool> _bodyPartsDestroyed)
         {
             body = _body;

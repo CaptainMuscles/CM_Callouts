@@ -16,8 +16,6 @@ namespace CM_Callouts.PendingCallouts.Combat
         public Pawn recipient = null;
         public Verb_LaunchProjectile verb = null;
 
-        public override Thing Recipient { get { return recipient; } }
-
         public PendingCalloutEventRangedAttempt(Pawn _initiator, Pawn _recipient, Verb_LaunchProjectile _verb)
         {
             initiator = _initiator;

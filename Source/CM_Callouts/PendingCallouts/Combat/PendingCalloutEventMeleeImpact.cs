@@ -15,8 +15,6 @@ namespace CM_Callouts.PendingCallouts.Combat
         public Pawn initiator = null;
         public Pawn recipient = null;
 
-        public override Thing Recipient { get { return recipient; } }
-
         public PendingCalloutEventMeleeImpact(Pawn _initiator, Pawn _recipient)
         {
             initiator = _initiator;

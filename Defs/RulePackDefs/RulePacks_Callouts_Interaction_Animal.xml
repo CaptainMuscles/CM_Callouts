@@ -279,6 +279,7 @@
 		<!-- RECIPIENT -->
 		<li>rule->see you on the other side, [RECIPIENT_name].</li>
 		<li>rule->sorry [callout_noun_diminutive_animal], but it's got to be done.</li>
+		<li>rule->thank you for your sacrifice, [callout_noun_diminutive_animal].</li>
 		<li>rule(SPICY==true)->guess what I'm having for [callout_noun_meal]? You!</li>
 		
       </rulesStrings>
@@ -293,11 +294,11 @@
     <rulePack>
       <rulesStrings>
 	  
-	    <li>rule->was I a good [RECIPIENT_kind]?...</li>
+	    <li>rule->was I a good [RECIPIENT_kind]?</li>
 		<li>rule(BONDED==true)->et tu, [INITIATOR_name]?</li>
 		<li>rule->I'll say hello to [callout_noun_afterlife_greeter] for you...</li>
 		<li>rule->my time has come...</li>
-		<li>rule(SPICY==true, p=2)->I hope you choke on me, [callout_insult]!</li>
+		<li>rule(SPICY==true,p=2)->I hope you choke on me, [callout_insult]!</li>
 
       </rulesStrings>
     </rulePack>

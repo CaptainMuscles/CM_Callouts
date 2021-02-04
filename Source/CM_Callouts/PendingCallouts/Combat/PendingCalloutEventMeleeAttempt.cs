@@ -16,8 +16,6 @@ namespace CM_Callouts.PendingCallouts.Combat
         public Pawn recipient = null;
         public Verb verb = null;
 
-        public override Thing Recipient { get { return recipient; } }
-
         public PendingCalloutEventMeleeAttempt(Pawn _initiator, Pawn _recipient, Verb _verb)
         {
             initiator = _initiator;

@@ -455,8 +455,8 @@
 		<li>rule->ouch!</li>
 		<li>rule->this [CULPRITHEDIFF_label] will be the end of me!</li>
 		<li>rule->I think I hear [callout_noun_afterlife_greeter] calling...</li>
-		<li>rule->its you and me 'til the end, [RECIPIENT_WEAPON_title]</li>
-		<li>rule->this may be the end of ol' [RECIPIENT_label]</li>
+		<li>rule->its you and me 'til the end, [INITIATOR_WEAPON_title]</li>
+		<li>rule->this may be the end of ol' [INITIATOR_label]</li>
 		
 		<li>rule(CULPRITHEDIFF_stage==extreme)->goodbye cruel world!</li>
 

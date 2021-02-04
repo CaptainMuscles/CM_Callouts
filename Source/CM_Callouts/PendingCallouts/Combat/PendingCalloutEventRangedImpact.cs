@@ -19,8 +19,6 @@ namespace CM_Callouts.PendingCallouts.Combat
         public ThingDef projectileDef = null;
         public ThingDef coverDef = null;
 
-        public override Thing Recipient { get { return recipient; } }
-
         public PendingCalloutEventRangedImpact(Pawn _initiator, Pawn _recipient, Pawn _originalTarget, ThingDef _weaponDef, ThingDef _projectileDef, ThingDef _coverDef)
         {
             initiator = _initiator;
