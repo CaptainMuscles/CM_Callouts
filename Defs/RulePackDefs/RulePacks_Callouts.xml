@@ -29,27 +29,27 @@
     <rulePack>
       <rulesStrings>
 	  
-	    <li>destroyed_part->[recipient_part_destroyed0_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed1_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed2_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed3_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed4_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed5_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed6_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed7_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed8_label]</li>
-		<li>destroyed_part->[recipient_part_destroyed9_label]</li>
+	    <li>destroyed_part->[PART_destroyed0_label]</li>
+		<li>destroyed_part->[PART_destroyed1_label]</li>
+		<li>destroyed_part->[PART_destroyed2_label]</li>
+		<li>destroyed_part->[PART_destroyed3_label]</li>
+		<li>destroyed_part->[PART_destroyed4_label]</li>
+		<li>destroyed_part->[PART_destroyed5_label]</li>
+		<li>destroyed_part->[PART_destroyed6_label]</li>
+		<li>destroyed_part->[PART_destroyed7_label]</li>
+		<li>destroyed_part->[PART_destroyed8_label]</li>
+		<li>destroyed_part->[PART_destroyed9_label]</li>
 		
-		<li>damaged_part->[recipient_part_damaged0_label]</li>
-		<li>damaged_part->[recipient_part_damaged1_label]</li>
-		<li>damaged_part->[recipient_part_damaged2_label]</li>
-		<li>damaged_part->[recipient_part_damaged3_label]</li>
-		<li>damaged_part->[recipient_part_damaged4_label]</li>
-		<li>damaged_part->[recipient_part_damaged5_label]</li>
-		<li>damaged_part->[recipient_part_damaged6_label]</li>
-		<li>damaged_part->[recipient_part_damaged7_label]</li>
-		<li>damaged_part->[recipient_part_damaged8_label]</li>
-		<li>damaged_part->[recipient_part_damaged9_label]</li>
+		<li>damaged_part->[PART_damaged0_label]</li>
+		<li>damaged_part->[PART_damaged1_label]</li>
+		<li>damaged_part->[PART_damaged2_label]</li>
+		<li>damaged_part->[PART_damaged3_label]</li>
+		<li>damaged_part->[PART_damaged4_label]</li>
+		<li>damaged_part->[PART_damaged5_label]</li>
+		<li>damaged_part->[PART_damaged6_label]</li>
+		<li>damaged_part->[PART_damaged7_label]</li>
+		<li>damaged_part->[PART_damaged8_label]</li>
+		<li>damaged_part->[PART_damaged9_label]</li>
 		
 		
 		<li>callout_potential_insult->!</li>
@@ -365,14 +365,14 @@
 		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere!</li>
 		
 		<li>rule->ouch!</li>
-		<li>rule(recipient_part_destroyed_count==0)->ow, my [damaged_part]!</li>
+		<li>rule(PART_destroyed_count==0)->ow, my [damaged_part]!</li>
 		<li>rule->goodbye, my [destroyed_part]!</li>
 		
 		<li>rule->oh, [callout_curse]! not my [destroyed_part]!</li>
 		<li>rule->aw, [callout_curse]!</li>
 		<li>rule->[callout_curse]!</li>
 		
-		<li>rule(MILD!=true,recipient_part_destroyed_count==0)->pfft, that didn't even hurt[callout_potential_insult]</li>
+		<li>rule(MILD!=true,PART_destroyed_count==0)->pfft, that didn't even hurt[callout_potential_insult]</li>
 		<li>rule(SPICY==true)->ha! I don't need my [destroyed_part] to kill you[callout_potential_insult]</li>
 		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway[callout_potential_insult]</li>
 
@@ -425,13 +425,13 @@
 		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere...</li>
 		
 		<li>rule->ouch!</li>
-		<li>rule(recipient_part_destroyed_count==0)->ow, my [damaged_part]!</li>
+		<li>rule(PART_destroyed_count==0)->ow, my [damaged_part]!</li>
 		<li>rule->goodbye, my [destroyed_part]!</li>
 		<li>rule->oh, [callout_curse]! not my [destroyed_part]!</li>
 		<li>rule->aw, [callout_curse]!</li>
 		<li>rule->[callout_curse]!</li>
 		
-		<li>rule(MILD!=true,recipient_part_destroyed_count==0)->pfft, that didn't even hurt.</li>
+		<li>rule(MILD!=true,PART_destroyed_count==0)->pfft, that didn't even hurt.</li>
 		
 		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway!</li>
 

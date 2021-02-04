@@ -46,7 +46,7 @@ namespace CM_Callouts.PendingCallouts
             GrammarRequest grammarRequest = new GrammarRequest { Includes = { rulePack } };
 
             CalloutUtility.CollectPawnRules(recipient, "RECIPIENT", ref grammarRequest);
-            grammarRequest.Rules.AddRange(PlayLogEntryUtility.RulesForDamagedParts("recipient_part", body, bodyPartsDamaged, bodyPartsDestroyed, grammarRequest.Constants));
+            grammarRequest.Rules.AddRange(PlayLogEntryUtility.RulesForDamagedParts("PART", body, bodyPartsDamaged, bodyPartsDestroyed, grammarRequest.Constants));
 
             return grammarRequest;
         }
