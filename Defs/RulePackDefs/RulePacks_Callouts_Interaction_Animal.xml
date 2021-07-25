@@ -280,6 +280,7 @@
       <rulesStrings>
 		<!-- INITIATOR -->
 		<!-- RECIPIENT -->
+    <li>rule->I'm sorry, little one.</li>
 		<li>rule->see you on the other side, [RECIPIENT_name].</li>
 		<li>rule->sorry [callout_noun_diminutive_animal], but it's got to be done.</li>
 		<li>rule->thank you for your sacrifice, [callout_noun_diminutive_animal].</li>

@@ -15,7 +15,7 @@ namespace CM_Callouts
     public static class Verb_Patches
     {
         [HarmonyPatch(typeof(Verb))]
-        [HarmonyPatch("TryStartCastOn", new Type[] { typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(bool), typeof(bool) })]
+        [HarmonyPatch("TryStartCastOn", new Type[] { typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(bool), typeof(bool), typeof(bool) })]
         public static class Verb_TryStartCastOn
         {
             [HarmonyPostfix]

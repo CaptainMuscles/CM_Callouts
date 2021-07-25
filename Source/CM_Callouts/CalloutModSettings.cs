@@ -78,15 +78,15 @@ namespace CM_Callouts
             listing_Standard.GapLine();
 
             listing_Standard.Label("CM_Callouts_Settings_Show_Wound_Level_Label".Translate(), -1, "CM_Callouts_Settings_Show_Wound_Level_Description".Translate());
-            if (listing_Standard.RadioButton_NewTemp("CM_Callouts_Settings_Show_Wounds_None_Label".Translate(), showWoundLevel == ShowWoundLevel.None, 8f, "CM_Callouts_Settings_Show_Wounds_None_Description".Translate()))
+            if (listing_Standard.RadioButton("CM_Callouts_Settings_Show_Wounds_None_Label".Translate(), showWoundLevel == ShowWoundLevel.None, 8f, "CM_Callouts_Settings_Show_Wounds_None_Description".Translate()))
                 showWoundLevel = ShowWoundLevel.None;
-            if (listing_Standard.RadioButton_NewTemp("CM_Callouts_Settings_Show_Wounds_Destroyed_Label".Translate(), showWoundLevel == ShowWoundLevel.Destroyed, 8f, "CM_Callouts_Settings_Show_Wounds_Destroyed_Description".Translate()))
+            if (listing_Standard.RadioButton("CM_Callouts_Settings_Show_Wounds_Destroyed_Label".Translate(), showWoundLevel == ShowWoundLevel.Destroyed, 8f, "CM_Callouts_Settings_Show_Wounds_Destroyed_Description".Translate()))
                 showWoundLevel = ShowWoundLevel.Destroyed;
-            if (listing_Standard.RadioButton_NewTemp("CM_Callouts_Settings_Show_Wounds_Major_Label".Translate(), showWoundLevel == ShowWoundLevel.Major, 8f, "CM_Callouts_Settings_Show_Wounds_Major_Description".Translate()))
+            if (listing_Standard.RadioButton("CM_Callouts_Settings_Show_Wounds_Major_Label".Translate(), showWoundLevel == ShowWoundLevel.Major, 8f, "CM_Callouts_Settings_Show_Wounds_Major_Description".Translate()))
                 showWoundLevel = ShowWoundLevel.Major;
-            if (listing_Standard.RadioButton_NewTemp("CM_Callouts_Settings_Show_Wounds_Serious_Label".Translate(), showWoundLevel == ShowWoundLevel.Serious, 8f, "CM_Callouts_Settings_Show_Wounds_Serious_Description".Translate()))
+            if (listing_Standard.RadioButton("CM_Callouts_Settings_Show_Wounds_Serious_Label".Translate(), showWoundLevel == ShowWoundLevel.Serious, 8f, "CM_Callouts_Settings_Show_Wounds_Serious_Description".Translate()))
                 showWoundLevel = ShowWoundLevel.Serious;
-            if (listing_Standard.RadioButton_NewTemp("CM_Callouts_Settings_Show_Wounds_All_Label".Translate(), showWoundLevel == ShowWoundLevel.All, 8f, "CM_Callouts_Settings_Show_Wounds_All_Description".Translate()))
+            if (listing_Standard.RadioButton("CM_Callouts_Settings_Show_Wounds_All_Label".Translate(), showWoundLevel == ShowWoundLevel.All, 8f, "CM_Callouts_Settings_Show_Wounds_All_Description".Translate()))
                 showWoundLevel = ShowWoundLevel.All;
 
             listing_Standard.GapLine();
