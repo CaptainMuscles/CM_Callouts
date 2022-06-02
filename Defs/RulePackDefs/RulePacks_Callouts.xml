@@ -4,10 +4,10 @@
   <CM_Callouts.CalloutConstantByTraitDef>
 	<defName>CM_Callout_SpicyTraits</defName>
 	<traits>
-	  <li>Bloodlust</li>
-      <li>Cannibal</li>
-	  <li>Psychopath</li>
-	  <li>Abrasive</li>
+	  <li>Кровожадность</li>
+      <li>Каннибализм</li>
+	  <li>Психопатия</li>
+	  <li>Грубость</li>
     </traits>
 	<name>SPICY</name>
 	<value>true</value>
@@ -16,8 +16,8 @@
   <CM_Callouts.CalloutConstantByTraitDef>
 	<defName>CM_Callout_MildTraits</defName>
 	<traits>
-	  <li>Kind</li>
-      <li>Wimp</li>
+	  <li>Доброта</li>
+      <li>Хлюпик</li>
     </traits>
 	<name>MILD</name>
 	<value>true</value>
@@ -59,143 +59,143 @@
 		
 		
 		<li>callout_insult->[callout_noun_insulting]</li>
-		<li>callout_insult(p=0.25)->you [callout_adjective_insulting] [callout_noun_insulting]</li>
+		<li>callout_insult(p=0.25)->ты [callout_adjective_insulting] [callout_noun_insulting]</li>
 		
 	  
-	    <li>callout_noun_afterlife_greeter->the devil</li>
-		<li>callout_noun_afterlife_greeter->the grim reaper</li>
-		<li>callout_noun_afterlife_greeter->the angels</li>
-		<li>callout_noun_afterlife_greeter->Kim Jong-il</li>
-		<li>callout_noun_afterlife_greeter->Jebus</li>
-		<li>callout_noun_afterlife_greeter->Macho Man Randy Savage</li>
+	    <li>callout_noun_afterlife_greeter->дьявол</li>
+		<li>callout_noun_afterlife_greeter->смерть</li>
+		<li>callout_noun_afterlife_greeter->ангелы</li>
+		<li>callout_noun_afterlife_greeter->Ким Джонг-ил</li>
+		<li>callout_noun_afterlife_greeter->Иибус</li>
+		<li>callout_noun_afterlife_greeter->Дикий Ренди Мачо-Мэн</li>
 		
 		
-		<li>callout_verb_decorate->decorate</li>
-		<li>callout_verb_decorate->adorn</li>
-		<li>callout_verb_decorate->festoon</li>
-		<li>callout_verb_decorate->drape</li>
-		<li>callout_verb_decorate->paint</li>
-		<li>callout_verb_decorate->cover</li>
+		<li>callout_verb_decorate->украсить</li>
+		<li>callout_verb_decorate->украшать</li>
+		<li>callout_verb_decorate->вешать гирлянду</li>
+		<li>callout_verb_decorate->обвесить</li>
+		<li>callout_verb_decorate->красить</li>
+		<li>callout_verb_decorate->покрыть</li>
 		
-		<li>callout_verb_rip->rip</li>
-		<li>callout_verb_rip->cut</li>
-		<li>callout_verb_rip->tear</li>
+		<li>callout_verb_rip->разорвать</li>
+		<li>callout_verb_rip->резать</li>
+		<li>callout_verb_rip->вспарывать</li>
 		
-		<li>callout_noun_room->bedroom</li>
-		<li>callout_noun_room->kitchen</li>
-		<li>callout_noun_room->bathroom</li>
-		<li>callout_noun_room->dining room</li>
-		<li>callout_noun_room->foyer</li>
-		<li>callout_noun_room->rec room</li>
-		<li>callout_noun_room->closet</li>
-		<li>callout_noun_room->garden</li>
+		<li>callout_noun_room->спальня</li>
+		<li>callout_noun_room->кухня</li>
+		<li>callout_noun_room->ванная</li>
+		<li>callout_noun_room->столовая</li>
+		<li>callout_noun_room->коридор</li>
+		<li>callout_noun_room->комната отдыха</li>
+		<li>callout_noun_room->уборная</li>
+		<li>callout_noun_room->сад</li>
 		
 		<li>callout_noun_bodypart->callout_noun_bodypart_external</li>
 		<li>callout_noun_bodypart->callout_noun_bodypart_internal</li>
 		
-		<li>callout_noun_bodypart_external->leg</li>
-		<li>callout_noun_bodypart_external->arm</li>
-		<li>callout_noun_bodypart_external->face</li>
+		<li>callout_noun_bodypart_external->нога</li>
+		<li>callout_noun_bodypart_external->рука</li>
+		<li>callout_noun_bodypart_external->лицо</li>
 		
-		<li>callout_noun_bodypart_internal->heart</li>
-		<li>callout_noun_bodypart_internal->brain</li>
-		<li>callout_noun_bodypart_internal->liver</li>
-		<li>callout_noun_bodypart_internal->lung</li>
-		<li>callout_noun_bodypart_internal->pancreas</li>
-		<li>callout_noun_bodypart_internal->intestine</li>
-		<li>callout_noun_bodypart_internal->stomach</li>
-		<li>callout_noun_bodypart_internal->spine</li>
+		<li>callout_noun_bodypart_internal->сердце</li>
+		<li>callout_noun_bodypart_internal->мозг</li>
+		<li>callout_noun_bodypart_internal->печень</li>
+		<li>callout_noun_bodypart_internal->легкое</li>
+		<li>callout_noun_bodypart_internal->поджелудочная</li>
+		<li>callout_noun_bodypart_internal->кишки</li>
+		<li>callout_noun_bodypart_internal->желудок</li>
+		<li>callout_noun_bodypart_internal->позвоночник</li>
 		
-		<li>callout_noun_orifice->ass</li>
-		<li>callout_noun_orifice->mouth</li>
-		<li>callout_noun_orifice->ear</li>
-		<li>callout_noun_orifice->nose</li>
+		<li>callout_noun_orifice->жопа</li>
+		<li>callout_noun_orifice->глотка</li>
+		<li>callout_noun_orifice->проушина</li>
+		<li>callout_noun_orifice->ноздря</li>
 		
-		<li>callout_noun_meal->breakfast</li>
-		<li>callout_noun_meal->second breakfast</li>
-		<li>callout_noun_meal->brunch</li>
-		<li>callout_noun_meal->lunch</li>
-		<li>callout_noun_meal->dinner</li>
-		<li>callout_noun_meal->a snack</li>
+		<li>callout_noun_meal->завтрак</li>
+		<li>callout_noun_meal->второй завтрак</li>
+		<li>callout_noun_meal->поздний завтрак</li>
+		<li>callout_noun_meal->обед</li>
+		<li>callout_noun_meal->ужин</li>
+		<li>callout_noun_meal->перекус</li>
 		
 		
-		<li>callout_noun_insulting(MILD==true)->ninnymuggins</li>
+		<li>callout_noun_insulting(MILD==true)->дурачок</li>
 		
-		<li>callout_noun_insulting(SPICY!=true)->jerk</li>
+		<li>callout_noun_insulting(SPICY!=true)->мудила</li>
 		
-		<li>callout_noun_insulting->buffoon</li>
-		<li>callout_noun_insulting->bonehead</li>
-		<li>callout_noun_insulting->dirtbag</li>
-		<li>callout_noun_insulting->boot-licker</li>
-		<li>callout_noun_insulting->moron</li>
-		<li>callout_noun_insulting->idiot</li>
-		<li>callout_noun_insulting->animal</li>
-		<li>callout_noun_insulting->maggot</li>
-		<li>callout_noun_insulting->worm</li>
-		<li>callout_noun_insulting->wretch</li>
-		<li>callout_noun_insulting->poltroon</li>
-		<li>callout_noun_insulting->turd</li>
-		<li>callout_noun_insulting->ass-clown</li>
-		<li>callout_noun_insulting->cockroach</li>
-		<li>callout_noun_insulting->penis-wrinkle</li>
-		<li>callout_noun_insulting->prick</li>
-		<li>callout_noun_insulting->twat</li>
-		<li>callout_noun_insulting->pissant</li>
-		<li>callout_noun_insulting->wanker</li>
-		<li>callout_noun_insulting->jag</li>
+		<li>callout_noun_insulting->бычара</li>
+		<li>callout_noun_insulting->тупица</li>
+		<li>callout_noun_insulting->мешок говна</li>
+		<li>callout_noun_insulting->подкаблучник</li>
+		<li>callout_noun_insulting->дебил</li>
+		<li>callout_noun_insulting->идиот</li>
+		<li>callout_noun_insulting->животное</li>
+		<li>callout_noun_insulting->опарыш</li>
+		<li>callout_noun_insulting->червяк</li>
+		<li>callout_noun_insulting->негодяй</li>
+		<li>callout_noun_insulting->трус</li>
+		<li>callout_noun_insulting->дерьма кусок</li>
+		<li>callout_noun_insulting->сраный клоун</li>
+		<li>callout_noun_insulting->таракан</li>
+		<li>callout_noun_insulting->хер морщинистый</li>
+		<li>callout_noun_insulting->хуй</li>
+		<li>callout_noun_insulting->пизда</li>
+		<li>callout_noun_insulting->ссыкун</li>
+		<li>callout_noun_insulting->дрочер</li>
+		<li>callout_noun_insulting->зубрила</li>
 
-		<li>callout_noun_insulting(MILD!=true)->assworm</li>
-        <li>callout_noun_insulting(MILD!=true)->fucktard</li>
-		<li>callout_noun_insulting(MILD!=true)->asshole</li>
-		<li>callout_noun_insulting(MILD!=true)->shithead</li>
-		<li>callout_noun_insulting(MILD!=true)->shit-sack</li>
-		<li>callout_noun_insulting(MILD!=true)->fuck-face</li>
-		<li>callout_noun_insulting(MILD!=true)->fuck-knuckle</li>
-		<li>callout_noun_insulting(MILD!=true)->cunt</li>
-		<li>callout_noun_insulting(MILD!=true)->cock-sucker</li>
-		<li>callout_noun_insulting(MILD!=true)->motherfucker</li>
-		<li>callout_noun_insulting(MILD!=true)->bitch</li>
-		<li>callout_noun_insulting(MILD!=true)->bastard</li>
-		<li>callout_noun_insulting(MILD!=true)->son-of-a-bitch</li>
+		<li>callout_noun_insulting(MILD!=true)->глист</li>
+        <li>callout_noun_insulting(MILD!=true)->ебаное говно</li>
+		<li>callout_noun_insulting(MILD!=true)->говнюк</li>
+		<li>callout_noun_insulting(MILD!=true)->придурок</li>
+		<li>callout_noun_insulting(MILD!=true)->говна кусок</li>
+		<li>callout_noun_insulting(MILD!=true)->ебанат</li>
+		<li>callout_noun_insulting(MILD!=true)->еблан</li>
+		<li>callout_noun_insulting(MILD!=true)->шлюха</li>
+		<li>callout_noun_insulting(MILD!=true)->хуесос</li>
+		<li>callout_noun_insulting(MILD!=true)->мамкоёб</li>
+		<li>callout_noun_insulting(MILD!=true)->сука</li>
+		<li>callout_noun_insulting(MILD!=true)->ублюдок</li>
+		<li>callout_noun_insulting(MILD!=true)->сукин сын</li>
 		
 		
-		<li>callout_adjective_insulting(MILD==true)->cotton-headed</li>
+		<li>callout_adjective_insulting(MILD==true)->наивный</li>
 		
-		<li>callout_adjective_insulting->absolute</li>
-		<li>callout_adjective_insulting->total</li>
-		<li>callout_adjective_insulting->rat-faced</li>
-		<li>callout_adjective_insulting->ugly</li>
-		<li>callout_adjective_insulting->meat-headed</li>
-		<li>callout_adjective_insulting->stupid</li>
-		<li>callout_adjective_insulting->half-witted</li>
-		<li>callout_adjective_insulting->simple-minded</li>
-		<li>callout_adjective_insulting->worthless</li>
-		<li>callout_adjective_insulting->festering</li>
-		<li>callout_adjective_insulting->dirty</li>
-		<li>callout_adjective_insulting->filthy</li>
-		<li>callout_adjective_insulting->stinking</li>
-		<li>callout_adjective_insulting->simpering</li>
-		<li>callout_adjective_insulting->lily-livered</li>
-		<li>callout_adjective_insulting->yellow-bellied</li>
-		<li>callout_adjective_insulting->gutless</li>
-		<li>callout_adjective_insulting->craven</li>
+		<li>callout_adjective_insulting->абсолютный</li>
+		<li>callout_adjective_insulting->полный</li>
+		<li>callout_adjective_insulting->крысолицый</li>
+		<li>callout_adjective_insulting->уродливый</li>
+		<li>callout_adjective_insulting->тупоголовый</li>
+		<li>callout_adjective_insulting->глупый</li>
+		<li>callout_adjective_insulting->полоумный</li>
+		<li>callout_adjective_insulting->легкомысленный</li>
+		<li>callout_adjective_insulting->бесполезный</li>
+		<li>callout_adjective_insulting->гнилой</li>
+		<li>callout_adjective_insulting->грязный</li>
+		<li>callout_adjective_insulting->мерзкий</li>
+		<li>callout_adjective_insulting->вонючий</li>
+		<li>callout_adjective_insulting->жеманный</li>
+		<li>callout_adjective_insulting->трусливый</li>
+		<li>callout_adjective_insulting->желторотый</li>
+		<li>callout_adjective_insulting->бесхребетный</li>
+		<li>callout_adjective_insulting->ничтожный</li>
         
-		<li>callout_curse(MILD==true)->gosh</li>
-		<li>callout_curse(MILD==true)->darn it</li>
-		<li>callout_curse(MILD==true)->dang it</li>
-		<li>callout_curse(MILD==true)->shucks</li>
-		<li>callout_curse(MILD==true)->poo</li>
-		<li>callout_curse(MILD==true)->fiddlesticks</li>
+		<li>callout_curse(MILD==true)->ух</li>
+		<li>callout_curse(MILD==true)->блять</li>
+		<li>callout_curse(MILD==true)->пиздец</li>
+		<li>callout_curse(MILD==true)->сссс</li>
+		<li>callout_curse(MILD==true)->дерьмо</li>
+		<li>callout_curse(MILD==true)->хрень</li>
 		
-		<li>callout_curse->[Animal] farts</li>
-		<li>callout_curse->crap</li>
-		<li>callout_curse->damn it</li>
-		<li>callout_curse->hell</li>
+		<li>callout_curse->[Animal] пердеж</li>
+		<li>callout_curse->говно</li>
+		<li>callout_curse->ах</li>
+		<li>callout_curse->блять</li>
 		
-		<li>callout_curse(MILD!=true)->shit snacks</li>
-		<li>callout_curse(MILD!=true)->shit</li>
-		<li>callout_curse(MILD!=true)->fuck</li>
-		<li>callout_curse(MILD!=true)->goddamn it</li>
+		<li>callout_curse(MILD!=true)->дерьмо</li>
+		<li>callout_curse(MILD!=true)->срань</li>
+		<li>callout_curse(MILD!=true)->ебать</li>
+		<li>callout_curse(MILD!=true)->срань господня</li>
 		
       </rulesStrings>
     </rulePack>
@@ -211,28 +211,28 @@
     <rulePack>
       <rulesStrings>
 
-		<li>rule(MILD==true)->I'll stop you[callout_potential_insult]</li>
-		<li>rule(MILD==true)->don't make me hurt you[callout_potential_insult]</li>
-		<li>rule(MILD==true)->take that[callout_potential_insult]</li>
+		<li>rule(MILD==true)->Я тебе не дам[callout_potential_insult]</li>
+		<li>rule(MILD==true)->Не заставляй меня тебе вредить[callout_potential_insult]</li>
+		<li>rule(MILD==true)->Лови[callout_potential_insult]</li>
 	    
-		<li>rule->I do as [INITIATOR_WEAPON_title] commands[callout_potential_insult]</li>
-		<li>rule->go to sleep[callout_potential_insult]</li>
-		<li>rule->say hello to my little [INITIATOR_WEAPON_label][callout_potential_insult]</li>
-		<li>rule->time to kiss your ass goodbye[callout_potential_insult]</li>
-		<li>rule->time for a dirt nap[callout_potential_insult]</li>
-		<li>rule->say hello to [callout_noun_afterlife_greeter] for me[callout_potential_insult]</li>
-		<li>rule->end-of-the-line for you[callout_potential_insult]</li>
-		<li>rule->say goodbye[callout_potential_insult]</li>
-		<li>rule->this [Community] ain't big enough for the two of us[callout_potential_insult]</li>
+		<li>rule->Я следую приказам [INITIATOR_WEAPON_title][callout_potential_insult]</li>
+		<li>rule->Поспи[callout_potential_insult]</li>
+		<li>rule->Поздоровайся с моим маленьким [INITIATOR_WEAPON_label][callout_potential_insult]</li>
+		<li>rule->Пора дать твоей жопе прощальный поцелуй[callout_potential_insult]</li>
+		<li>rule->Время поваляться в грязи[callout_potential_insult]</li>
+		<li>rule->Поздоровайся с [callout_noun_afterlife_greeter] за меня[callout_potential_insult]</li>
+		<li>rule->Вот и твой конец[callout_potential_insult]</li>
+		<li>rule->Скажи "прощай"[callout_potential_insult]</li>
+		<li>rule->Это [Community] не вместит нас обоих[callout_potential_insult]</li>
 		
-		<li>rule(MILD!=true)->mommy can't save you now[callout_potential_insult]</li>
-        <li>rule(MILD!=true)->I'll see you in hell[callout_potential_insult]</li>
-        <li>rule(MILD!=true)->wake up, time to die[callout_potential_insult]</li>
-		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label]s don't kill people... I kill people[callout_potential_insult]</li>
-		<li>rule(MILD!=true)->eat shit and die[callout_potential_insult]</li>
+		<li>rule(MILD!=true)->Мамочка тебя уже не спасет[callout_potential_insult]</li>
+        <li>rule(MILD!=true)->Увидимся в аду[callout_potential_insult]</li>
+        <li>rule(MILD!=true)->Просыпайся, пора умирать[callout_potential_insult]</li>
+		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label] не убивает людей... Я убиваю людей[callout_potential_insult]</li>
+		<li>rule(MILD!=true)->Жри говно и умирай[callout_potential_insult]</li>
 		
-		<li>rule(SPICY==true)->I'm going to [callout_verb_decorate] my [callout_noun_room] with your [Gore][callout_potential_insult]</li>
-		<li>rule(SPICY==true)->after this I'll kill your [PersonFamily][callout_potential_insult]</li>
+		<li>rule(SPICY==true)->Я буду [callout_verb_decorate] мою [callout_noun_room] твоими [Gore][callout_potential_insult]</li>
+		<li>rule(SPICY==true)->А потом я убью твою [PersonFamily][callout_potential_insult]</li>
 		
       </rulesStrings>
     </rulePack>
@@ -248,12 +248,12 @@
 	    
 		<li>rule(MILD==true,p=0.1)->yippie kayak, other buckets!</li>
 		
-	    <li>rule->eat [INITIATOR_WEAPON_projectile_labelPlural][callout_potential_insult]</li>
-		<li>rule(p=0.25)->my [INITIATOR_WEAPON_projectile_labelPlural] will blot out the sun[callout_potential_insult]</li>
-		<li>rule->you can't hide behind that [RECIPIENT_COVER_label] forever[callout_potential_insult]</li>
-		<li>rule->keep hugging that [RECIPIENT_COVER_label][callout_potential_insult]</li>
+	    <li>rule->Жри [INITIATOR_WEAPON_projectile_labelPlural][callout_potential_insult]</li>
+		<li>rule(p=0.25)->Мои [INITIATOR_WEAPON_projectile_labelPlural] затмят солнце[callout_potential_insult]</li>
+		<li>rule->Ты не сможешь вечно прятаться за этим [RECIPIENT_COVER_label][callout_potential_insult]</li>
+		<li>rule->Обнимай это [RECIPIENT_COVER_label] дальше[callout_potential_insult]</li>
 		
-		<li>rule(MILD!=true)->I hope you're ready for a [INITIATOR_WEAPON_projectile_label] in your [callout_noun_bodypart_internal][callout_potential_insult]</li>
+		<li>rule(MILD!=true)->Надеюсь, ты готов к [INITIATOR_WEAPON_projectile_label] в твоей [callout_noun_bodypart_internal][callout_potential_insult]</li>
 	    
       </rulesStrings>
     </rulePack>
@@ -267,24 +267,24 @@
     <rulePack>
       <rulesStrings>
 
-		<li>rule->taste my [INITIATOR_WEAPON_stuffLabel][callout_potential_insult]</li>
-        <li>rule->I'll knock your ass into the next quadrum[callout_potential_insult]</li>
-		<li>rule->come get some[callout_potential_insult]</li>
-		<li>rule->I'm going to build a boot factory in your ass[callout_potential_insult]</li>
-		<li>rule->I'm going to beat you like a [Animal][callout_potential_insult]</li>
-		<li>rule->my name is [INITIATOR_label], prepare to be [destroyed_past][callout_potential_insult]</li>
-		<li>rule->I'm going to [damaged_inf] you[callout_potential_insult]</li>
-		<li>rule->I hope you're ready to get [damaged_past][callout_potential_insult]</li>
-		<li>rule->I've crossed oceans of time to [damaged_inf] you[callout_potential_insult]</li>
+		<li>rule->Вкуси моего [INITIATOR_WEAPON_stuffLabel][callout_potential_insult]</li>
+        <li>rule->Я выпну тебя в соседний квадрум[callout_potential_insult]</li>
+		<li>rule->Приди и слови чутка[callout_potential_insult]</li>
+		<li>rule->Я построю в твоей жопе обувную фабрику[callout_potential_insult]</li>
+		<li>rule->Я побью тебя, как [Animal][callout_potential_insult]</li>
+		<li>rule->Меня зовут [INITIATOR_label], готовься быть [destroyed_past][callout_potential_insult]</li>
+		<li>rule->Я тебя [damaged][callout_potential_insult]</li>
+		<li>rule->Надеюсь, ты готов оказаться [damaged_past][callout_potential_insult]</li>
+		<li>rule->Я столько ждал момента, когда смогу [damaged_inf] тебя[callout_potential_insult]</li>
 		
-		<li>rule(MILD!=true)->now you've awakened the [AnimalBadass][callout_potential_insult]</li>
-		<li>rule(MILD!=true)->I'll [callout_verb_rip] you another [callout_noun_orifice]-hole[callout_potential_insult]</li>
-		<li>rule(MILD!=true)->I hope you're ready for a [INITIATOR_WEAPON_label] in your [callout_noun_bodypart_internal][callout_potential_insult]</li>
-		<li>rule(MILD!=true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and beat you to death with it[callout_potential_insult]</li>
+		<li>rule(MILD!=true)->Теперь ты пробудил [AnimalBadass][callout_potential_insult]</li>
+		<li>rule(MILD!=true)->Я [callout_verb_rip] в тебе очередную [callout_noun_orifice][callout_potential_insult]</li>
+		<li>rule(MILD!=true)->Надеюсь, ты готов к [INITIATOR_WEAPON_label] в твоем [callout_noun_bodypart_internal][callout_potential_insult]</li>
+		<li>rule(MILD!=true)->Я [callout_verb_rip] твоё [callout_noun_bodypart_external] и им же забью тебя насмерть[callout_potential_insult]</li>
 		
-		<li>rule(MILD!=true)->I'll [callout_verb_rip] out your [callout_noun_bodypart_internal] and eat it for [callout_noun_meal][callout_potential_insult]</li>
-		<li>rule(SPICY==true)->I can't wait to harvest your [callout_noun_bodypart_internal][callout_potential_insult]</li>
-		<li>rule(SPICY==true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and shove it in your [callout_noun_orifice][callout_potential_insult]</li>
+		<li>rule(MILD!=true)->Я [callout_verb_rip] твою [callout_noun_bodypart_internal] и съем её на [callout_noun_meal][callout_potential_insult]</li>
+		<li>rule(SPICY==true)->Не могу дождаться, когда смогу вырезать твою [callout_noun_bodypart_internal][callout_potential_insult]</li>
+		<li>rule(SPICY==true)->Я [callout_verb_rip] твою [callout_noun_bodypart_external] и запихну её тебе в [callout_noun_orifice][callout_potential_insult]</li>
 
       </rulesStrings>
     </rulePack>
@@ -304,15 +304,14 @@
 		<!--<li>rule->pow, right in the [damaged_targets]!</li>
 		<li>rule->say goodbye to your [destroyed_targets]!</li>-->
 		
-		<li>rule(MILD==true)->I don't want to have to hurt you anymore[callout_potential_insult]</li>
+		<li>rule(MILD==true)->Я больше не хочу тебе вредить[callout_potential_insult]</li>
 		
-		<li>rule->pow, right in the [damaged_part][callout_potential_insult]</li>
-		<li>rule->say goodbye to your [destroyed_part][callout_potential_insult]</li>
+		<li>rule->Пиф-паф, прямо в [damaged_part][callout_potential_insult]</li>
+		<li>rule->Попрощайся со своей [destroyed_part][callout_potential_insult]</li>
 		
-		<li>rule(MILD!=true)->what a waste of a perfectly good [destroyed_part][callout_potential_insult]</li>
-		<li>rule(SPICY==true)->damn! I was going to eat that [destroyed_part][callout_potential_insult]</li>
+		<li>rule(MILD!=true)->Как же жалко твою [destroyed_part][callout_potential_insult]</li>
+		<li>rule(SPICY==true)->Черт! Я хотел съесть ту [destroyed_part][callout_potential_insult]</li>
 		
-
 
       </rulesStrings>
     </rulePack>
@@ -338,7 +337,7 @@
     <rulePack>
       <rulesStrings>
 	  
-	    <li>rule(SPICY==true)->now I'm going to shove your [destroyed_part] in your [callout_noun_orifice][callout_potential_insult]</li>
+	    <li>rule(SPICY==true)->А теперь я засуну эту [destroyed_part] в твою [callout_noun_orifice][callout_potential_insult]</li>
 
       </rulesStrings>
     </rulePack>
@@ -358,23 +357,23 @@
 		<!--<li>rule->ow, my [damaged_targets]!</li>
 		<li>rule->goodbye, my [destroyed_targets]!</li>-->
 		
-		<li>rule(MILD==true)->ow, make it stop[callout_potential_insult]</li>
-		<li>rule(MILD==true)->ow, I want my mommy[callout_potential_insult]</li>
+		<li>rule(MILD==true)->Ау, прекрати[callout_potential_insult]</li>
+		<li>rule(MILD==true)->Ауч, хочу маму[callout_potential_insult]</li>
 		
-		<li>rule(SPICY!=true)->nooo, not my [destroyed_part]!</li>
-		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere!</li>
+		<li>rule(SPICY!=true)->Нееет, только не мою [destroyed_part]!</li>
+		<li>rule(SPICY!=true)->Пожалуйста, скажите, что у нас где-то есть запасная [destroyed_part]</li>
 		
-		<li>rule->ouch!</li>
-		<li>rule(PART_destroyed_count==0)->ow, my [damaged_part]!</li>
-		<li>rule->goodbye, my [destroyed_part]!</li>
+		<li>rule->Ауч!</li>
+		<li>rule(PART_destroyed_count==0)->Ау, моя [damaged_part]!</li>
+		<li>rule->До свидания, моя [destroyed_part]!</li>
 		
-		<li>rule->oh, [callout_curse]! not my [destroyed_part]!</li>
-		<li>rule->aw, [callout_curse]!</li>
+		<li>rule->Ох, [callout_curse]! только не моя [destroyed_part]!</li>
+		<li>rule->Ау, [callout_curse]!</li>
 		<li>rule->[callout_curse]!</li>
 		
-		<li>rule(MILD!=true,PART_destroyed_count==0)->pfft, that didn't even hurt[callout_potential_insult]</li>
-		<li>rule(SPICY==true)->ha! I don't need my [destroyed_part] to kill you[callout_potential_insult]</li>
-		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway[callout_potential_insult]</li>
+		<li>rule(MILD!=true,PART_destroyed_count==0)->Пффф, даже не больно[callout_potential_insult]</li>
+		<li>rule(SPICY==true)->Ха! Мне не нужна [destroyed_part], чтобы тебя убить[callout_potential_insult]</li>
+		<li>rule(SPICY==true)->Эта [destroyed_part] все равно меня только тормозила[callout_potential_insult]</li>
 
       </rulesStrings>
     </rulePack>
@@ -418,22 +417,22 @@
 		<!--<li>rule->ow, my [damaged_targets]!</li>
 		<li>rule->goodbye, my [destroyed_targets]!</li>-->
 		
-		<li>rule(MILD==true)->ow, make it stop!</li>
-		<li>rule(MILD==true)->ow, I want my mommy!</li>
+		<li>rule(MILD==true)->Ау, прекратите!</li>
+		<li>rule(MILD==true)->Ау, хочу мамочку!</li>
 		
-		<li>rule(SPICY!=true)->nooo, not my [destroyed_part]!</li>
-		<li>rule(SPICY!=true)->please tell me we have a spare [destroyed_part] somewhere...</li>
+		<li>rule(SPICY!=true)->Неет, только не моя [destroyed_part]!</li>
+		<li>rule(SPICY!=true)->Пожалуйста, скажите, что у нас где-то есть запасная [destroyed_part]...</li>
 		
-		<li>rule->ouch!</li>
-		<li>rule(PART_destroyed_count==0)->ow, my [damaged_part]!</li>
-		<li>rule->goodbye, my [destroyed_part]!</li>
-		<li>rule->oh, [callout_curse]! not my [destroyed_part]!</li>
-		<li>rule->aw, [callout_curse]!</li>
+		<li>rule->Ауч!</li>
+		<li>rule(PART_destroyed_count==0)->Ау, моя [damaged_part]!</li>
+		<li>rule->Прощай, моя [destroyed_part]!</li>
+		<li>rule->Ох, [callout_curse]! только не моя [destroyed_part]!</li>
+		<li>rule->Ах, [callout_curse]!</li>
 		<li>rule->[callout_curse]!</li>
 		
-		<li>rule(MILD!=true,PART_destroyed_count==0)->pfft, that didn't even hurt.</li>
+		<li>rule(MILD!=true,PART_destroyed_count==0)->Пфф, даже не больно.</li>
 		
-		<li>rule(SPICY==true)->that [destroyed_part] was only slowing me down anyway!</li>
+		<li>rule(SPICY==true)->Эта [destroyed_part] все равно мне только мешала!</li>
 
       </rulesStrings>
     </rulePack>
@@ -449,17 +448,17 @@
     <rulePack>
       <rulesStrings>
 		
-		<li>rule(MILD==true)->ow, make it stop!</li>
-		<li>rule(MILD==true)->ow, I want my mommy!</li>
+		<li>rule(MILD==true)->Ау, остановите это!</li>
+		<li>rule(MILD==true)->Ау, где моя мама?!</li>
 		
-    <li>rule->well, [callout_curse].</li>
-		<li>rule->ouch!</li>
-		<li>rule->this [CULPRITHEDIFF_label] will be the end of me!</li>
-		<li>rule->I think I hear [callout_noun_afterlife_greeter] calling...</li>
-		<li>rule->its you and me 'til the end, [INITIATOR_WEAPON_title]</li>
-		<li>rule->this may be the end of ol' [INITIATOR_label]</li>
+    <li>rule->Что ж, [callout_curse].</li>
+		<li>rule->Ауч!</li>
+		<li>rule->Это [CULPRITHEDIFF_label] будет моим последним!</li>
+		<li>rule->Кажется, я слышу, как [callout_noun_afterlife_greeter] зовёт...</li>
+		<li>rule->Ты был со мной до конца, [INITIATOR_WEAPON_title]</li>
+		<li>rule->Похоже, настал конец старика [INITIATOR_label]</li>
 		
-		<li>rule(CULPRITHEDIFF_stage==extreme)->goodbye cruel world!</li>
+		<li>rule(CULPRITHEDIFF_stage==extreme)->Прощай, жестокий мир!</li>
 
       </rulesStrings>
     </rulePack>
@@ -475,30 +474,30 @@
     <rulePack>
       <rulesStrings>
 	  
-	    <li>rule(MILD==true)->bring me my brown pants!</li>
-		<li>rule(MILD==true)->is there no one else?</li>
-		<li>rule(MILD==true)->who, me?</li>
-		<li>rule(MILD==true)->why me!?</li>
-		<li>rule(MILD==true)->can we talk about this?!</li>
+	    <li>rule(MILD==true)->Тащите мои коричневые штаны!</li>
+		<li>rule(MILD==true)->Что, никого другого нет?</li>
+		<li>rule(MILD==true)->Кого, меня?</li>
+		<li>rule(MILD==true)->Почему я!?</li>
+		<li>rule(MILD==true)->Может, поговорим об этом?!</li>
 		
-		<li>rule(SPICY!=true)->I fight for [ConceptPositive]!</li>
-		<li>rule(SPICY!=true)->my [PersonalCharacteristic] should come in handy!</li>
+		<li>rule(SPICY!=true)->Я сражаюсь за [ConceptPositive]!</li>
+		<li>rule(SPICY!=true)->Моя [PersonalCharacteristic] сейчас пригодится!</li>
 		
-		<li>rule->for [INITIATOR_factionName]!</li>
-		<li>rule->make [INITIATOR_factionName] great again!</li>
-		<li>rule->you have my [INITIATOR_WEAPON_label]!</li>
-		<li>rule->this is my [INITIATOR_WEAPON_label], there are many like it, but this one is mine.</li>
-		<li>rule->ready to roll!</li>
-		<li>rule->let's do this!</li>
-		<li>rule->where's the action at?</li>
-		<li>rule->show me ya moves!</li>
-        <li>rule->locked and loaded!</li>
-        <li>rule->show me an ass and I'll kick it!</li>
-        <li>rule->hell yeah, I'm ready! Are you?</li>
-		<li>rule->the day of [ConceptBadass] is here!</li>
-		<li>rule->you can get much further with a kind word and a [INITIATOR_WEAPON_label] then you can with a kind word alone</li>
+		<li>rule->Во имя [INITIATOR_factionName]!</li>
+		<li>rule->Сделаем [INITIATOR_factionName] снова великой!</li>
+		<li>rule->У тебя есть мой [INITIATOR_WEAPON_label]!</li>
+		<li>rule->Это мой [INITIATOR_WEAPON_label], есть много похожих, но этот - мой.</li>
+		<li>rule->К бою готов!</li>
+		<li>rule->Давайте сделаем это!</li>
+		<li>rule->А где экшен?</li>
+		<li>rule->Покажите ваши движения!</li>
+        <li>rule->Собран и заряженен!</li>
+        <li>rule->Покажи, кого пинать, я его испинаю!</li>
+        <li>rule->Да, сука, я готов! А ты?</li>
+		<li>rule->День [ConceptBadass] наступил!</li>
+		<li>rule->Ты можешь сделать намного больше добрым словом и [INITIATOR_WEAPON_label], чем одним добрым словом</li>
 		
-		<li>rule(MILD!=true)->the [AdjectiveBadass] [PersonBadass] of [ConceptBadass] is here!</li>
+		<li>rule(MILD!=true)->[AdjectiveBadass] [PersonBadass] от [ConceptBadass] здесь!</li>
 
       </rulesStrings>
     </rulePack>
